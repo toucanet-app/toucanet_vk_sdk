@@ -22,7 +22,7 @@ class HttpClient implements TransportClient {
       _fetch(url, body: body);
 
   Future<HttpClientResponse> _fetch(String url,
-      {Map<String, String>? body}) async {
+      {Map<String, String> body}) async {
     _http.Response response;
 
     try {

@@ -1,5 +1,5 @@
 class TransportClientException implements Exception {
-  final String? message;
+  final String message;
 
   TransportClientException(this.message);
 }

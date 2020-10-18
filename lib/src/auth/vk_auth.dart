@@ -1,19 +1,20 @@
+import 'package:meta/meta.dart';
 import '../enums/vk_enums.dart';
 import '../exceptions/vk_api_exception_mapper.dart';
 
-import '../vk_client.dart';
 import 'vk_auth_helpers.dart';
 
 class VKAuth {
-  final VKClient vkClient;
+  final int clientId;
+  final double version;
   static const defaultHost = 'https://oauth.vk.com/';
 
-  const VKAuth(this.vkClient);
+  const VKAuth(this.clientId, this.version);
 
   String getAuthorizeUrl({
     String state = '',
     bool revoke = false,
-    required List<String> scope,
+    @required List<String> scope,
     List<int> groupIds = const [],
     String oAuthUrl = defaultHost,
     String redirectUri = '$defaultHost/blank.html',
@@ -24,9 +25,9 @@ class VKAuth {
     const responseTypes = ['code', 'token'];
 
     var url = '${oAuthUrl}authorize'
-        '?v=${vkClient.version}'
+        '?v=${version}'
         '&scope=${scope.join(',')}'
-        '&client_id=${vkClient.clientId}'
+        '&client_id=${clientId}'
         '&redirect_uri=${redirectUri}blank.html'
         '&display=${displayTypes[displayType.index]}'
         '&response_type=${responseTypes[responseType.index]}';

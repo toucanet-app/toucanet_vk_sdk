@@ -1,5 +1,3 @@
-part of 'vk_enums.dart';
-
 /// Authorization page appearance.
 enum VKAuthDisplay {
   /// A pop-up window.

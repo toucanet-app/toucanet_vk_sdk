@@ -1,12 +1,12 @@
-import 'dart:async';
 import 'dart:io';
-import 'package:http/http.dart' as _http;
+import 'dart:async';
+import 'package:http/http.dart' as http;
 
-import '../base/transport_client.dart';
-
-part 'http_client_response.dart';
+import 'base/transport_client.dart';
 
 class HttpClient implements TransportClient {
+  const HttpClient();
+
   @override
   Future<TransportClientResponse> get(
     String url, [
@@ -23,11 +23,11 @@ class HttpClient implements TransportClient {
 
   Future<HttpClientResponse> _fetch(String url,
       {Map<String, String> body}) async {
-    _http.Response response;
+    http.Response response;
 
     try {
       final request =
-          (body == null) ? _http.get(url) : _http.post(url, body: body);
+          (body == null) ? http.get(url) : http.post(url, body: body);
 
       response = await request;
     } on SocketException catch (error) {
@@ -44,4 +44,17 @@ class HttpClient implements TransportClient {
       response.headers,
     );
   }
+}
+
+class HttpClientResponse implements TransportClientResponse {
+  @override
+  final int code;
+
+  @override
+  final String body;
+
+  @override
+  final Map<String, String> headers;
+
+  HttpClientResponse(this.code, this.body, [this.headers = const {}]);
 }

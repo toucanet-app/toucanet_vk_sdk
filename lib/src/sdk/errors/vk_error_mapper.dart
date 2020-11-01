@@ -1,6 +1,6 @@
-import 'vk_exceptions.dart';
+import 'exceptions/vk_exceptions.dart';
 
-abstract class ExceptionMapper {
+abstract class ErrorMapper {
   static VKApiException mapErrorResponseToException(int code, String message) {
     switch (code) {
       case 1:

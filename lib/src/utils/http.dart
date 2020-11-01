@@ -1,4 +1,5 @@
-abstract class VKAuthHelpers {
+/// Http helpers.
+abstract class Http {
   static Map<String, String> explodeQuery(String query) {
     final parameters = <String, String>{};
 

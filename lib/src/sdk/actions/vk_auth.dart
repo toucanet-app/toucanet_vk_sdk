@@ -1,8 +1,9 @@
 import 'package:meta/meta.dart';
-import '../enums/vk_enums.dart';
-import '../exceptions/vk_api_exception_mapper.dart';
 
-import 'vk_auth_helpers.dart';
+import '../../utils/http.dart';
+
+import '../enums/vk_enums.dart';
+import '../errors/vk_error_mapper.dart';
 
 class VKAuth {
   final int clientId;
@@ -45,10 +46,10 @@ class VKAuth {
 
   Map<String, String> parseAuthUrl(String uri) {
     final query = uri.substring(uri.indexOf('#') + 1);
-    final parameters = VKAuthHelpers.explodeQuery(query);
+    final parameters = Http.explodeQuery(query);
 
     if (parameters.containsKey('error')) {
-      throw ExceptionMapper.mapErrorResponseToException(5, 'Auth denied.');
+      throw ErrorMapper.mapErrorResponseToException(5, 'Auth denied.');
     }
 
     return parameters;

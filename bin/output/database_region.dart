@@ -1,5 +1,3 @@
-
-
 class DatabaseRegion {
   /// Region ID.
   final int id;

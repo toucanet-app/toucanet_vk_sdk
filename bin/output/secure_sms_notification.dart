@@ -1,5 +1,3 @@
-
-
 class SecureSmsNotification {
   /// Application ID.
   final String appId;

@@ -1,5 +1,3 @@
-
-
 class UsersLastSeen {
   /// Type of the platform that used for the last authorization.
   final int platform;

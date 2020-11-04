@@ -14,7 +14,8 @@ class NewsfeedIgnoreItemType {
 
   static const NewsfeedIgnoreItemType tag = NewsfeedIgnoreItemType._('tag');
 
-  static const NewsfeedIgnoreItemType profilephoto = NewsfeedIgnoreItemType._('profilephoto');
+  static const NewsfeedIgnoreItemType profilephoto =
+      NewsfeedIgnoreItemType._('profilephoto');
 
   static const NewsfeedIgnoreItemType video = NewsfeedIgnoreItemType._('video');
 
@@ -22,7 +23,8 @@ class NewsfeedIgnoreItemType {
 
   static const NewsfeedIgnoreItemType audio = NewsfeedIgnoreItemType._('audio');
 
-  static List get values => const ['wall', 'tag', 'profilephoto', 'video', 'photo', 'audio'];
+  static List get values =>
+      const ['wall', 'tag', 'profilephoto', 'video', 'photo', 'audio'];
 
   @override
   String toString() => '$value';

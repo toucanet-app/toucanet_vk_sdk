@@ -20,7 +20,8 @@ class SearchHintType {
 
   static const SearchHintType html5Game = SearchHintType._('html5_game');
 
-  static List get values => const ['group', 'profile', 'vk_app', 'app', 'html5_game'];
+  static List get values =>
+      const ['group', 'profile', 'vk_app', 'app', 'html5_game'];
 
   @override
   String toString() => '$value';

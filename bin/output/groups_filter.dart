@@ -26,7 +26,16 @@ class GroupsFilter {
 
   static const GroupsFilter hasAddresses = GroupsFilter._('has_addresses');
 
-  static List get values => const ['admin', 'editor', 'moder', 'advertiser', 'groups', 'publics', 'events', 'has_addresses'];
+  static List get values => const [
+        'admin',
+        'editor',
+        'moder',
+        'advertiser',
+        'groups',
+        'publics',
+        'events',
+        'has_addresses'
+      ];
 
   @override
   String toString() => '$value';

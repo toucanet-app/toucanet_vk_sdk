@@ -1,5 +1,3 @@
-
-
 class BaseStickerAnimation {
   /// Type of animation script.
   final String type;

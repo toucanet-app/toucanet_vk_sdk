@@ -1,5 +1,3 @@
-
-
 class FaveTag {
   /// Tag id.
   final int id;

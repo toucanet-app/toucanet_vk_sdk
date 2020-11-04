@@ -1,5 +1,3 @@
-
-
 class StatsCountry {
   /// Country code.
   final String code;

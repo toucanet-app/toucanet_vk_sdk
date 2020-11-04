@@ -1,5 +1,3 @@
-
-
 class StatsActivity {
   /// Comments number.
   final int comments;

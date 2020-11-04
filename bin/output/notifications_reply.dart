@@ -1,5 +1,3 @@
-
-
 class NotificationsReply {
   /// Date when the reply has been created in Unixtime.
   final int date;

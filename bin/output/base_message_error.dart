@@ -1,5 +1,3 @@
-
-
 class BaseMessageError {
   /// Error code.
   final int code;

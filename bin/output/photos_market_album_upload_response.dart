@@ -1,5 +1,3 @@
-
-
 class PhotosMarketAlbumUploadResponse {
   /// Community ID.
   final int gid;

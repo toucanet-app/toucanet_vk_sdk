@@ -1,5 +1,3 @@
-
-
 class AccountOffer {
   /// Offer description.
   final String description;

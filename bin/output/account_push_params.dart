@@ -98,15 +98,21 @@ class AccountPushParams {
       reply: map['reply']?.map((item) => AccountPushParamsOnoff(item)),
       newPost: map['new_post']?.map((item) => AccountPushParamsOnoff(item)),
       wallPost: map['wall_post']?.map((item) => AccountPushParamsOnoff(item)),
-      wallPublish: map['wall_publish']?.map((item) => AccountPushParamsOnoff(item)),
+      wallPublish:
+          map['wall_publish']?.map((item) => AccountPushParamsOnoff(item)),
       friend: map['friend']?.map((item) => AccountPushParamsOnoff(item)),
-      friendFound: map['friend_found']?.map((item) => AccountPushParamsOnoff(item)),
-      friendAccepted: map['friend_accepted']?.map((item) => AccountPushParamsOnoff(item)),
-      groupInvite: map['group_invite']?.map((item) => AccountPushParamsOnoff(item)),
-      groupAccepted: map['group_accepted']?.map((item) => AccountPushParamsOnoff(item)),
+      friendFound:
+          map['friend_found']?.map((item) => AccountPushParamsOnoff(item)),
+      friendAccepted:
+          map['friend_accepted']?.map((item) => AccountPushParamsOnoff(item)),
+      groupInvite:
+          map['group_invite']?.map((item) => AccountPushParamsOnoff(item)),
+      groupAccepted:
+          map['group_accepted']?.map((item) => AccountPushParamsOnoff(item)),
       birthday: map['birthday']?.map((item) => AccountPushParamsOnoff(item)),
       eventSoon: map['event_soon']?.map((item) => AccountPushParamsOnoff(item)),
-      appRequest: map['app_request']?.map((item) => AccountPushParamsOnoff(item)),
+      appRequest:
+          map['app_request']?.map((item) => AccountPushParamsOnoff(item)),
       sdkOpen: map['sdk_open']?.map((item) => AccountPushParamsOnoff(item)),
     );
   }

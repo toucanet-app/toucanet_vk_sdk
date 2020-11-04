@@ -12,15 +12,19 @@ class BaseLinkProductStatus {
 
   static const BaseLinkProductStatus active = BaseLinkProductStatus._('active');
 
-  static const BaseLinkProductStatus blocked = BaseLinkProductStatus._('blocked');
+  static const BaseLinkProductStatus blocked =
+      BaseLinkProductStatus._('blocked');
 
   static const BaseLinkProductStatus sold = BaseLinkProductStatus._('sold');
 
-  static const BaseLinkProductStatus deleted = BaseLinkProductStatus._('deleted');
+  static const BaseLinkProductStatus deleted =
+      BaseLinkProductStatus._('deleted');
 
-  static const BaseLinkProductStatus archived = BaseLinkProductStatus._('archived');
+  static const BaseLinkProductStatus archived =
+      BaseLinkProductStatus._('archived');
 
-  static List get values => const ['active', 'blocked', 'sold', 'deleted', 'archived'];
+  static List get values =>
+      const ['active', 'blocked', 'sold', 'deleted', 'archived'];
 
   @override
   String toString() => '$value';

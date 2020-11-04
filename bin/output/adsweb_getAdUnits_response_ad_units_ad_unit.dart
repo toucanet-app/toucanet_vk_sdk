@@ -25,7 +25,8 @@ class AdswebGetAdUnitsResponseAdUnitsAdUnit {
     }..removeWhere((_, dynamic value) => value == null);
   }
 
-  factory AdswebGetAdUnitsResponseAdUnitsAdUnit.fromMap(Map<String, dynamic> map) {
+  factory AdswebGetAdUnitsResponseAdUnitsAdUnit.fromMap(
+      Map<String, dynamic> map) {
     return AdswebGetAdUnitsResponseAdUnitsAdUnit(
       id: map['id'] as int,
       siteId: map['site_id'] as int,

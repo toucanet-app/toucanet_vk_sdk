@@ -10,11 +10,14 @@ class WidgetsCommentMediaType {
     return WidgetsCommentMediaType._(value);
   }
 
-  static const WidgetsCommentMediaType audio = WidgetsCommentMediaType._('audio');
+  static const WidgetsCommentMediaType audio =
+      WidgetsCommentMediaType._('audio');
 
-  static const WidgetsCommentMediaType photo = WidgetsCommentMediaType._('photo');
+  static const WidgetsCommentMediaType photo =
+      WidgetsCommentMediaType._('photo');
 
-  static const WidgetsCommentMediaType video = WidgetsCommentMediaType._('video');
+  static const WidgetsCommentMediaType video =
+      WidgetsCommentMediaType._('video');
 
   static List get values => const ['audio', 'photo', 'video'];
 

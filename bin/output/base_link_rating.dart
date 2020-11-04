@@ -1,5 +1,3 @@
-
-
 class BaseLinkRating {
   /// Count of reviews.
   final int reviewsCount;

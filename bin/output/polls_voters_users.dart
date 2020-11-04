@@ -1,5 +1,3 @@
-
-
 class PollsVotersUsers {
   /// Votes number.
   final int count;

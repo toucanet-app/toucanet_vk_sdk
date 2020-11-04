@@ -28,7 +28,8 @@ class NewsfeedItemHolidayRecommendationsBlockHeader {
     }..removeWhere((_, dynamic value) => value == null);
   }
 
-  factory NewsfeedItemHolidayRecommendationsBlockHeader.fromMap(Map<String, dynamic> map) {
+  factory NewsfeedItemHolidayRecommendationsBlockHeader.fromMap(
+      Map<String, dynamic> map) {
     return NewsfeedItemHolidayRecommendationsBlockHeader(
       title: map['title'] as String,
       subtitle: map['subtitle'] as String,

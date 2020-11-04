@@ -1,5 +1,3 @@
-
-
 class AdsParagraphs {
   /// Rules paragraph.
   final String paragraph;

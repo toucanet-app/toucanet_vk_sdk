@@ -44,7 +44,8 @@ class PhotosTagsSuggestionItem {
       title: map['title'] as String,
       caption: map['caption'] as String,
       type: map['type'] as String,
-      buttons: map['buttons']?.map((item) => PhotosTagsSuggestionItemButton.fromMap(item)),
+      buttons: map['buttons']
+          ?.map((item) => PhotosTagsSuggestionItemButton.fromMap(item)),
       photo: PhotosPhoto.fromMap(map['photo']),
       tags: map['tags']?.map((item) => PhotosPhotoTag.fromMap(item)),
       trackCode: map['track_code'] as String,

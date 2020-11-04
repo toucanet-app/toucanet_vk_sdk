@@ -66,11 +66,13 @@ class MessagesPinnedMessage {
 
   factory MessagesPinnedMessage.fromMap(Map<String, dynamic> map) {
     return MessagesPinnedMessage(
-      attachments: map['attachments']?.map((item) => MessagesMessageAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => MessagesMessageAttachment.fromMap(item)),
       conversationMessageId: map['conversation_message_id'] as int,
       date: map['date'] as int,
       fromId: map['from_id'] as int,
-      fwdMessages: map['fwd_messages']?.map((item) => MessagesForeignMessage.fromMap(item)),
+      fwdMessages: map['fwd_messages']
+          ?.map((item) => MessagesForeignMessage.fromMap(item)),
       geo: BaseGeo.fromMap(map['geo']),
       id: map['id'] as int,
       peerId: map['peer_id'] as int,

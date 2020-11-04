@@ -1,5 +1,3 @@
-
-
 class UsersOccupation {
   /// ID of school, university, company group.
   final int id;

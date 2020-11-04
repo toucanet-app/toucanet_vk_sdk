@@ -123,9 +123,11 @@ class NewsfeedItemWallpost {
       sourceId: map['source_id'] as int,
       date: map['date'] as int,
       activity: NewsfeedEventActivity.fromMap(map['activity']),
-      attachments: map['attachments']?.map((item) => WallWallpostAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallWallpostAttachment.fromMap(item)),
       comments: BaseCommentsInfo.fromMap(map['comments']),
-      copyHistory: map['copy_history']?.map((item) => WallWallpost.fromMap(item)),
+      copyHistory:
+          map['copy_history']?.map((item) => WallWallpost.fromMap(item)),
       feedback: NewsfeedItemWallpostFeedback.fromMap(map['feedback']),
       geo: BaseGeo.fromMap(map['geo']),
       isFavorite: map['is_favorite'] as bool,

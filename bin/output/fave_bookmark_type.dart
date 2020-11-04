@@ -20,7 +20,8 @@ class FaveBookmarkType {
 
   static const FaveBookmarkType link = FaveBookmarkType._('link');
 
-  static List get values => const ['post', 'video', 'product', 'article', 'link'];
+  static List get values =>
+      const ['post', 'video', 'product', 'article', 'link'];
 
   @override
   String toString() => '$value';

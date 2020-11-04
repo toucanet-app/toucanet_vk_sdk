@@ -186,7 +186,8 @@ class StoriesStory {
       replies: StoriesReplies.fromMap(map['replies']),
       seen: BaseBoolInt(map['seen']),
       type: StoriesStoryType(map['type']),
-      clickableStickers: StoriesClickableStickers.fromMap(map['clickable_stickers']),
+      clickableStickers:
+          StoriesClickableStickers.fromMap(map['clickable_stickers']),
       video: VideoVideo.fromMap(map['video']),
       views: map['views'] as int,
       canAsk: BaseBoolInt(map['can_ask']),

@@ -1,5 +1,3 @@
-
-
 class AdsTargetGroup {
   /// Audience.
   final int audienceCount;

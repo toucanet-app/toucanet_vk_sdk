@@ -1,5 +1,3 @@
-
-
 class BaseObjectCount {
   /// Items count.
   final int count;

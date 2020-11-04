@@ -14,9 +14,11 @@ class AccountPushParamsMode {
 
   static const AccountPushParamsMode off = AccountPushParamsMode._('off');
 
-  static const AccountPushParamsMode noSound = AccountPushParamsMode._('no_sound');
+  static const AccountPushParamsMode noSound =
+      AccountPushParamsMode._('no_sound');
 
-  static const AccountPushParamsMode noText = AccountPushParamsMode._('no_text');
+  static const AccountPushParamsMode noText =
+      AccountPushParamsMode._('no_text');
 
   static List get values => const ['on', 'off', 'no_sound', 'no_text'];
 

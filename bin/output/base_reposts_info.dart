@@ -1,5 +1,3 @@
-
-
 class BaseRepostsInfo {
   /// Total reposts counter. Sum of wall and mail reposts counters.
   final int count;

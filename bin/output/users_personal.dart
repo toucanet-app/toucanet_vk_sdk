@@ -1,5 +1,3 @@
-
-
 class UsersPersonal {
   /// User's views on alcohol.
   final int alcohol;

@@ -1,5 +1,3 @@
-
-
 class SecureLevel {
   /// Level.
   final int level;

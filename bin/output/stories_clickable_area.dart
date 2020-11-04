@@ -1,5 +1,3 @@
-
-
 class StoriesClickableArea {
   final int x;
 

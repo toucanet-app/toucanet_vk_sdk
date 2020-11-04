@@ -10,11 +10,14 @@ class UtilsLinkCheckedStatus {
     return UtilsLinkCheckedStatus._(value);
   }
 
-  static const UtilsLinkCheckedStatus notBanned = UtilsLinkCheckedStatus._('not_banned');
+  static const UtilsLinkCheckedStatus notBanned =
+      UtilsLinkCheckedStatus._('not_banned');
 
-  static const UtilsLinkCheckedStatus banned = UtilsLinkCheckedStatus._('banned');
+  static const UtilsLinkCheckedStatus banned =
+      UtilsLinkCheckedStatus._('banned');
 
-  static const UtilsLinkCheckedStatus processing = UtilsLinkCheckedStatus._('processing');
+  static const UtilsLinkCheckedStatus processing =
+      UtilsLinkCheckedStatus._('processing');
 
   static List get values => const ['not_banned', 'banned', 'processing'];
 

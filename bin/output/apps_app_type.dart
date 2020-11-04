@@ -26,7 +26,16 @@ class AppsAppType {
 
   static const AppsAppType miniApp = AppsAppType._('mini_app');
 
-  static List get values => const ['app', 'game', 'site', 'standalone', 'vk_app', 'community_app', 'html5_game', 'mini_app'];
+  static List get values => const [
+        'app',
+        'game',
+        'site',
+        'standalone',
+        'vk_app',
+        'community_app',
+        'html5_game',
+        'mini_app'
+      ];
 
   @override
   String toString() => '$value';

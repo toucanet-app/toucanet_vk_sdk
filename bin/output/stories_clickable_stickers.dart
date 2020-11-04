@@ -24,7 +24,8 @@ class StoriesClickableStickers {
 
   factory StoriesClickableStickers.fromMap(Map<String, dynamic> map) {
     return StoriesClickableStickers(
-      clickableStickers: map['clickable_stickers']?.map((item) => StoriesClickableSticker.fromMap(item)),
+      clickableStickers: map['clickable_stickers']
+          ?.map((item) => StoriesClickableSticker.fromMap(item)),
       originalHeight: map['original_height'] as int,
       originalWidth: map['original_width'] as int,
     );

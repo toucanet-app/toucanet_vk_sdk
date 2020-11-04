@@ -1,5 +1,3 @@
-
-
 class SecureTransaction {
   /// Transaction date in Unixtime.
   final int date;

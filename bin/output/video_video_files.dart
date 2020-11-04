@@ -1,5 +1,3 @@
-
-
 class VideoVideoFiles {
   /// URL of the external player.
   final String external;

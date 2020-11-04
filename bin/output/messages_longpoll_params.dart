@@ -1,5 +1,3 @@
-
-
 class MessagesLongpollParams {
   /// Key.
   final String key;

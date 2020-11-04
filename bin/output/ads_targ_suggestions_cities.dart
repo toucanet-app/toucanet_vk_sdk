@@ -1,5 +1,3 @@
-
-
 class AdsTargSuggestionsCities {
   /// Object ID.
   final int id;

@@ -32,7 +32,8 @@ class PhotosImageType {
 
   static const PhotosImageType w = PhotosImageType._('w');
 
-  static List get values => const ['s', 'm', 'x', 'l', 'o', 'p', 'q', 'r', 'y', 'z', 'w'];
+  static List get values =>
+      const ['s', 'm', 'x', 'l', 'o', 'p', 'q', 'r', 'y', 'z', 'w'];
 
   @override
   String toString() => '$value';

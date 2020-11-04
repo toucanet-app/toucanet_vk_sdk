@@ -36,7 +36,8 @@ class UtilsStatsExtended {
   factory UtilsStatsExtended.fromMap(Map<String, dynamic> map) {
     return UtilsStatsExtended(
       cities: map['cities']?.map((item) => UtilsStatsCity.fromMap(item)),
-      countries: map['countries']?.map((item) => UtilsStatsCountry.fromMap(item)),
+      countries:
+          map['countries']?.map((item) => UtilsStatsCountry.fromMap(item)),
       sexAge: map['sex_age']?.map((item) => UtilsStatsSexAge.fromMap(item)),
       timestamp: map['timestamp'] as int,
       views: map['views'] as int,

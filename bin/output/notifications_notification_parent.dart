@@ -383,7 +383,8 @@ class NotificationsNotificationParent {
 
   factory NotificationsNotificationParent.fromMap(Map<String, dynamic> map) {
     return NotificationsNotificationParent(
-      attachments: map['attachments']?.map((item) => WallWallpostAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallWallpostAttachment.fromMap(item)),
       comments: BaseCommentsInfo.fromMap(map['comments']),
       copyOwnerId: map['copy_owner_id'] as int,
       copyPostId: map['copy_post_id'] as int,
@@ -434,7 +435,8 @@ class NotificationsNotificationParent {
       description: map['description'] as String,
       duration: map['duration'] as int,
       image: map['image']?.map((item) => VideoVideoImage.fromMap(item)),
-      firstFrame: map['first_frame']?.map((item) => VideoVideoImage.fromMap(item)),
+      firstFrame:
+          map['first_frame']?.map((item) => VideoVideoImage.fromMap(item)),
       player: map['player'] as String,
       processing: BasePropertyExists(map['processing']),
       converting: BaseBoolInt(map['converting']),

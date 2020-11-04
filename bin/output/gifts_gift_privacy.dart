@@ -14,7 +14,8 @@ class GiftsGiftPrivacy {
 
   static const GiftsGiftPrivacy nameForAll = GiftsGiftPrivacy._(1);
 
-  static const GiftsGiftPrivacy nameAndMessageForRecipientOnly = GiftsGiftPrivacy._(2);
+  static const GiftsGiftPrivacy nameAndMessageForRecipientOnly =
+      GiftsGiftPrivacy._(2);
 
   static List get values => const [0, 1, 2];
 

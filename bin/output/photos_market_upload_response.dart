@@ -1,5 +1,3 @@
-
-
 class PhotosMarketUploadResponse {
   /// Crop data.
   final String cropData;

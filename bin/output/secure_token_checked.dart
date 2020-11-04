@@ -1,5 +1,3 @@
-
-
 class SecureTokenChecked {
   /// Date when access_token has been generated in Unixtime.
   final int date;

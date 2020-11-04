@@ -82,7 +82,8 @@ class WidgetsWidgetComment {
 
   factory WidgetsWidgetComment.fromMap(Map<String, dynamic> map) {
     return WidgetsWidgetComment(
-      attachments: map['attachments']?.map((item) => WallCommentAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallCommentAttachment.fromMap(item)),
       canDelete: BaseBoolInt(map['can_delete']),
       comments: WidgetsCommentReplies.fromMap(map['comments']),
       date: map['date'] as int,

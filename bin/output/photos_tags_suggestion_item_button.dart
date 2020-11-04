@@ -1,5 +1,3 @@
-
-
 class PhotosTagsSuggestionItemButton {
   final String title;
 

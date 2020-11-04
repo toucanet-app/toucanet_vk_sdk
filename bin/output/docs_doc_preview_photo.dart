@@ -15,7 +15,8 @@ class DocsDocPreviewPhoto {
 
   factory DocsDocPreviewPhoto.fromMap(Map<String, dynamic> map) {
     return DocsDocPreviewPhoto(
-      sizes: map['sizes']?.map((item) => DocsDocPreviewPhotoSizes.fromMap(item)),
+      sizes:
+          map['sizes']?.map((item) => DocsDocPreviewPhotoSizes.fromMap(item)),
     );
   }
 }

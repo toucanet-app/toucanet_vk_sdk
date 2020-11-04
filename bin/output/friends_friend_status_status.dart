@@ -10,13 +10,17 @@ class FriendsFriendStatusStatus {
     return FriendsFriendStatusStatus._(value);
   }
 
-  static const FriendsFriendStatusStatus notAFriend = FriendsFriendStatusStatus._(0);
+  static const FriendsFriendStatusStatus notAFriend =
+      FriendsFriendStatusStatus._(0);
 
-  static const FriendsFriendStatusStatus outcomingRequest = FriendsFriendStatusStatus._(1);
+  static const FriendsFriendStatusStatus outcomingRequest =
+      FriendsFriendStatusStatus._(1);
 
-  static const FriendsFriendStatusStatus incomingRequest = FriendsFriendStatusStatus._(2);
+  static const FriendsFriendStatusStatus incomingRequest =
+      FriendsFriendStatusStatus._(2);
 
-  static const FriendsFriendStatusStatus isFriend = FriendsFriendStatusStatus._(3);
+  static const FriendsFriendStatusStatus isFriend =
+      FriendsFriendStatusStatus._(3);
 
   static List get values => const [0, 1, 2, 3];
 

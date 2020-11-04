@@ -1,5 +1,3 @@
-
-
 class WallGraffiti {
   /// Graffiti ID.
   final int id;

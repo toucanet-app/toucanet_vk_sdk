@@ -1,5 +1,3 @@
-
-
 class StatsCity {
   /// Visitors number.
   final int count;

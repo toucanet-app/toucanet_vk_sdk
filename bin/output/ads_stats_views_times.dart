@@ -1,5 +1,3 @@
-
-
 class AdsStatsViewsTimes {
   final int viewsAdsTimes1;
 

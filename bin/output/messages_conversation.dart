@@ -77,7 +77,8 @@ class MessagesConversation {
       important: map['important'] as bool,
       unanswered: map['unanswered'] as bool,
       specialServiceType: map['special_service_type'] as String,
-      messageRequestData: MessagesMessageRequestData.fromMap(map['message_request_data']),
+      messageRequestData:
+          MessagesMessageRequestData.fromMap(map['message_request_data']),
       mentions: map['mentions'] as List<int>,
       currentKeyboard: MessagesKeyboard.fromMap(map['current_keyboard']),
     );

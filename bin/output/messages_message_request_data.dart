@@ -1,5 +1,3 @@
-
-
 class MessagesMessageRequestData {
   /// Status of message request.
   final String status;

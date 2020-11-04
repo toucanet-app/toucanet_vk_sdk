@@ -140,12 +140,14 @@ class MessagesMessage {
     return MessagesMessage(
       action: MessagesMessageAction.fromMap(map['action']),
       adminAuthorId: map['admin_author_id'] as int,
-      attachments: map['attachments']?.map((item) => MessagesMessageAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => MessagesMessageAttachment.fromMap(item)),
       conversationMessageId: map['conversation_message_id'] as int,
       date: map['date'] as int,
       deleted: BaseBoolInt(map['deleted']),
       fromId: map['from_id'] as int,
-      fwdMessages: map['fwd_messages']?.map((item) => MessagesForeignMessage.fromMap(item)),
+      fwdMessages: map['fwd_messages']
+          ?.map((item) => MessagesForeignMessage.fromMap(item)),
       geo: BaseGeo.fromMap(map['geo']),
       id: map['id'] as int,
       important: map['important'] as bool,

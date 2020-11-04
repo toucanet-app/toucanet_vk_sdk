@@ -10,17 +10,23 @@ class GroupsGroupFullMainSection {
     return GroupsGroupFullMainSection._(value);
   }
 
-  static const GroupsGroupFullMainSection absent = GroupsGroupFullMainSection._(0);
+  static const GroupsGroupFullMainSection absent =
+      GroupsGroupFullMainSection._(0);
 
-  static const GroupsGroupFullMainSection photos = GroupsGroupFullMainSection._(1);
+  static const GroupsGroupFullMainSection photos =
+      GroupsGroupFullMainSection._(1);
 
-  static const GroupsGroupFullMainSection topics = GroupsGroupFullMainSection._(2);
+  static const GroupsGroupFullMainSection topics =
+      GroupsGroupFullMainSection._(2);
 
-  static const GroupsGroupFullMainSection audio = GroupsGroupFullMainSection._(3);
+  static const GroupsGroupFullMainSection audio =
+      GroupsGroupFullMainSection._(3);
 
-  static const GroupsGroupFullMainSection video = GroupsGroupFullMainSection._(4);
+  static const GroupsGroupFullMainSection video =
+      GroupsGroupFullMainSection._(4);
 
-  static const GroupsGroupFullMainSection market = GroupsGroupFullMainSection._(5);
+  static const GroupsGroupFullMainSection market =
+      GroupsGroupFullMainSection._(5);
 
   static List get values => const [0, 1, 2, 3, 4, 5];
 

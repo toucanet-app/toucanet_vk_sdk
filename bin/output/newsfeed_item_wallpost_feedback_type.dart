@@ -10,9 +10,11 @@ class NewsfeedItemWallpostFeedbackType {
     return NewsfeedItemWallpostFeedbackType._(value);
   }
 
-  static const NewsfeedItemWallpostFeedbackType buttons = NewsfeedItemWallpostFeedbackType._('buttons');
+  static const NewsfeedItemWallpostFeedbackType buttons =
+      NewsfeedItemWallpostFeedbackType._('buttons');
 
-  static const NewsfeedItemWallpostFeedbackType stars = NewsfeedItemWallpostFeedbackType._('stars');
+  static const NewsfeedItemWallpostFeedbackType stars =
+      NewsfeedItemWallpostFeedbackType._('stars');
 
   static List get values => const ['buttons', 'stars'];
 

@@ -14,11 +14,13 @@ class GroupsGroupRole {
 
   static const GroupsGroupRole editor = GroupsGroupRole._('editor');
 
-  static const GroupsGroupRole administrator = GroupsGroupRole._('administrator');
+  static const GroupsGroupRole administrator =
+      GroupsGroupRole._('administrator');
 
   static const GroupsGroupRole advertiser = GroupsGroupRole._('advertiser');
 
-  static List get values => const ['moderator', 'editor', 'administrator', 'advertiser'];
+  static List get values =>
+      const ['moderator', 'editor', 'administrator', 'advertiser'];
 
   @override
   String toString() => '$value';

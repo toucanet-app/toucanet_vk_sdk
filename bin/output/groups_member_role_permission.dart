@@ -10,7 +10,8 @@ class GroupsMemberRolePermission {
     return GroupsMemberRolePermission._(value);
   }
 
-  static const GroupsMemberRolePermission ads = GroupsMemberRolePermission._('ads');
+  static const GroupsMemberRolePermission ads =
+      GroupsMemberRolePermission._('ads');
 
   static List get values => const ['ads'];
 

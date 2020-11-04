@@ -104,7 +104,8 @@ class WallWallpost {
   factory WallWallpost.fromMap(Map<String, dynamic> map) {
     return WallWallpost(
       accessKey: map['access_key'] as String,
-      attachments: map['attachments']?.map((item) => WallWallpostAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallWallpostAttachment.fromMap(item)),
       copyright: WallPostCopyright.fromMap(map['copyright']),
       date: map['date'] as int,
       edited: map['edited'] as int,

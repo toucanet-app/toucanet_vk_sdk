@@ -1,5 +1,3 @@
-
-
 class BaseLinkApplicationStore {
   /// Store Id.
   final double id;

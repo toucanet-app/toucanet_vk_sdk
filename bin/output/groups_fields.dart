@@ -36,7 +36,8 @@ class GroupsFields {
 
   static const GroupsFields canPost = GroupsFields._('can_post');
 
-  static const GroupsFields canSeeAllPosts = GroupsFields._('can_see_all_posts');
+  static const GroupsFields canSeeAllPosts =
+      GroupsFields._('can_see_all_posts');
 
   static const GroupsFields activity = GroupsFields._('activity');
 
@@ -64,9 +65,11 @@ class GroupsFields {
 
   static const GroupsFields canMessage = GroupsFields._('can_message');
 
-  static const GroupsFields isMarketCartEnabled = GroupsFields._('is_market_cart_enabled');
+  static const GroupsFields isMarketCartEnabled =
+      GroupsFields._('is_market_cart_enabled');
 
-  static const GroupsFields isMessagesBlocked = GroupsFields._('is_messages_blocked');
+  static const GroupsFields isMessagesBlocked =
+      GroupsFields._('is_messages_blocked');
 
   static const GroupsFields canSendNotify = GroupsFields._('can_send_notify');
 
@@ -94,13 +97,16 @@ class GroupsFields {
 
   static const GroupsFields isAdult = GroupsFields._('is_adult');
 
-  static const GroupsFields canSubscribePosts = GroupsFields._('can_subscribe_posts');
+  static const GroupsFields canSubscribePosts =
+      GroupsFields._('can_subscribe_posts');
 
-  static const GroupsFields warningNotification = GroupsFields._('warning_notification');
+  static const GroupsFields warningNotification =
+      GroupsFields._('warning_notification');
 
   static const GroupsFields msgPushAllowed = GroupsFields._('msg_push_allowed');
 
-  static const GroupsFields storiesArchiveCount = GroupsFields._('stories_archive_count');
+  static const GroupsFields storiesArchiveCount =
+      GroupsFields._('stories_archive_count');
 
   static const GroupsFields videoLiveLevel = GroupsFields._('video_live_level');
 
@@ -108,7 +114,57 @@ class GroupsFields {
 
   static const GroupsFields clipsCount = GroupsFields._('clips_count');
 
-  static List get values => const ['market', 'member_status', 'is_favorite', 'is_subscribed', 'city', 'country', 'verified', 'description', 'wiki_page', 'members_count', 'counters', 'cover', 'can_post', 'can_see_all_posts', 'activity', 'fixed_post', 'can_create_topic', 'can_upload_video', 'has_photo', 'status', 'main_album_id', 'links', 'contacts', 'site', 'main_section', 'trending', 'can_message', 'is_market_cart_enabled', 'is_messages_blocked', 'can_send_notify', 'online_status', 'start_date', 'finish_date', 'age_limits', 'ban_info', 'action_button', 'author_id', 'phone', 'has_market_app', 'addresses', 'live_covers', 'is_adult', 'can_subscribe_posts', 'warning_notification', 'msg_push_allowed', 'stories_archive_count', 'video_live_level', 'video_live_count', 'clips_count'];
+  static List get values => const [
+        'market',
+        'member_status',
+        'is_favorite',
+        'is_subscribed',
+        'city',
+        'country',
+        'verified',
+        'description',
+        'wiki_page',
+        'members_count',
+        'counters',
+        'cover',
+        'can_post',
+        'can_see_all_posts',
+        'activity',
+        'fixed_post',
+        'can_create_topic',
+        'can_upload_video',
+        'has_photo',
+        'status',
+        'main_album_id',
+        'links',
+        'contacts',
+        'site',
+        'main_section',
+        'trending',
+        'can_message',
+        'is_market_cart_enabled',
+        'is_messages_blocked',
+        'can_send_notify',
+        'online_status',
+        'start_date',
+        'finish_date',
+        'age_limits',
+        'ban_info',
+        'action_button',
+        'author_id',
+        'phone',
+        'has_market_app',
+        'addresses',
+        'live_covers',
+        'is_adult',
+        'can_subscribe_posts',
+        'warning_notification',
+        'msg_push_allowed',
+        'stories_archive_count',
+        'video_live_level',
+        'video_live_count',
+        'clips_count'
+      ];
 
   @override
   String toString() => '$value';

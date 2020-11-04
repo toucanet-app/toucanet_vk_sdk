@@ -1,5 +1,3 @@
-
-
 class LeadsLeadDays {
   /// Completed offers number.
   final int completed;

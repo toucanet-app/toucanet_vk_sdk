@@ -1,5 +1,3 @@
-
-
 class AccountAccountCounters {
   /// New app requests number.
   final int appRequests;

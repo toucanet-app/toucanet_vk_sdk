@@ -36,7 +36,8 @@ class BaseSticker {
       'sticker_id': stickerId,
       'product_id': productId,
       'images': images?.map((item) => item?.toMap()),
-      'images_with_background': imagesWithBackground?.map((item) => item?.toMap()),
+      'images_with_background':
+          imagesWithBackground?.map((item) => item?.toMap()),
       'animation_url': animationUrl,
       'animations': animations?.map((item) => item?.toMap()),
       'is_allowed': isAllowed,
@@ -48,9 +49,11 @@ class BaseSticker {
       stickerId: map['sticker_id'] as int,
       productId: map['product_id'] as int,
       images: map['images']?.map((item) => BaseImage.fromMap(item)),
-      imagesWithBackground: map['images_with_background']?.map((item) => BaseImage.fromMap(item)),
+      imagesWithBackground:
+          map['images_with_background']?.map((item) => BaseImage.fromMap(item)),
       animationUrl: map['animation_url'] as String,
-      animations: map['animations']?.map((item) => BaseStickerAnimation.fromMap(item)),
+      animations:
+          map['animations']?.map((item) => BaseStickerAnimation.fromMap(item)),
       isAllowed: map['is_allowed'] as bool,
     );
   }

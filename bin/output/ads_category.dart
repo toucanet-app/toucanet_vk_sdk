@@ -28,7 +28,8 @@ class AdsCategory {
     return AdsCategory(
       id: map['id'] as int,
       name: map['name'] as String,
-      subcategories: map['subcategories']?.map((item) => BaseObjectWithName.fromMap(item)),
+      subcategories:
+          map['subcategories']?.map((item) => BaseObjectWithName.fromMap(item)),
     );
   }
 }

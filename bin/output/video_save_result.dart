@@ -1,5 +1,3 @@
-
-
 class VideoSaveResult {
   /// Video access key.
   final String accessKey;

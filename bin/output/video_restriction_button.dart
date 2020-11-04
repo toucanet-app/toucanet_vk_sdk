@@ -1,5 +1,3 @@
-
-
 class VideoRestrictionButton {
   final String action;
 

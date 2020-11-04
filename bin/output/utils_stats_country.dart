@@ -1,5 +1,3 @@
-
-
 class UtilsStatsCountry {
   /// Country ID.
   final int countryId;

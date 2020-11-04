@@ -12,9 +12,11 @@ class DocsDocAttachmentType {
 
   static const DocsDocAttachmentType doc = DocsDocAttachmentType._('doc');
 
-  static const DocsDocAttachmentType graffiti = DocsDocAttachmentType._('graffiti');
+  static const DocsDocAttachmentType graffiti =
+      DocsDocAttachmentType._('graffiti');
 
-  static const DocsDocAttachmentType audioMessage = DocsDocAttachmentType._('audio_message');
+  static const DocsDocAttachmentType audioMessage =
+      DocsDocAttachmentType._('audio_message');
 
   static List get values => const ['doc', 'graffiti', 'audio_message'];
 

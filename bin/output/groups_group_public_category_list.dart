@@ -25,7 +25,8 @@ class GroupsGroupPublicCategoryList {
     return GroupsGroupPublicCategoryList(
       id: map['id'] as int,
       name: map['name'] as String,
-      subcategories: map['subcategories']?.map((item) => GroupsGroupCategoryType.fromMap(item)),
+      subcategories: map['subcategories']
+          ?.map((item) => GroupsGroupCategoryType.fromMap(item)),
     );
   }
 }

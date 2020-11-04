@@ -1,5 +1,3 @@
-
-
 class WallCarouselBase {
   /// Index of current carousel element.
   final int carouselOffset;

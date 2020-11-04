@@ -12,9 +12,11 @@ class GroupsGroupFullAgeLimits {
 
   static const GroupsGroupFullAgeLimits no = GroupsGroupFullAgeLimits._(1);
 
-  static const GroupsGroupFullAgeLimits overAge16 = GroupsGroupFullAgeLimits._(2);
+  static const GroupsGroupFullAgeLimits overAge16 =
+      GroupsGroupFullAgeLimits._(2);
 
-  static const GroupsGroupFullAgeLimits overAge18 = GroupsGroupFullAgeLimits._(3);
+  static const GroupsGroupFullAgeLimits overAge18 =
+      GroupsGroupFullAgeLimits._(3);
 
   static List get values => const [1, 2, 3];
 

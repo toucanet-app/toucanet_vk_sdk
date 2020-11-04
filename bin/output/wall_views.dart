@@ -1,5 +1,3 @@
-
-
 class WallViews {
   /// Count.
   final int count;

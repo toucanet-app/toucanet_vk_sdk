@@ -10,9 +10,11 @@ class PagesPrivacySettings {
     return PagesPrivacySettings._(value);
   }
 
-  static const PagesPrivacySettings communityManagersOnly = PagesPrivacySettings._(0);
+  static const PagesPrivacySettings communityManagersOnly =
+      PagesPrivacySettings._(0);
 
-  static const PagesPrivacySettings communityMembersOnly = PagesPrivacySettings._(1);
+  static const PagesPrivacySettings communityMembersOnly =
+      PagesPrivacySettings._(1);
 
   static const PagesPrivacySettings everyone = PagesPrivacySettings._(2);
 

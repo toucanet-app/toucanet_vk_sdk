@@ -1,5 +1,3 @@
-
-
 class NotificationsSendMessageError {
   /// Error code.
   final int code;

@@ -1,5 +1,3 @@
-
-
 class AdsStatsCities {
   /// Clicks rate.
   final double clicksRate;

@@ -91,7 +91,8 @@ class PagesWikipageFull {
       created: map['created'] as int,
       creatorId: map['creator_id'] as int,
       currentUserCanEdit: BaseBoolInt(map['current_user_can_edit']),
-      currentUserCanEditAccess: BaseBoolInt(map['current_user_can_edit_access']),
+      currentUserCanEditAccess:
+          BaseBoolInt(map['current_user_can_edit_access']),
       edited: map['edited'] as int,
       editorId: map['editor_id'] as int,
       groupId: map['group_id'] as int,

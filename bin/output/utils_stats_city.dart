@@ -1,5 +1,3 @@
-
-
 class UtilsStatsCity {
   /// City ID.
   final int cityId;

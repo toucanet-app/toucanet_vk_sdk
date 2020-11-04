@@ -1,5 +1,3 @@
-
-
 class UtilsLastShortenedLink {
   /// Access key for private stats.
   final String accessKey;

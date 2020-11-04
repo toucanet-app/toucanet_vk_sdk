@@ -563,7 +563,8 @@ class GroupsUserXtrRole {
       relation: UsersUserRelation(map['relation']),
       relationPartner: UsersUserMin.fromMap(map['relation_partner']),
       personal: UsersPersonal.fromMap(map['personal']),
-      universities: map['universities']?.map((item) => UsersUniversity.fromMap(item)),
+      universities:
+          map['universities']?.map((item) => UsersUniversity.fromMap(item)),
       schools: map['schools']?.map((item) => UsersSchool.fromMap(item)),
       relatives: map['relatives']?.map((item) => UsersRelative.fromMap(item)),
       isSubscribedPodcasts: map['is_subscribed_podcasts'] as bool,

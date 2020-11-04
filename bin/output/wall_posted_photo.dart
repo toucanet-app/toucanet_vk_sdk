@@ -1,5 +1,3 @@
-
-
 class WallPostedPhoto {
   /// Photo ID.
   final int id;

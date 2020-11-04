@@ -1,5 +1,3 @@
-
-
 class PhotosOwnerUploadResponse {
   /// Uploading hash.
   final String hash;

@@ -77,7 +77,8 @@ class MessagesChatFull {
       pushSettings: MessagesChatPushSettings.fromMap(map['push_settings']),
       title: map['title'] as String,
       type: map['type'] as String,
-      users: map['users']?.map((item) => MessagesUserXtrInvitedBy.fromMap(item)),
+      users:
+          map['users']?.map((item) => MessagesUserXtrInvitedBy.fromMap(item)),
     );
   }
 }

@@ -70,7 +70,8 @@ class AdsLookalikeRequest {
       sourceRetargetingGroupId: map['source_retargeting_group_id'] as int,
       sourceName: map['source_name'] as String,
       audienceCount: map['audience_count'] as int,
-      saveAudienceLevels: map['save_audience_levels']?.map((item) => AdsLookalikeRequestSaveAudienceLevel.fromMap(item)),
+      saveAudienceLevels: map['save_audience_levels']
+          ?.map((item) => AdsLookalikeRequestSaveAudienceLevel.fromMap(item)),
     );
   }
 }

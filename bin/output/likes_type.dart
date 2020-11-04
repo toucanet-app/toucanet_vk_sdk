@@ -34,7 +34,20 @@ class LikesType {
 
   static const LikesType sitepage = LikesType._('sitepage');
 
-  static List get values => const ['post', 'comment', 'photo', 'audio', 'video', 'note', 'market', 'photo_comment', 'video_comment', 'topic_comment', 'market_comment', 'sitepage'];
+  static List get values => const [
+        'post',
+        'comment',
+        'photo',
+        'audio',
+        'video',
+        'note',
+        'market',
+        'photo_comment',
+        'video_comment',
+        'topic_comment',
+        'market_comment',
+        'sitepage'
+      ];
 
   @override
   String toString() => '$value';

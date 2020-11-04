@@ -1,5 +1,3 @@
-
-
 class AdsTargSuggestionsRegions {
   /// Object ID.
   final int id;

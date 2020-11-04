@@ -10,7 +10,8 @@ class AppsAppLeaderboardType {
     return AppsAppLeaderboardType._(value);
   }
 
-  static const AppsAppLeaderboardType notSupported = AppsAppLeaderboardType._(0);
+  static const AppsAppLeaderboardType notSupported =
+      AppsAppLeaderboardType._(0);
 
   static const AppsAppLeaderboardType levels = AppsAppLeaderboardType._(1);
 

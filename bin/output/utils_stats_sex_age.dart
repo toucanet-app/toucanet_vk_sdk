@@ -1,5 +1,3 @@
-
-
 class UtilsStatsSexAge {
   /// Age denotation.
   final String ageRange;

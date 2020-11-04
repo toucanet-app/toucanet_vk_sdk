@@ -1,5 +1,3 @@
-
-
 class LinkTargetObject {
   /// Object type.
   final String type;

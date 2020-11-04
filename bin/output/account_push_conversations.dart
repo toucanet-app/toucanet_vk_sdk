@@ -21,7 +21,8 @@ class AccountPushConversations {
   factory AccountPushConversations.fromMap(Map<String, dynamic> map) {
     return AccountPushConversations(
       count: map['count'] as int,
-      items: map['items']?.map((item) => AccountPushConversationsItem.fromMap(item)),
+      items: map['items']
+          ?.map((item) => AccountPushConversationsItem.fromMap(item)),
     );
   }
 }

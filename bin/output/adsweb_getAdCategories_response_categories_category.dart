@@ -17,7 +17,8 @@ class AdswebGetAdCategoriesResponseCategoriesCategory {
     }..removeWhere((_, dynamic value) => value == null);
   }
 
-  factory AdswebGetAdCategoriesResponseCategoriesCategory.fromMap(Map<String, dynamic> map) {
+  factory AdswebGetAdCategoriesResponseCategoriesCategory.fromMap(
+      Map<String, dynamic> map) {
     return AdswebGetAdCategoriesResponseCategoriesCategory(
       id: map['id'] as int,
       name: map['name'] as String,

@@ -77,7 +77,8 @@ class WallWallComment {
 
   factory WallWallComment.fromMap(Map<String, dynamic> map) {
     return WallWallComment(
-      attachments: map['attachments']?.map((item) => WallCommentAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallCommentAttachment.fromMap(item)),
       date: map['date'] as int,
       fromId: map['from_id'] as int,
       id: map['id'] as int,

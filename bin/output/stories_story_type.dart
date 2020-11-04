@@ -16,11 +16,19 @@ class StoriesStoryType {
 
   static const StoriesStoryType liveActive = StoriesStoryType._('live_active');
 
-  static const StoriesStoryType liveFinished = StoriesStoryType._('live_finished');
+  static const StoriesStoryType liveFinished =
+      StoriesStoryType._('live_finished');
 
-  static const StoriesStoryType birthdayInvite = StoriesStoryType._('birthday_invite');
+  static const StoriesStoryType birthdayInvite =
+      StoriesStoryType._('birthday_invite');
 
-  static List get values => const ['photo', 'video', 'live_active', 'live_finished', 'birthday_invite'];
+  static List get values => const [
+        'photo',
+        'video',
+        'live_active',
+        'live_finished',
+        'birthday_invite'
+      ];
 
   @override
   String toString() => '$value';

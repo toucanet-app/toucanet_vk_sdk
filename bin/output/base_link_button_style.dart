@@ -10,8 +10,6 @@ class BaseLinkButtonStyle {
     return BaseLinkButtonStyle._(value);
   }
 
-  
-
   static List get values => const [];
 
   @override

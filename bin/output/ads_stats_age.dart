@@ -1,5 +1,3 @@
-
-
 class AdsStatsAge {
   /// Clicks rate.
   final double clicksRate;

@@ -20,7 +20,8 @@ class NewsfeedFilters {
 
   static const NewsfeedFilters friend = NewsfeedFilters._('friend');
 
-  static const NewsfeedFilters recommendedGroups = NewsfeedFilters._('recommended_groups');
+  static const NewsfeedFilters recommendedGroups =
+      NewsfeedFilters._('recommended_groups');
 
   static const NewsfeedFilters note = NewsfeedFilters._('note');
 
@@ -28,13 +29,28 @@ class NewsfeedFilters {
 
   static const NewsfeedFilters video = NewsfeedFilters._('video');
 
-  static const NewsfeedFilters audioPlaylist = NewsfeedFilters._('audio_playlist');
+  static const NewsfeedFilters audioPlaylist =
+      NewsfeedFilters._('audio_playlist');
 
-  static const NewsfeedFilters gamesCarousel = NewsfeedFilters._('games_carousel');
+  static const NewsfeedFilters gamesCarousel =
+      NewsfeedFilters._('games_carousel');
 
   static const NewsfeedFilters clip = NewsfeedFilters._('clip');
 
-  static List get values => const ['post', 'photo', 'photo_tag', 'wall_photo', 'friend', 'recommended_groups', 'note', 'audio', 'video', 'audio_playlist', 'games_carousel', 'clip'];
+  static List get values => const [
+        'post',
+        'photo',
+        'photo_tag',
+        'wall_photo',
+        'friend',
+        'recommended_groups',
+        'note',
+        'audio',
+        'video',
+        'audio_playlist',
+        'games_carousel',
+        'clip'
+      ];
 
   @override
   String toString() => '$value';

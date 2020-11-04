@@ -35,7 +35,8 @@ class NewsfeedItemWallpostFeedback {
     return NewsfeedItemWallpostFeedback(
       type: NewsfeedItemWallpostFeedbackType(map['type']),
       question: map['question'] as String,
-      answers: map['answers']?.map((item) => NewsfeedItemWallpostFeedbackAnswer.fromMap(item)),
+      answers: map['answers']
+          ?.map((item) => NewsfeedItemWallpostFeedbackAnswer.fromMap(item)),
       starsCount: map['stars_count'] as int,
       gratitude: map['gratitude'] as String,
     );

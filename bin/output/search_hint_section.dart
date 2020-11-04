@@ -16,15 +16,25 @@ class SearchHintSection {
 
   static const SearchHintSection publics = SearchHintSection._('publics');
 
-  static const SearchHintSection correspondents = SearchHintSection._('correspondents');
+  static const SearchHintSection correspondents =
+      SearchHintSection._('correspondents');
 
   static const SearchHintSection people = SearchHintSection._('people');
 
   static const SearchHintSection friends = SearchHintSection._('friends');
 
-  static const SearchHintSection mutualFriends = SearchHintSection._('mutual_friends');
+  static const SearchHintSection mutualFriends =
+      SearchHintSection._('mutual_friends');
 
-  static List get values => const ['groups', 'events', 'publics', 'correspondents', 'people', 'friends', 'mutual_friends'];
+  static List get values => const [
+        'groups',
+        'events',
+        'publics',
+        'correspondents',
+        'people',
+        'friends',
+        'mutual_friends'
+      ];
 
   @override
   String toString() => '$value';

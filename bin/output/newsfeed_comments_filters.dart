@@ -12,11 +12,14 @@ class NewsfeedCommentsFilters {
 
   static const NewsfeedCommentsFilters post = NewsfeedCommentsFilters._('post');
 
-  static const NewsfeedCommentsFilters photo = NewsfeedCommentsFilters._('photo');
+  static const NewsfeedCommentsFilters photo =
+      NewsfeedCommentsFilters._('photo');
 
-  static const NewsfeedCommentsFilters video = NewsfeedCommentsFilters._('video');
+  static const NewsfeedCommentsFilters video =
+      NewsfeedCommentsFilters._('video');
 
-  static const NewsfeedCommentsFilters topic = NewsfeedCommentsFilters._('topic');
+  static const NewsfeedCommentsFilters topic =
+      NewsfeedCommentsFilters._('topic');
 
   static const NewsfeedCommentsFilters note = NewsfeedCommentsFilters._('note');
 

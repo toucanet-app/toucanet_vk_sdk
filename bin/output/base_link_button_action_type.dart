@@ -10,7 +10,8 @@ class BaseLinkButtonActionType {
     return BaseLinkButtonActionType._(value);
   }
 
-  static const BaseLinkButtonActionType openUrl = BaseLinkButtonActionType._('open_url');
+  static const BaseLinkButtonActionType openUrl =
+      BaseLinkButtonActionType._('open_url');
 
   static List get values => const ['open_url'];
 

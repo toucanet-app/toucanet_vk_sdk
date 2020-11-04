@@ -1,5 +1,3 @@
-
-
 class DocsDocUploadResponse {
   /// Uploaded file data.
   final String file;

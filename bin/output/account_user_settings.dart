@@ -175,7 +175,8 @@ class AccountUserSettings {
       relation: UsersUserRelation(map['relation']),
       relationPartner: UsersUserMin.fromMap(map['relation_partner']),
       relationPending: BaseBoolInt(map['relation_pending']),
-      relationRequests: map['relation_requests']?.map((item) => UsersUserMin.fromMap(item)),
+      relationRequests:
+          map['relation_requests']?.map((item) => UsersUserMin.fromMap(item)),
       screenName: map['screen_name'] as String,
       sex: BaseSex(map['sex']),
       status: map['status'] as String,

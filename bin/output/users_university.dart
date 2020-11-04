@@ -1,5 +1,3 @@
-
-
 class UsersUniversity {
   /// Chair ID.
   final int chair;

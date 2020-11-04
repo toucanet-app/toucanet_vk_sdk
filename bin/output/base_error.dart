@@ -39,7 +39,8 @@ class BaseError {
       errorSubcode: map['error_subcode'] as int,
       errorMsg: map['error_msg'] as String,
       errorText: map['error_text'] as String,
-      requestParams: map['request_params']?.map((item) => BaseRequestParam.fromMap(item)),
+      requestParams:
+          map['request_params']?.map((item) => BaseRequestParam.fromMap(item)),
     );
   }
 }

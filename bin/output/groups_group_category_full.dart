@@ -39,8 +39,10 @@ class GroupsGroupCategoryFull {
       id: map['id'] as int,
       name: map['name'] as String,
       pageCount: map['page_count'] as int,
-      pagePreviews: map['page_previews']?.map((item) => GroupsGroup.fromMap(item)),
-      subcategories: map['subcategories']?.map((item) => GroupsGroupCategory.fromMap(item)),
+      pagePreviews:
+          map['page_previews']?.map((item) => GroupsGroup.fromMap(item)),
+      subcategories: map['subcategories']
+          ?.map((item) => GroupsGroupCategory.fromMap(item)),
     );
   }
 }

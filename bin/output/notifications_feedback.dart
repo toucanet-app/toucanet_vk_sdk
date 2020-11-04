@@ -45,7 +45,8 @@ class NotificationsFeedback {
 
   factory NotificationsFeedback.fromMap(Map<String, dynamic> map) {
     return NotificationsFeedback(
-      attachments: map['attachments']?.map((item) => WallWallpostAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallWallpostAttachment.fromMap(item)),
       fromId: map['from_id'] as int,
       geo: BaseGeo.fromMap(map['geo']),
       id: map['id'] as int,

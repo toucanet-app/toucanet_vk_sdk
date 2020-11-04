@@ -1,5 +1,3 @@
-
-
 class UsersUserCounters {
   /// Albums number.
   final int albums;

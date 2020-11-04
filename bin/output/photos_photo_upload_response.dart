@@ -1,5 +1,3 @@
-
-
 class PhotosPhotoUploadResponse {
   /// Album ID.
   final int aid;

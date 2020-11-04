@@ -1,5 +1,3 @@
-
-
 class BasePlace {
   /// Place address.
   final String address;

@@ -1,5 +1,3 @@
-
-
 class DatabaseSchool {
   /// School ID.
   final int id;

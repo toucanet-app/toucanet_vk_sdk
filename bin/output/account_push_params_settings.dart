@@ -12,9 +12,11 @@ class AccountPushParamsSettings {
 
   static const AccountPushParamsSettings on = AccountPushParamsSettings._('on');
 
-  static const AccountPushParamsSettings off = AccountPushParamsSettings._('off');
+  static const AccountPushParamsSettings off =
+      AccountPushParamsSettings._('off');
 
-  static const AccountPushParamsSettings frOfFr = AccountPushParamsSettings._('fr_of_fr');
+  static const AccountPushParamsSettings frOfFr =
+      AccountPushParamsSettings._('fr_of_fr');
 
   static List get values => const ['on', 'off', 'fr_of_fr'];
 

@@ -10,11 +10,14 @@ class GroupsGroupXtrInvitedByType {
     return GroupsGroupXtrInvitedByType._(value);
   }
 
-  static const GroupsGroupXtrInvitedByType group = GroupsGroupXtrInvitedByType._('group');
+  static const GroupsGroupXtrInvitedByType group =
+      GroupsGroupXtrInvitedByType._('group');
 
-  static const GroupsGroupXtrInvitedByType page = GroupsGroupXtrInvitedByType._('page');
+  static const GroupsGroupXtrInvitedByType page =
+      GroupsGroupXtrInvitedByType._('page');
 
-  static const GroupsGroupXtrInvitedByType event = GroupsGroupXtrInvitedByType._('event');
+  static const GroupsGroupXtrInvitedByType event =
+      GroupsGroupXtrInvitedByType._('event');
 
   static List get values => const ['group', 'page', 'event'];
 

@@ -14,7 +14,8 @@ class StoriesStoryStatsState {
 
   static const StoriesStoryStatsState off = StoriesStoryStatsState._('off');
 
-  static const StoriesStoryStatsState hidden = StoriesStoryStatsState._('hidden');
+  static const StoriesStoryStatsState hidden =
+      StoriesStoryStatsState._('hidden');
 
   static List get values => const ['on', 'off', 'hidden'];
 

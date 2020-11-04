@@ -367,7 +367,8 @@ class GroupsGroupFull {
       status: map['status'] as String,
       mainAlbumId: map['main_album_id'] as int,
       links: map['links']?.map((item) => GroupsLinksItem.fromMap(item)),
-      contacts: map['contacts']?.map((item) => GroupsContactsItem.fromMap(item)),
+      contacts:
+          map['contacts']?.map((item) => GroupsContactsItem.fromMap(item)),
       wall: map['wall'] as int,
       site: map['site'] as String,
       mainSection: GroupsGroupFullMainSection(map['main_section']),

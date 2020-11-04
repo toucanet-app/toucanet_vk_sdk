@@ -26,7 +26,8 @@ class GroupsMemberRole {
   factory GroupsMemberRole.fromMap(Map<String, dynamic> map) {
     return GroupsMemberRole(
       id: map['id'] as int,
-      permissions: map['permissions']?.map((item) => GroupsMemberRolePermission(item)),
+      permissions:
+          map['permissions']?.map((item) => GroupsMemberRolePermission(item)),
       role: GroupsMemberRoleStatus(map['role']),
     );
   }

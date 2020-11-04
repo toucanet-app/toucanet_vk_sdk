@@ -14,13 +14,17 @@ class CallbackGroupJoinType {
 
   static const CallbackGroupJoinType unsure = CallbackGroupJoinType._('unsure');
 
-  static const CallbackGroupJoinType accepted = CallbackGroupJoinType._('accepted');
+  static const CallbackGroupJoinType accepted =
+      CallbackGroupJoinType._('accepted');
 
-  static const CallbackGroupJoinType approved = CallbackGroupJoinType._('approved');
+  static const CallbackGroupJoinType approved =
+      CallbackGroupJoinType._('approved');
 
-  static const CallbackGroupJoinType request = CallbackGroupJoinType._('request');
+  static const CallbackGroupJoinType request =
+      CallbackGroupJoinType._('request');
 
-  static List get values => const ['join', 'unsure', 'accepted', 'approved', 'request'];
+  static List get values =>
+      const ['join', 'unsure', 'accepted', 'approved', 'request'];
 
   @override
   String toString() => '$value';

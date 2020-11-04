@@ -156,7 +156,8 @@ class WallWallpostFull {
     return WallWallpostFull(
       carouselOffset: map['carousel_offset'] as int,
       accessKey: map['access_key'] as String,
-      attachments: map['attachments']?.map((item) => WallWallpostAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallWallpostAttachment.fromMap(item)),
       copyright: WallPostCopyright.fromMap(map['copyright']),
       date: map['date'] as int,
       edited: map['edited'] as int,
@@ -173,7 +174,8 @@ class WallWallpostFull {
       signerId: map['signer_id'] as int,
       text: map['text'] as String,
       views: WallViews.fromMap(map['views']),
-      copyHistory: map['copy_history']?.map((item) => WallWallpost.fromMap(item)),
+      copyHistory:
+          map['copy_history']?.map((item) => WallWallpost.fromMap(item)),
       canEdit: BaseBoolInt(map['can_edit']),
       createdBy: map['created_by'] as int,
       canDelete: BaseBoolInt(map['can_delete']),

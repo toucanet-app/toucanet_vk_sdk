@@ -110,7 +110,8 @@ class MarketOrder {
       tags: map['tags'] as List<dynamic>,
       dimensions: map['dimensions'] as dynamic,
       totalPrice: MarketPrice.fromMap(map['total_price']),
-      previewOrderItems: map['preview_order_items']?.map((item) => MarketOrderItem.fromMap(item)),
+      previewOrderItems: map['preview_order_items']
+          ?.map((item) => MarketOrderItem.fromMap(item)),
       delivery: map['delivery'] as dynamic,
       recipient: map['recipient'] as dynamic,
       priceDetails: map['price_details'] as List<dynamic>,

@@ -1,5 +1,3 @@
-
-
 class MessagesChatRestrictions {
   /// Only admins can promote users to admins.
   final bool adminsPromoteUsers;

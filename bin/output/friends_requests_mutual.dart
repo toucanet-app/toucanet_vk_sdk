@@ -1,5 +1,3 @@
-
-
 class FriendsRequestsMutual {
   /// Total mutual friends number.
   final int count;

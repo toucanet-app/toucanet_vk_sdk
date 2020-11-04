@@ -250,7 +250,8 @@ class VideoVideo {
       description: map['description'] as String,
       duration: map['duration'] as int,
       image: map['image']?.map((item) => VideoVideoImage.fromMap(item)),
-      firstFrame: map['first_frame']?.map((item) => VideoVideoImage.fromMap(item)),
+      firstFrame:
+          map['first_frame']?.map((item) => VideoVideoImage.fromMap(item)),
       width: map['width'] as int,
       height: map['height'] as int,
       id: map['id'] as int,

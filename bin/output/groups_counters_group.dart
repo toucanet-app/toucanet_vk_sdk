@@ -1,5 +1,3 @@
-
-
 class GroupsCountersGroup {
   /// Addresses number.
   final int addresses;

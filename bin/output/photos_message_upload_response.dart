@@ -1,5 +1,3 @@
-
-
 class PhotosMessageUploadResponse {
   /// Uploading hash.
   final String hash;

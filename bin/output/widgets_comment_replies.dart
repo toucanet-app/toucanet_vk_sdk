@@ -28,7 +28,8 @@ class WidgetsCommentReplies {
     return WidgetsCommentReplies(
       canPost: BaseBoolInt(map['can_post']),
       count: map['count'] as int,
-      replies: map['replies']?.map((item) => WidgetsCommentRepliesItem.fromMap(item)),
+      replies: map['replies']
+          ?.map((item) => WidgetsCommentRepliesItem.fromMap(item)),
     );
   }
 }

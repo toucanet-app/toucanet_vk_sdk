@@ -54,7 +54,8 @@ class NewsfeedItemPromoButton {
       text: map['text'] as String,
       title: map['title'] as String,
       action: NewsfeedItemPromoButtonAction.fromMap(map['action']),
-      images: map['images']?.map((item) => NewsfeedItemPromoButtonImage.fromMap(item)),
+      images: map['images']
+          ?.map((item) => NewsfeedItemPromoButtonImage.fromMap(item)),
       trackCode: map['track_code'] as String,
     );
   }

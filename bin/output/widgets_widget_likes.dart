@@ -1,5 +1,3 @@
-
-
 class WidgetsWidgetLikes {
   /// Likes number.
   final int count;

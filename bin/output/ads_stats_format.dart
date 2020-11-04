@@ -1,5 +1,3 @@
-
-
 class AdsStatsFormat {
   /// Clicks number.
   final int clicks;

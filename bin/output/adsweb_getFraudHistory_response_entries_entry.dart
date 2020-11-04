@@ -17,7 +17,8 @@ class AdswebGetFraudHistoryResponseEntriesEntry {
     }..removeWhere((_, dynamic value) => value == null);
   }
 
-  factory AdswebGetFraudHistoryResponseEntriesEntry.fromMap(Map<String, dynamic> map) {
+  factory AdswebGetFraudHistoryResponseEntriesEntry.fromMap(
+      Map<String, dynamic> map) {
     return AdswebGetFraudHistoryResponseEntriesEntry(
       siteId: map['site_id'] as int,
       day: map['day'] as String,

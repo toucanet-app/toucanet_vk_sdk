@@ -1,5 +1,3 @@
-
-
 class GiftsLayout {
   /// Gift ID.
   final int id;

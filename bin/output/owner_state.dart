@@ -1,5 +1,3 @@
-
-
 class OwnerState {
   final int state;
 

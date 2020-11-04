@@ -20,7 +20,8 @@ class WallPostType {
 
   static const WallPostType suggest = WallPostType._('suggest');
 
-  static List get values => const ['post', 'copy', 'reply', 'postpone', 'suggest'];
+  static List get values =>
+      const ['post', 'copy', 'reply', 'postpone', 'suggest'];
 
   @override
   String toString() => '$value';

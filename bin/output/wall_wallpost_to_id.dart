@@ -95,7 +95,8 @@ class WallWallpostToId {
 
   factory WallWallpostToId.fromMap(Map<String, dynamic> map) {
     return WallWallpostToId(
-      attachments: map['attachments']?.map((item) => WallWallpostAttachment.fromMap(item)),
+      attachments: map['attachments']
+          ?.map((item) => WallWallpostAttachment.fromMap(item)),
       comments: BaseCommentsInfo.fromMap(map['comments']),
       copyOwnerId: map['copy_owner_id'] as int,
       copyPostId: map['copy_post_id'] as int,

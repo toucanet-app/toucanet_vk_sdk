@@ -132,7 +132,8 @@ class StoriesClickableSticker {
 
   factory StoriesClickableSticker.fromMap(Map<String, dynamic> map) {
     return StoriesClickableSticker(
-      clickableArea: map['clickable_area']?.map((item) => StoriesClickableArea.fromMap(item)),
+      clickableArea: map['clickable_area']
+          ?.map((item) => StoriesClickableArea.fromMap(item)),
       id: map['id'] as int,
       hashtag: map['hashtag'] as String,
       linkObject: BaseLink.fromMap(map['link_object']),

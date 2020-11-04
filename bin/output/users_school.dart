@@ -1,5 +1,3 @@
-
-
 class UsersSchool {
   /// City ID.
   final int city;

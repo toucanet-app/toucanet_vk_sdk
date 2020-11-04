@@ -1,5 +1,3 @@
-
-
 class OrdersAmountItem {
   /// Votes amount in user's currency.
   final int amount;

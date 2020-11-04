@@ -1,5 +1,3 @@
-
-
 class UtilsStats {
   /// Start time.
   final int timestamp;

@@ -71,7 +71,8 @@ class AccountInfo {
 
   factory AccountInfo.fromMap(Map<String, dynamic> map) {
     return AccountInfo(
-      wishlistsAePromoBannerShow: BaseBoolInt(map['wishlists_ae_promo_banner_show']),
+      wishlistsAePromoBannerShow:
+          BaseBoolInt(map['wishlists_ae_promo_banner_show']),
       twoFaRequired: BaseBoolInt(map['2fa_required']),
       country: map['country'] as String,
       httpsRequired: BaseBoolInt(map['https_required']),

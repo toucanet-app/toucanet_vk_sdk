@@ -1,5 +1,3 @@
-
-
 class PhotosWallUploadResponse {
   /// Uploading hash.
   final String hash;

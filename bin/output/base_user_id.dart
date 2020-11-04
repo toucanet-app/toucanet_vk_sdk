@@ -1,5 +1,3 @@
-
-
 class BaseUserId {
   /// User ID.
   final int userId;

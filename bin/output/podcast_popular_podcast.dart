@@ -1,5 +1,3 @@
-
-
 class PodcastPopularPodcast {
   final int ownerId;
 

@@ -1,5 +1,3 @@
-
-
 class GroupsContactsItem {
   /// Contact description.
   final String desc;

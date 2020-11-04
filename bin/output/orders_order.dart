@@ -1,5 +1,3 @@
-
-
 class OrdersOrder {
   /// Amount.
   final int amount;

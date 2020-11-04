@@ -1,5 +1,3 @@
-
-
 class WallAppPost {
   /// Application ID.
   final int id;

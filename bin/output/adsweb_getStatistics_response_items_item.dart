@@ -1,5 +1,3 @@
-
-
 class AdswebGetStatisticsResponseItemsItem {
   final int siteId;
 
@@ -61,7 +59,8 @@ class AdswebGetStatisticsResponseItemsItem {
     }..removeWhere((_, dynamic value) => value == null);
   }
 
-  factory AdswebGetStatisticsResponseItemsItem.fromMap(Map<String, dynamic> map) {
+  factory AdswebGetStatisticsResponseItemsItem.fromMap(
+      Map<String, dynamic> map) {
     return AdswebGetStatisticsResponseItemsItem(
       siteId: map['site_id'] as int,
       adUnitId: map['ad_unit_id'] as int,

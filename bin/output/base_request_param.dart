@@ -1,5 +1,3 @@
-
-
 class BaseRequestParam {
   /// Parameter name.
   final String key;

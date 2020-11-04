@@ -49,7 +49,7 @@ class AppsApp {
   final String banner560;
 
   /// URL of the app icon with 16 px in width.
-  final String icon16;
+  final String iconAge16;
 
   /// Is new flag.
   final BaseBoolInt isNew;
@@ -113,7 +113,7 @@ class AppsApp {
     this.authorUrl,
     this.banner1120,
     this.banner560,
-    this.icon16,
+    this.iconAge16,
     this.isNew,
     this.pushEnabled,
     this.screenOrientation,
@@ -149,7 +149,7 @@ class AppsApp {
       'author_url': authorUrl,
       'banner_1120': banner1120,
       'banner_560': banner560,
-      'icon_16': icon16,
+      'icon_16': iconAge16,
       'is_new': isNew?.value,
       'push_enabled': pushEnabled?.value,
       'screen_orientation': screenOrientation,
@@ -186,7 +186,7 @@ class AppsApp {
       authorUrl: map['author_url'] as String,
       banner1120: map['banner_1120'] as String,
       banner560: map['banner_560'] as String,
-      icon16: map['icon_16'] as String,
+      iconAge16: map['icon_16'] as String,
       isNew: BaseBoolInt(map['is_new']),
       pushEnabled: BaseBoolInt(map['push_enabled']),
       screenOrientation: map['screen_orientation'] as int,

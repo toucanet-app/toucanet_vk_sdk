@@ -22,6 +22,8 @@ abstract class Converters {
   static String snakeToCamelCase(String name) {
     return name
         .replaceAll('2fa', 'twoFa')
+        .replaceAll('16', 'age16')
+        .replaceAll('18', 'age18')
         .split('_')
         .map(validate)
         .reduce((n, p) => n + p[0].toUpperCase() + p.substring(1));
@@ -30,6 +32,8 @@ abstract class Converters {
   static String snakeToPascalCase(String name) {
     return name
         .replaceAll('2fa', 'TwoFa')
+        .replaceAll('16', 'Age16')
+        .replaceAll('18', 'Age18')
         .split('_')
         .map(validate)
         .fold('', (n, p) => n + p[0].toUpperCase() + p.substring(1));

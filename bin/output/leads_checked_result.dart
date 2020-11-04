@@ -10,9 +10,9 @@ class LeadsCheckedResult {
     return LeadsCheckedResult._(value);
   }
 
-  static const LeadsCheckedResult true = LeadsCheckedResult._('true');
+  static const LeadsCheckedResult checked = LeadsCheckedResult._('true');
 
-  static const LeadsCheckedResult false = LeadsCheckedResult._('false');
+  static const LeadsCheckedResult notChecked = LeadsCheckedResult._('false');
 
   static List get values => const ['true', 'false'];
 

@@ -70,6 +70,10 @@ class EnumTemplate {
       }
 
       if (value is String) {
+        if (className == 'LeadsCheckedResult') {
+          key = key == 'true' ? 'checked' : 'notChecked';
+        }
+
         array.add('\'$value\'');
         enums.add('static const $className $key = $className._(\'$value\');');
       }

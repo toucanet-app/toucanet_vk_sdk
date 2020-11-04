@@ -98,7 +98,10 @@ class PropertyTemplate {
     type = Converters.schemaToDartType(data['type']);
   }
 
-  String get name => Converters.snakeToCamelCase(property);
+  String get name {
+    if (property == 'new') return 'newCount';
+    return Converters.snakeToCamelCase(property);
+  }
 
   String get comment => description == null ? '' : '/// ${description}';
 

@@ -1,0 +1,52 @@
+import 'package:meta/meta.dart';
+
+class MessagesGraffiti {
+  /// Access key for graffiti.
+  final String accessKey;
+
+  /// Graffiti height.
+  final int height;
+
+  /// Graffiti ID.
+  final int id;
+
+  /// Graffiti owner ID.
+  final int ownerId;
+
+  /// Graffiti URL.
+  final String url;
+
+  /// Graffiti width.
+  final int width;
+
+  const MessagesGraffiti({
+    this.accessKey,
+    @required this.height,
+    @required this.id,
+    @required this.ownerId,
+    @required this.url,
+    @required this.width,
+  });
+
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'access_key': accessKey,
+      'height': height,
+      'id': id,
+      'owner_id': ownerId,
+      'url': url,
+      'width': width,
+    }..removeWhere((_, dynamic value) => value == null);
+  }
+
+  factory MessagesGraffiti.fromMap(Map<String, dynamic> map) {
+    return MessagesGraffiti(
+      accessKey: map['access_key'] as String,
+      height: map['height'] as int,
+      id: map['id'] as int,
+      ownerId: map['owner_id'] as int,
+      url: map['url'] as String,
+      width: map['width'] as int,
+    );
+  }
+}

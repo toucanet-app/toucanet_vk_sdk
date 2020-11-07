@@ -1,1 +1,1 @@
-export 'vk_auth_enums.dart';
+export 'vk_auth.dart';

@@ -1,7 +1,6 @@
 import 'package:meta/meta.dart';
 
 import '../../utils/http.dart';
-
 import '../enums/vk_enums.dart';
 import '../errors/vk_error_mapper.dart';
 

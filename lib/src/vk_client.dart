@@ -1,7 +1,7 @@
 import 'package:meta/meta.dart';
 
-import 'http_client.dart';
 import 'base/transport_client.dart';
+import 'http_client.dart';
 import 'sdk/actions/vk_actions.dart';
 
 class VKClient {

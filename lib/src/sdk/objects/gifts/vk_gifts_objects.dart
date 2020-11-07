@@ -1,3 +1,3 @@
-export 'gifts_gift.dart';
-export 'gifts_gift_privacy.dart';
-export 'gifts_layout.dart';
+export 'vk_gifts_gift.dart';
+export 'vk_gifts_gift_privacy.dart';
+export 'vk_gifts_layout.dart';

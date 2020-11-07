@@ -13,6 +13,8 @@ class VKAdsCreateCampaignsResponse {
   }
 
   factory VKAdsCreateCampaignsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsCreateCampaignsResponse(
       adsCreateCampaignsResponse:
           map['ads_createCampaigns_response'] as List<int>,

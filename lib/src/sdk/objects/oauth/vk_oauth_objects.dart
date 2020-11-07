@@ -1,1 +1,1 @@
-export 'oauth_error.dart';
+export 'vk_oauth_error.dart';

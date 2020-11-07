@@ -1,1 +1,1 @@
-export 'comment_thread.dart';
+export 'vk_comment_thread.dart';

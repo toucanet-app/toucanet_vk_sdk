@@ -55,6 +55,8 @@ class VKAdsGetTargetingStatsResponse {
   }
 
   factory VKAdsGetTargetingStatsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsGetTargetingStatsResponse(
       audienceCount: map['audience_count'] as int,
       recommendedCpc: map['recommended_cpc'] as double,

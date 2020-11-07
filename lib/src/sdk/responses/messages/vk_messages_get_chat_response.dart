@@ -71,6 +71,8 @@ class VKMessagesGetChatResponse {
   }
 
   factory VKMessagesGetChatResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesGetChatResponse(
       adminId: map['admin_id'] as int,
       id: map['id'] as int,

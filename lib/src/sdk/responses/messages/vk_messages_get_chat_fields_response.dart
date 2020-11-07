@@ -60,11 +60,13 @@ class VKMessagesGetChatFieldsResponse {
       'push_settings': pushSettings?.toMap(),
       'title': title,
       'type': type,
-      'users': users?.map((item) => item?.toMap()),
+      'users': users?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKMessagesGetChatFieldsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesGetChatFieldsResponse(
       adminId: map['admin_id'] as int,
       id: map['id'] as int,
@@ -76,8 +78,9 @@ class VKMessagesGetChatFieldsResponse {
       pushSettings: VKMessagesChatPushSettings.fromMap(map['push_settings']),
       title: map['title'] as String,
       type: map['type'] as String,
-      users:
-          map['users']?.map((item) => VKMessagesUserXtrInvitedBy.fromMap(item)),
+      users: map['users']
+          ?.map((item) => VKMessagesUserXtrInvitedBy.fromMap(item))
+          ?.toList(),
     );
   }
 }

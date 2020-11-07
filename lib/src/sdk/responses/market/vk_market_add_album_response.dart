@@ -13,6 +13,8 @@ class VKMarketAddAlbumResponse {
   }
 
   factory VKMarketAddAlbumResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMarketAddAlbumResponse(
       marketAlbumId: map['market_album_id'] as int,
     );

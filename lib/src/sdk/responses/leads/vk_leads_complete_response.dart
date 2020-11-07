@@ -34,6 +34,8 @@ class VKLeadsCompleteResponse {
   }
 
   factory VKLeadsCompleteResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLeadsCompleteResponse(
       cost: map['cost'] as int,
       limit: map['limit'] as int,

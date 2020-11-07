@@ -14,6 +14,8 @@ class VKPodcastsGetRecentSearchRequestsResponse {
 
   factory VKPodcastsGetRecentSearchRequestsResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPodcastsGetRecentSearchRequestsResponse(
       podcastsGetRecentSearchRequestsResponse:
           map['podcasts_getRecentSearchRequests_response'] as List<String>,

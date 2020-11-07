@@ -26,6 +26,8 @@ class VKDocsSaveResponse {
   }
 
   factory VKDocsSaveResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKDocsSaveResponse(
       type: VKDocsDocAttachmentType(map['type']),
       audioMessage: VKMessagesAudioMessage.fromMap(map['audio_message']),

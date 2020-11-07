@@ -43,7 +43,7 @@ class VKNotesGetByIdResponse {
     this.textWiki,
     @required this.title,
     @required this.viewUrl,
-  })  : assert(readComments >= 0),
+  })  : assert(readComments == null || readComments >= 0),
         assert(comments >= 0),
         assert(date >= 0),
         assert(id >= 1),
@@ -65,6 +65,8 @@ class VKNotesGetByIdResponse {
   }
 
   factory VKNotesGetByIdResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKNotesGetByIdResponse(
       readComments: map['read_comments'] as int,
       canComment: VKBaseBoolInt(map['can_comment']),

@@ -33,28 +33,35 @@ class VKMessagesGetLongPollHistoryResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'history': history,
-      'groups': groups?.map((item) => item?.toMap()),
+      'groups': groups?.map((item) => item?.toMap())?.toList(),
       'messages': messages?.toMap(),
-      'profiles': profiles?.map((item) => item?.toMap()),
-      'chats': chats?.map((item) => item?.toMap()),
+      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
+      'chats': chats?.map((item) => item?.toMap())?.toList(),
       'new_pts': newPts,
       'more': more,
-      'conversations': conversations?.map((item) => item?.toMap()),
+      'conversations': conversations?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKMessagesGetLongPollHistoryResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesGetLongPollHistoryResponse(
       history: map['history'] as List<List>,
-      groups: map['groups']?.map((item) => VKGroupsGroup.fromMap(item)),
+      groups:
+          map['groups']?.map((item) => VKGroupsGroup.fromMap(item))?.toList(),
       messages: VKMessagesLongpollMessages.fromMap(map['messages']),
-      profiles: map['profiles']?.map((item) => VKUsersUserFull.fromMap(item)),
-      chats: map['chats']?.map((item) => VKMessagesChat.fromMap(item)),
+      profiles: map['profiles']
+          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.toList(),
+      chats:
+          map['chats']?.map((item) => VKMessagesChat.fromMap(item))?.toList(),
       newPts: map['new_pts'] as int,
       more: map['more'] as bool,
       conversations: map['conversations']
-          ?.map((item) => VKMessagesConversation.fromMap(item)),
+          ?.map((item) => VKMessagesConversation.fromMap(item))
+          ?.toList(),
     );
   }
 }

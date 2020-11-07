@@ -1,5 +1,5 @@
-export 'fave_bookmark.dart';
-export 'fave_bookmark_type.dart';
-export 'fave_page.dart';
-export 'fave_page_type.dart';
-export 'fave_tag.dart';
+export 'vk_fave_bookmark.dart';
+export 'vk_fave_bookmark_type.dart';
+export 'vk_fave_page.dart';
+export 'vk_fave_page_type.dart';
+export 'vk_fave_tag.dart';

@@ -21,6 +21,8 @@ class VKStatusGetResponse {
   }
 
   factory VKStatusGetResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStatusGetResponse(
       text: map['text'] as String,
       audio: VKAudioAudio.fromMap(map['audio']),

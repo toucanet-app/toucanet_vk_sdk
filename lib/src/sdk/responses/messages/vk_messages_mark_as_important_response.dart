@@ -13,6 +13,8 @@ class VKMessagesMarkAsImportantResponse {
   }
 
   factory VKMessagesMarkAsImportantResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesMarkAsImportantResponse(
       messagesMarkAsImportantResponse:
           map['messages_markAsImportant_response'] as List<int>,

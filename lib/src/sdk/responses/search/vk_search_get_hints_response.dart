@@ -18,15 +18,17 @@ class VKSearchGetHintsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
       'suggested_queries': suggestedQueries,
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKSearchGetHintsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKSearchGetHintsResponse(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKSearchHint.fromMap(item)),
+      items: map['items']?.map((item) => VKSearchHint.fromMap(item))?.toList(),
       suggestedQueries: map['suggested_queries'] as List<String>,
     );
   }

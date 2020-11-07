@@ -15,6 +15,8 @@ class VKFriendsAddListResponse {
   }
 
   factory VKFriendsAddListResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKFriendsAddListResponse(
       listId: map['list_id'] as int,
     );

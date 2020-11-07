@@ -20,6 +20,8 @@ class VKGroupsGetMembersResponse {
   }
 
   factory VKGroupsGetMembersResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsGetMembersResponse(
       count: map['count'] as int,
       items: map['items'] as List<int>,

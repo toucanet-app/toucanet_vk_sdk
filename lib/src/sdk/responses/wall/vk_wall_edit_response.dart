@@ -15,6 +15,8 @@ class VKWallEditResponse {
   }
 
   factory VKWallEditResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKWallEditResponse(
       postId: map['post_id'] as int,
     );

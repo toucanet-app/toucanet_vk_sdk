@@ -1,4 +1,4 @@
-export 'secure_level.dart';
-export 'secure_sms_notification.dart';
-export 'secure_token_checked.dart';
-export 'secure_transaction.dart';
+export 'vk_secure_level.dart';
+export 'vk_secure_sms_notification.dart';
+export 'vk_secure_token_checked.dart';
+export 'vk_secure_transaction.dart';

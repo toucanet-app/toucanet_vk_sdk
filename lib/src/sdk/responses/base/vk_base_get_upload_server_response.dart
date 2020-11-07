@@ -15,6 +15,8 @@ class VKBaseGetUploadServerResponse {
   }
 
   factory VKBaseGetUploadServerResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKBaseGetUploadServerResponse(
       uploadUrl: map['upload_url'] as String,
     );

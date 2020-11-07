@@ -15,6 +15,8 @@ class VKLikesDeleteResponse {
   }
 
   factory VKLikesDeleteResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLikesDeleteResponse(
       likes: map['likes'] as int,
     );

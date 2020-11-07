@@ -19,6 +19,8 @@ class VKAccountSaveProfileInfoResponse {
   }
 
   factory VKAccountSaveProfileInfoResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAccountSaveProfileInfoResponse(
       changed: VKBaseBoolInt(map['changed']),
       nameRequest: VKAccountNameRequest.fromMap(map['name_request']),

@@ -13,6 +13,8 @@ class VKDocsAddResponse {
   }
 
   factory VKDocsAddResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKDocsAddResponse(
       id: map['id'] as int,
     );

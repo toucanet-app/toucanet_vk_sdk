@@ -12,6 +12,8 @@ class VKDatabaseGetSchoolClassesResponse {
   }
 
   factory VKDatabaseGetSchoolClassesResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKDatabaseGetSchoolClassesResponse(
       databaseGetSchoolClassesResponse:
           map['database_getSchoolClasses_response'] as List<List>,

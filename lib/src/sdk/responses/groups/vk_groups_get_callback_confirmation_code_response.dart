@@ -14,6 +14,8 @@ class VKGroupsGetCallbackConfirmationCodeResponse {
 
   factory VKGroupsGetCallbackConfirmationCodeResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsGetCallbackConfirmationCodeResponse(
       code: map['code'] as String,
     );

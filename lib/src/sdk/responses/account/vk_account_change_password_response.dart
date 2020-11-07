@@ -20,6 +20,8 @@ class VKAccountChangePasswordResponse {
   }
 
   factory VKAccountChangePasswordResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAccountChangePasswordResponse(
       token: map['token'] as String,
       secret: map['secret'] as String,

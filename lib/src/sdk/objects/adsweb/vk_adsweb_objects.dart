@@ -1,5 +1,5 @@
-export 'adsweb_getAdCategories_response_categories_category.dart';
-export 'adsweb_getAdUnits_response_ad_units_ad_unit.dart';
-export 'adsweb_getFraudHistory_response_entries_entry.dart';
-export 'adsweb_getSites_response_sites_site.dart';
-export 'adsweb_getStatistics_response_items_item.dart';
+export 'vk_adsweb_get_ad_categories_response_categories_category.dart';
+export 'vk_adsweb_get_ad_units_response_ad_units_ad_unit.dart';
+export 'vk_adsweb_get_fraud_history_response_entries_entry.dart';
+export 'vk_adsweb_get_sites_response_sites_site.dart';
+export 'vk_adsweb_get_statistics_response_items_item.dart';

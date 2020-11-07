@@ -19,15 +19,17 @@ class VKAppWidgetsSaveAppImageResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'images': images?.map((item) => item?.toMap()),
+      'images': images?.map((item) => item?.toMap())?.toList(),
       'type': type,
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKAppWidgetsSaveAppImageResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAppWidgetsSaveAppImageResponse(
       id: map['id'] as String,
-      images: map['images']?.map((item) => VKBaseImage.fromMap(item)),
+      images: map['images']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
       type: map['type'] as dynamic,
     );
   }

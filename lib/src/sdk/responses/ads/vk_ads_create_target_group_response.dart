@@ -18,6 +18,8 @@ class VKAdsCreateTargetGroupResponse {
   }
 
   factory VKAdsCreateTargetGroupResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsCreateTargetGroupResponse(
       id: map['id'] as int,
       pixel: map['pixel'] as String,

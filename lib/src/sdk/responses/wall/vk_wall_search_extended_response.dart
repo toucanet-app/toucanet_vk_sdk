@@ -22,18 +22,26 @@ class VKWallSearchExtendedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap()),
-      'profiles': profiles?.map((item) => item?.toMap()),
-      'groups': groups?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
+      'groups': groups?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKWallSearchExtendedResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKWallSearchExtendedResponse(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKWallWallpostFull.fromMap(item)),
-      profiles: map['profiles']?.map((item) => VKUsersUserFull.fromMap(item)),
-      groups: map['groups']?.map((item) => VKGroupsGroupFull.fromMap(item)),
+      items: map['items']
+          ?.map((item) => VKWallWallpostFull.fromMap(item))
+          ?.toList(),
+      profiles: map['profiles']
+          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.toList(),
+      groups: map['groups']
+          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.toList(),
     );
   }
 }

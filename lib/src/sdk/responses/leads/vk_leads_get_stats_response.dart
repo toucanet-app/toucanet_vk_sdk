@@ -44,6 +44,8 @@ class VKLeadsGetStatsResponse {
   }
 
   factory VKLeadsGetStatsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLeadsGetStatsResponse(
       completed: map['completed'] as int,
       cost: map['cost'] as int,

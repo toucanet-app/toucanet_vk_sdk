@@ -14,6 +14,8 @@ class VKAppWidgetsGetGroupImageUploadServerResponse {
 
   factory VKAppWidgetsGetGroupImageUploadServerResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAppWidgetsGetGroupImageUploadServerResponse(
       uploadUrl: map['upload_url'] as String,
     );

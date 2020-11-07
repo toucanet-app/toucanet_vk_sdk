@@ -13,6 +13,8 @@ class VKAdsUpdateAdsResponse {
   }
 
   factory VKAdsUpdateAdsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsUpdateAdsResponse(
       adsUpdateAdsResponse: map['ads_updateAds_response'] as List<int>,
     );

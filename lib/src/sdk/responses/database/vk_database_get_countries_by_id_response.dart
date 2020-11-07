@@ -9,16 +9,20 @@ class VKDatabaseGetCountriesByIdResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'database_getCountriesById_response':
-          databaseGetCountriesByIdResponse?.map((item) => item?.toMap()),
+      'database_getCountriesById_response': databaseGetCountriesByIdResponse
+          ?.map((item) => item?.toMap())
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKDatabaseGetCountriesByIdResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKDatabaseGetCountriesByIdResponse(
       databaseGetCountriesByIdResponse:
           map['database_getCountriesById_response']
-              ?.map((item) => VKBaseCountry.fromMap(item)),
+              ?.map((item) => VKBaseCountry.fromMap(item))
+              ?.toList(),
     );
   }
 }

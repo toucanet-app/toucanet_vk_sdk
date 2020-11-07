@@ -28,6 +28,8 @@ class VKAccountGetPushSettingsResponse {
   }
 
   factory VKAccountGetPushSettingsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAccountGetPushSettingsResponse(
       disabled: VKBaseBoolInt(map['disabled']),
       disabledUntil: map['disabled_until'] as int,

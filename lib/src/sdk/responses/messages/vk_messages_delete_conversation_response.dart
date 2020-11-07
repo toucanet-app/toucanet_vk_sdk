@@ -16,6 +16,8 @@ class VKMessagesDeleteConversationResponse {
 
   factory VKMessagesDeleteConversationResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesDeleteConversationResponse(
       lastDeletedId: map['last_deleted_id'] as int,
     );

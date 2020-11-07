@@ -20,6 +20,8 @@ class VKStoriesGetBannedResponse {
   }
 
   factory VKStoriesGetBannedResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStoriesGetBannedResponse(
       count: map['count'] as int,
       items: map['items'] as List<int>,

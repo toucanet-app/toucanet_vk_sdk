@@ -19,6 +19,8 @@ class VKFriendsGetOnlineOnlineMobileResponse {
 
   factory VKFriendsGetOnlineOnlineMobileResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKFriendsGetOnlineOnlineMobileResponse(
       online: map['online'] as List<int>,
       onlineMobile: map['online_mobile'] as List<int>,

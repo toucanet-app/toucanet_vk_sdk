@@ -8,7 +8,7 @@ class VKFaveAddTagResponse {
   const VKFaveAddTagResponse({
     this.id,
     this.name,
-  }) : assert(id >= 0);
+  }) : assert(id == null || id >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -18,6 +18,8 @@ class VKFaveAddTagResponse {
   }
 
   factory VKFaveAddTagResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKFaveAddTagResponse(
       id: map['id'] as int,
       name: map['name'] as String,

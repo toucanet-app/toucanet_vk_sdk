@@ -25,6 +25,8 @@ class VKGroupsGetLongPollServerResponse {
   }
 
   factory VKGroupsGetLongPollServerResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsGetLongPollServerResponse(
       key: map['key'] as String,
       server: map['server'] as String,

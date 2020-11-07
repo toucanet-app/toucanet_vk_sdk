@@ -1,4 +1,5 @@
 export 'account/vk_account_responses.dart';
+export 'ads/vk_ads_responses.dart';
 export 'adsweb/vk_adsweb_responses.dart';
 export 'appWidgets/vk_appWidgets_responses.dart';
 export 'apps/vk_apps_responses.dart';

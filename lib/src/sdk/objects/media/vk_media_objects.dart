@@ -1,1 +1,1 @@
-export 'media_restriction.dart';
+export 'vk_media_restriction.dart';

@@ -13,6 +13,8 @@ class VKMessagesJoinChatByInviteLinkResponse {
 
   factory VKMessagesJoinChatByInviteLinkResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesJoinChatByInviteLinkResponse(
       chatId: map['chat_id'] as int,
     );

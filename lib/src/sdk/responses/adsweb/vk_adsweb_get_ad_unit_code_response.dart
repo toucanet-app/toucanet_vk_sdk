@@ -14,6 +14,8 @@ class VKAdswebGetAdUnitCodeResponse {
   }
 
   factory VKAdswebGetAdUnitCodeResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdswebGetAdUnitCodeResponse(
       html: map['html'] as String,
     );

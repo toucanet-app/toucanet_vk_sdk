@@ -15,15 +15,18 @@ class VKAdswebGetStatisticsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'next_page_id': nextPageId,
-      'items': items?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKAdswebGetStatisticsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdswebGetStatisticsResponse(
       nextPageId: map['next_page_id'] as String,
       items: map['items']
-          ?.map((item) => VKAdswebGetStatisticsResponseItemsItem.fromMap(item)),
+          ?.map((item) => VKAdswebGetStatisticsResponseItemsItem.fromMap(item))
+          ?.toList(),
     );
   }
 }

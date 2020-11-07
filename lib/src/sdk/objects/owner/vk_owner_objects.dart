@@ -1,1 +1,1 @@
-export 'owner_state.dart';
+export 'vk_owner_state.dart';

@@ -37,6 +37,8 @@ class VKGroupsIsMemberExtendedResponse {
   }
 
   factory VKGroupsIsMemberExtendedResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsIsMemberExtendedResponse(
       member: VKBaseBoolInt(map['member']),
       invitation: VKBaseBoolInt(map['invitation']),

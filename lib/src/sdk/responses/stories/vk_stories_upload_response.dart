@@ -13,6 +13,8 @@ class VKStoriesUploadResponse {
   }
 
   factory VKStoriesUploadResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStoriesUploadResponse(
       uploadResult: map['upload_result'] as String,
     );

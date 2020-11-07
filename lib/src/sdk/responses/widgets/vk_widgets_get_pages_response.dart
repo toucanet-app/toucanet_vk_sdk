@@ -16,14 +16,18 @@ class VKWidgetsGetPagesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'pages': pages?.map((item) => item?.toMap()),
+      'pages': pages?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKWidgetsGetPagesResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKWidgetsGetPagesResponse(
       count: map['count'] as int,
-      pages: map['pages']?.map((item) => VKWidgetsWidgetPage.fromMap(item)),
+      pages: map['pages']
+          ?.map((item) => VKWidgetsWidgetPage.fromMap(item))
+          ?.toList(),
     );
   }
 }

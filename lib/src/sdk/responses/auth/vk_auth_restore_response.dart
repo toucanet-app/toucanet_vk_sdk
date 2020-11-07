@@ -18,6 +18,8 @@ class VKAuthRestoreResponse {
   }
 
   factory VKAuthRestoreResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAuthRestoreResponse(
       success: map['success'] as int,
       sid: map['sid'] as String,

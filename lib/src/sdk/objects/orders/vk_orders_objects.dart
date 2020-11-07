@@ -1,4 +1,4 @@
-export 'orders_amount.dart';
-export 'orders_amount_item.dart';
-export 'orders_order.dart';
-export 'orders_subscription.dart';
+export 'vk_orders_amount.dart';
+export 'vk_orders_amount_item.dart';
+export 'vk_orders_order.dart';
+export 'vk_orders_subscription.dart';

@@ -40,6 +40,8 @@ class VKGroupsAddLinkResponse {
   }
 
   factory VKGroupsAddLinkResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsAddLinkResponse(
       name: map['name'] as String,
       desc: map['desc'] as String,

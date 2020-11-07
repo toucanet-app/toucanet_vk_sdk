@@ -25,6 +25,8 @@ class VKAdsCheckLinkResponse {
   }
 
   factory VKAdsCheckLinkResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsCheckLinkResponse(
       description: map['description'] as String,
       redirectUrl: map['redirect_url'] as String,

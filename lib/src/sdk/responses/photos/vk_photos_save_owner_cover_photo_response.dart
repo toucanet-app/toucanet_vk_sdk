@@ -10,7 +10,9 @@ class VKPhotosSaveOwnerCoverPhotoResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'photos_saveOwnerCoverPhoto_response': photosSaveOwnerCoverPhotoResponse
-          ?.map((item) => item?.toMap())
+          ?.map(
+            (item) => item?.toMap(),
+          )
           ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -22,7 +24,9 @@ class VKPhotosSaveOwnerCoverPhotoResponse {
     return VKPhotosSaveOwnerCoverPhotoResponse(
       photosSaveOwnerCoverPhotoResponse:
           map['photos_saveOwnerCoverPhoto_response']
-              ?.map((item) => VKBaseImage.fromMap(item))
+              ?.map<List<VKBaseImage>>(
+                (item) => VKBaseImage.fromMap(item),
+              )
               ?.toList(),
     );
   }

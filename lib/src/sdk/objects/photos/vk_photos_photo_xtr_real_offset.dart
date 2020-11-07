@@ -114,7 +114,11 @@ class VKPhotosPhotoXtrRealOffset {
       'photo_807': photo807,
       'post_id': postId,
       'real_offset': realOffset,
-      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
+      'sizes': sizes
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'text': text,
       'user_id': userId,
       'width': width,
@@ -143,7 +147,9 @@ class VKPhotosPhotoXtrRealOffset {
       postId: map['post_id'] as int,
       realOffset: map['real_offset'] as int,
       sizes: map['sizes']
-          ?.map((item) => VKPhotosPhotoSizes.fromMap(item))
+          ?.map<VKPhotosPhotoSizes>(
+            (item) => VKPhotosPhotoSizes.fromMap(item),
+          )
           ?.toList(),
       text: map['text'] as String,
       userId: map['user_id'] as int,

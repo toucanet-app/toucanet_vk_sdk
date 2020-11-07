@@ -9,8 +9,11 @@ class VKDocsGetByIdResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'docs_getById_response':
-          docsGetByIdResponse?.map((item) => item?.toMap())?.toList(),
+      'docs_getById_response': docsGetByIdResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKDocsGetByIdResponse {
 
     return VKDocsGetByIdResponse(
       docsGetByIdResponse: map['docs_getById_response']
-          ?.map((item) => VKDocsDoc.fromMap(item))
+          ?.map<List<VKDocsDoc>>(
+            (item) => VKDocsDoc.fromMap(item),
+          )
           ?.toList(),
     );
   }

@@ -42,7 +42,11 @@ class VKNewsfeedItemPromoButton {
       'text': text,
       'title': title,
       'action': action?.toMap(),
-      'images': images?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'track_code': trackCode,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -58,7 +62,9 @@ class VKNewsfeedItemPromoButton {
       title: map['title'] as String,
       action: VKNewsfeedItemPromoButtonAction.fromMap(map['action']),
       images: map['images']
-          ?.map((item) => VKNewsfeedItemPromoButtonImage.fromMap(item))
+          ?.map<VKNewsfeedItemPromoButtonImage>(
+            (item) => VKNewsfeedItemPromoButtonImage.fromMap(item),
+          )
           ?.toList(),
       trackCode: map['track_code'] as String,
     );

@@ -9,7 +9,11 @@ class VKDocsDocPreviewPhoto {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
+      'sizes': sizes
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -18,7 +22,9 @@ class VKDocsDocPreviewPhoto {
 
     return VKDocsDocPreviewPhoto(
       sizes: map['sizes']
-          ?.map((item) => VKDocsDocPreviewPhotoSizes.fromMap(item))
+          ?.map<VKDocsDocPreviewPhotoSizes>(
+            (item) => VKDocsDocPreviewPhotoSizes.fromMap(item),
+          )
           ?.toList(),
     );
   }

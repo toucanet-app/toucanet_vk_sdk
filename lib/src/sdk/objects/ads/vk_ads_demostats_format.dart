@@ -33,13 +33,29 @@ class VKAdsDemostatsFormat {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'age': age?.map((item) => item?.toMap())?.toList(),
-      'cities': cities?.map((item) => item?.toMap())?.toList(),
+      'age': age
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'cities': cities
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'day': day,
       'month': month,
       'overall': overall,
-      'sex': sex?.map((item) => item?.toMap())?.toList(),
-      'sex_age': sexAge?.map((item) => item?.toMap())?.toList(),
+      'sex': sex
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'sex_age': sexAge
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -47,16 +63,28 @@ class VKAdsDemostatsFormat {
     if (map == null) return null;
 
     return VKAdsDemostatsFormat(
-      age: map['age']?.map((item) => VKAdsStatsAge.fromMap(item))?.toList(),
+      age: map['age']
+          ?.map<VKAdsStatsAge>(
+            (item) => VKAdsStatsAge.fromMap(item),
+          )
+          ?.toList(),
       cities: map['cities']
-          ?.map((item) => VKAdsStatsCities.fromMap(item))
+          ?.map<VKAdsStatsCities>(
+            (item) => VKAdsStatsCities.fromMap(item),
+          )
           ?.toList(),
       day: map['day'] as String,
       month: map['month'] as String,
       overall: map['overall'] as int,
-      sex: map['sex']?.map((item) => VKAdsStatsSex.fromMap(item))?.toList(),
+      sex: map['sex']
+          ?.map<VKAdsStatsSex>(
+            (item) => VKAdsStatsSex.fromMap(item),
+          )
+          ?.toList(),
       sexAge: map['sex_age']
-          ?.map((item) => VKAdsStatsSexAge.fromMap(item))
+          ?.map<VKAdsStatsSexAge>(
+            (item) => VKAdsStatsSexAge.fromMap(item),
+          )
           ?.toList(),
     );
   }

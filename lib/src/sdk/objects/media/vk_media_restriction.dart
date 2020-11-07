@@ -48,8 +48,16 @@ class VKMediaRestriction {
       'blur': blur?.value,
       'can_play': canPlay?.value,
       'can_preview': canPreview?.value,
-      'card_icon': cardIcon?.map((item) => item?.toMap())?.toList(),
-      'list_icon': listIcon?.map((item) => item?.toMap())?.toList(),
+      'card_icon': cardIcon
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'list_icon': listIcon
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -64,10 +72,16 @@ class VKMediaRestriction {
       blur: VKBaseBoolInt(map['blur']),
       canPlay: VKBaseBoolInt(map['can_play']),
       canPreview: VKBaseBoolInt(map['can_preview']),
-      cardIcon:
-          map['card_icon']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
-      listIcon:
-          map['list_icon']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
+      cardIcon: map['card_icon']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
+      listIcon: map['list_icon']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

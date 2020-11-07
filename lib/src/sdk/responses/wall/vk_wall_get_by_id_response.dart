@@ -9,7 +9,11 @@ class VKWallGetByIdResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -18,7 +22,9 @@ class VKWallGetByIdResponse {
 
     return VKWallGetByIdResponse(
       items: map['items']
-          ?.map((item) => VKWallWallpostFull.fromMap(item))
+          ?.map<VKWallWallpostFull>(
+            (item) => VKWallWallpostFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

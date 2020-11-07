@@ -21,7 +21,11 @@ class VKAdsCategory {
     return <String, dynamic>{
       'id': id,
       'name': name,
-      'subcategories': subcategories?.map((item) => item?.toMap())?.toList(),
+      'subcategories': subcategories
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -32,7 +36,9 @@ class VKAdsCategory {
       id: map['id'] as int,
       name: map['name'] as String,
       subcategories: map['subcategories']
-          ?.map((item) => VKBaseObjectWithName.fromMap(item))
+          ?.map<VKBaseObjectWithName>(
+            (item) => VKBaseObjectWithName.fromMap(item),
+          )
           ?.toList(),
     );
   }

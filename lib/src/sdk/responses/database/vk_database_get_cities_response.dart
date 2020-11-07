@@ -14,7 +14,11 @@ class VKDatabaseGetCitiesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -23,8 +27,11 @@ class VKDatabaseGetCitiesResponse {
 
     return VKDatabaseGetCitiesResponse(
       count: map['count'] as int,
-      items:
-          map['items']?.map((item) => VKDatabaseCity.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKDatabaseCity>(
+            (item) => VKDatabaseCity.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

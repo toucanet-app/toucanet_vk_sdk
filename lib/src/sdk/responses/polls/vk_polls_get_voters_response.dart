@@ -9,8 +9,11 @@ class VKPollsGetVotersResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'polls_getVoters_response':
-          pollsGetVotersResponse?.map((item) => item?.toMap())?.toList(),
+      'polls_getVoters_response': pollsGetVotersResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKPollsGetVotersResponse {
 
     return VKPollsGetVotersResponse(
       pollsGetVotersResponse: map['polls_getVoters_response']
-          ?.map((item) => VKPollsVoters.fromMap(item))
+          ?.map<List<VKPollsVoters>>(
+            (item) => VKPollsVoters.fromMap(item),
+          )
           ?.toList(),
     );
   }

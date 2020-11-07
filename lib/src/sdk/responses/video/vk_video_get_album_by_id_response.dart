@@ -43,7 +43,11 @@ class VKVideoGetAlbumByIdResponse {
     return <String, dynamic>{
       'count': count,
       'id': id,
-      'image': image?.map((item) => item?.toMap())?.toList(),
+      'image': image
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'image_blur': imageBlur?.value,
       'is_system': isSystem?.value,
       'owner_id': ownerId,
@@ -59,7 +63,9 @@ class VKVideoGetAlbumByIdResponse {
       count: map['count'] as int,
       id: map['id'] as int,
       image: map['image']
-          ?.map((item) => VKVideoVideoImage.fromMap(item))
+          ?.map<VKVideoVideoImage>(
+            (item) => VKVideoVideoImage.fromMap(item),
+          )
           ?.toList(),
       imageBlur: VKBasePropertyExists(map['image_blur']),
       isSystem: VKBasePropertyExists(map['is_system']),

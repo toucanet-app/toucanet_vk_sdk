@@ -15,7 +15,11 @@ class VKAdswebGetStatisticsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'next_page_id': nextPageId,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -25,7 +29,9 @@ class VKAdswebGetStatisticsResponse {
     return VKAdswebGetStatisticsResponse(
       nextPageId: map['next_page_id'] as String,
       items: map['items']
-          ?.map((item) => VKAdswebGetStatisticsResponseItemsItem.fromMap(item))
+          ?.map<VKAdswebGetStatisticsResponseItemsItem>(
+            (item) => VKAdswebGetStatisticsResponseItemsItem.fromMap(item),
+          )
           ?.toList(),
     );
   }

@@ -9,8 +9,11 @@ class VKStorageGetV5110Response {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'storage_get_v5110_response':
-          storageGetV5110Response?.map((item) => item?.toMap())?.toList(),
+      'storage_get_v5110_response': storageGetV5110Response
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKStorageGetV5110Response {
 
     return VKStorageGetV5110Response(
       storageGetV5110Response: map['storage_get_v5110_response']
-          ?.map((item) => VKStorageValue.fromMap(item))
+          ?.map<List<VKStorageValue>>(
+            (item) => VKStorageValue.fromMap(item),
+          )
           ?.toList(),
     );
   }

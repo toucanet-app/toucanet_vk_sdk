@@ -25,9 +25,21 @@ class VKUtilsStatsExtended {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'cities': cities?.map((item) => item?.toMap())?.toList(),
-      'countries': countries?.map((item) => item?.toMap())?.toList(),
-      'sex_age': sexAge?.map((item) => item?.toMap())?.toList(),
+      'cities': cities
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'countries': countries
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'sex_age': sexAge
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'timestamp': timestamp,
       'views': views,
     }..removeWhere((_, dynamic value) => value == null);
@@ -38,13 +50,19 @@ class VKUtilsStatsExtended {
 
     return VKUtilsStatsExtended(
       cities: map['cities']
-          ?.map((item) => VKUtilsStatsCity.fromMap(item))
+          ?.map<VKUtilsStatsCity>(
+            (item) => VKUtilsStatsCity.fromMap(item),
+          )
           ?.toList(),
       countries: map['countries']
-          ?.map((item) => VKUtilsStatsCountry.fromMap(item))
+          ?.map<VKUtilsStatsCountry>(
+            (item) => VKUtilsStatsCountry.fromMap(item),
+          )
           ?.toList(),
       sexAge: map['sex_age']
-          ?.map((item) => VKUtilsStatsSexAge.fromMap(item))
+          ?.map<VKUtilsStatsSexAge>(
+            (item) => VKUtilsStatsSexAge.fromMap(item),
+          )
           ?.toList(),
       timestamp: map['timestamp'] as int,
       views: map['views'] as int,

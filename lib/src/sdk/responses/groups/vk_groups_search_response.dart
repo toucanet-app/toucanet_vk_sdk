@@ -16,7 +16,11 @@ class VKGroupsSearchResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -25,7 +29,11 @@ class VKGroupsSearchResponse {
 
     return VKGroupsSearchResponse(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKGroupsGroup.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKGroupsGroup>(
+            (item) => VKGroupsGroup.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

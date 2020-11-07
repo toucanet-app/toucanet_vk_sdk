@@ -29,7 +29,11 @@ class VKBaseError {
       'error_subcode': errorSubcode,
       'error_msg': errorMsg,
       'error_text': errorText,
-      'request_params': requestParams?.map((item) => item?.toMap())?.toList(),
+      'request_params': requestParams
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -42,7 +46,9 @@ class VKBaseError {
       errorMsg: map['error_msg'] as String,
       errorText: map['error_text'] as String,
       requestParams: map['request_params']
-          ?.map((item) => VKBaseRequestParam.fromMap(item))
+          ?.map<VKBaseRequestParam>(
+            (item) => VKBaseRequestParam.fromMap(item),
+          )
           ?.toList(),
     );
   }

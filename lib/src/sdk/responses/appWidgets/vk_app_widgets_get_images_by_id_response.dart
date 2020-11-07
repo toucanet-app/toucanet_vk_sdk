@@ -10,7 +10,9 @@ class VKAppWidgetsGetImagesByIdResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'appWidgets_getImagesById_response': appWidgetsGetImagesByIdResponse
-          ?.map((item) => item?.toMap())
+          ?.map(
+            (item) => item?.toMap(),
+          )
           ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -20,7 +22,9 @@ class VKAppWidgetsGetImagesByIdResponse {
 
     return VKAppWidgetsGetImagesByIdResponse(
       appWidgetsGetImagesByIdResponse: map['appWidgets_getImagesById_response']
-          ?.map((item) => VKAppWidgetsPhoto.fromMap(item))
+          ?.map<List<VKAppWidgetsPhoto>>(
+            (item) => VKAppWidgetsPhoto.fromMap(item),
+          )
           ?.toList(),
     );
   }

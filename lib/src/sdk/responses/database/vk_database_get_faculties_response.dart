@@ -14,7 +14,11 @@ class VKDatabaseGetFacultiesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -24,7 +28,9 @@ class VKDatabaseGetFacultiesResponse {
     return VKDatabaseGetFacultiesResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKDatabaseFaculty.fromMap(item))
+          ?.map<VKDatabaseFaculty>(
+            (item) => VKDatabaseFaculty.fromMap(item),
+          )
           ?.toList(),
     );
   }

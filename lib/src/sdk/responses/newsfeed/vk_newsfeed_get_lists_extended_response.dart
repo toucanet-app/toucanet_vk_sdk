@@ -16,7 +16,11 @@ class VKNewsfeedGetListsExtendedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKNewsfeedGetListsExtendedResponse {
     return VKNewsfeedGetListsExtendedResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKNewsfeedListFull.fromMap(item))
+          ?.map<VKNewsfeedListFull>(
+            (item) => VKNewsfeedListFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

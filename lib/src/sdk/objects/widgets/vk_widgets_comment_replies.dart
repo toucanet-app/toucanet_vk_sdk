@@ -20,7 +20,11 @@ class VKWidgetsCommentReplies {
     return <String, dynamic>{
       'can_post': canPost?.value,
       'count': count,
-      'replies': replies?.map((item) => item?.toMap())?.toList(),
+      'replies': replies
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -31,7 +35,9 @@ class VKWidgetsCommentReplies {
       canPost: VKBaseBoolInt(map['can_post']),
       count: map['count'] as int,
       replies: map['replies']
-          ?.map((item) => VKWidgetsCommentRepliesItem.fromMap(item))
+          ?.map<VKWidgetsCommentRepliesItem>(
+            (item) => VKWidgetsCommentRepliesItem.fromMap(item),
+          )
           ?.toList(),
     );
   }

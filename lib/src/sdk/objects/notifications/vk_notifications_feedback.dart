@@ -33,7 +33,11 @@ class VKNotificationsFeedback {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'from_id': fromId,
       'geo': geo?.toMap(),
       'id': id,
@@ -48,7 +52,9 @@ class VKNotificationsFeedback {
 
     return VKNotificationsFeedback(
       attachments: map['attachments']
-          ?.map((item) => VKWallWallpostAttachment.fromMap(item))
+          ?.map<VKWallWallpostAttachment>(
+            (item) => VKWallWallpostAttachment.fromMap(item),
+          )
           ?.toList(),
       fromId: map['from_id'] as int,
       geo: VKBaseGeo.fromMap(map['geo']),

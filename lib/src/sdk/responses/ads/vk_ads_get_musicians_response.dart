@@ -12,7 +12,11 @@ class VKAdsGetMusiciansResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -20,7 +24,11 @@ class VKAdsGetMusiciansResponse {
     if (map == null) return null;
 
     return VKAdsGetMusiciansResponse(
-      items: map['items']?.map((item) => VKAdsMusician.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKAdsMusician>(
+            (item) => VKAdsMusician.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

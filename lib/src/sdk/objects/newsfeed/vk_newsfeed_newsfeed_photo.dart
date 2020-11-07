@@ -105,7 +105,11 @@ class VKNewsfeedNewsfeedPhoto {
       'date': date,
       'height': height,
       'id': id,
-      'images': images?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'lat': lat,
       'long': long,
       'owner_id': ownerId,
@@ -113,7 +117,11 @@ class VKNewsfeedNewsfeedPhoto {
       'can_comment': canComment?.value,
       'place': place,
       'post_id': postId,
-      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
+      'sizes': sizes
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'text': text,
       'user_id': userId,
       'width': width,
@@ -134,8 +142,11 @@ class VKNewsfeedNewsfeedPhoto {
       date: map['date'] as int,
       height: map['height'] as int,
       id: map['id'] as int,
-      images:
-          map['images']?.map((item) => VKPhotosImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKPhotosImage>(
+            (item) => VKPhotosImage.fromMap(item),
+          )
+          ?.toList(),
       lat: map['lat'] as double,
       long: map['long'] as double,
       ownerId: map['owner_id'] as int,
@@ -144,7 +155,9 @@ class VKNewsfeedNewsfeedPhoto {
       place: map['place'] as String,
       postId: map['post_id'] as int,
       sizes: map['sizes']
-          ?.map((item) => VKPhotosPhotoSizes.fromMap(item))
+          ?.map<VKPhotosPhotoSizes>(
+            (item) => VKPhotosPhotoSizes.fromMap(item),
+          )
           ?.toList(),
       text: map['text'] as String,
       userId: map['user_id'] as int,

@@ -14,7 +14,11 @@ class VKNewsfeedItemPhotoTagPhotoTags {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -24,7 +28,9 @@ class VKNewsfeedItemPhotoTagPhotoTags {
     return VKNewsfeedItemPhotoTagPhotoTags(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKNewsfeedNewsfeedPhoto.fromMap(item))
+          ?.map<VKNewsfeedNewsfeedPhoto>(
+            (item) => VKNewsfeedNewsfeedPhoto.fromMap(item),
+          )
           ?.toList(),
     );
   }

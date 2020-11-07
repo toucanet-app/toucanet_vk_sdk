@@ -9,8 +9,11 @@ class VKPodcastsGetPopularResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'podcasts_getPopular_response':
-          podcastsGetPopularResponse?.map((item) => item?.toMap())?.toList(),
+      'podcasts_getPopular_response': podcastsGetPopularResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKPodcastsGetPopularResponse {
 
     return VKPodcastsGetPopularResponse(
       podcastsGetPopularResponse: map['podcasts_getPopular_response']
-          ?.map((item) => VKPodcastPopularPodcast.fromMap(item))
+          ?.map<List<VKPodcastPopularPodcast>>(
+            (item) => VKPodcastPopularPodcast.fromMap(item),
+          )
           ?.toList(),
     );
   }

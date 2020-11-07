@@ -10,7 +10,9 @@ class VKMessagesGetChatChatIdsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'messages_getChat_chat_ids_response': messagesGetChatChatIdsResponse
-          ?.map((item) => item?.toMap())
+          ?.map(
+            (item) => item?.toMap(),
+          )
           ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -20,7 +22,9 @@ class VKMessagesGetChatChatIdsResponse {
 
     return VKMessagesGetChatChatIdsResponse(
       messagesGetChatChatIdsResponse: map['messages_getChat_chat_ids_response']
-          ?.map((item) => VKMessagesChat.fromMap(item))
+          ?.map<List<VKMessagesChat>>(
+            (item) => VKMessagesChat.fromMap(item),
+          )
           ?.toList(),
     );
   }

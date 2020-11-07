@@ -24,9 +24,21 @@ class VKStoriesGetV5113Response {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'need_upload_screen': needUploadScreen,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -37,12 +49,20 @@ class VKStoriesGetV5113Response {
     return VKStoriesGetV5113Response(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKStoriesFeedItem.fromMap(item))
+          ?.map<VKStoriesFeedItem>(
+            (item) => VKStoriesFeedItem.fromMap(item),
+          )
           ?.toList(),
-      profiles:
-          map['profiles']?.map((item) => VKUsersUser.fromMap(item))?.toList(),
-      groups:
-          map['groups']?.map((item) => VKGroupsGroup.fromMap(item))?.toList(),
+      profiles: map['profiles']
+          ?.map<VKUsersUser>(
+            (item) => VKUsersUser.fromMap(item),
+          )
+          ?.toList(),
+      groups: map['groups']
+          ?.map<VKGroupsGroup>(
+            (item) => VKGroupsGroup.fromMap(item),
+          )
+          ?.toList(),
       needUploadScreen: map['need_upload_screen'] as bool,
     );
   }

@@ -16,7 +16,11 @@ class VKPhotosGetAlbumsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKPhotosGetAlbumsResponse {
     return VKPhotosGetAlbumsResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKPhotosPhotoAlbumFull.fromMap(item))
+          ?.map<VKPhotosPhotoAlbumFull>(
+            (item) => VKPhotosPhotoAlbumFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

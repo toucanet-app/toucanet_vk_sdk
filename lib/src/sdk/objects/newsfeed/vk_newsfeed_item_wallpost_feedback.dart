@@ -26,7 +26,11 @@ class VKNewsfeedItemWallpostFeedback {
     return <String, dynamic>{
       'type': type?.value,
       'question': question,
-      'answers': answers?.map((item) => item?.toMap())?.toList(),
+      'answers': answers
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'stars_count': starsCount,
       'gratitude': gratitude,
     }..removeWhere((_, dynamic value) => value == null);
@@ -39,7 +43,9 @@ class VKNewsfeedItemWallpostFeedback {
       type: VKNewsfeedItemWallpostFeedbackType(map['type']),
       question: map['question'] as String,
       answers: map['answers']
-          ?.map((item) => VKNewsfeedItemWallpostFeedbackAnswer.fromMap(item))
+          ?.map<VKNewsfeedItemWallpostFeedbackAnswer>(
+            (item) => VKNewsfeedItemWallpostFeedbackAnswer.fromMap(item),
+          )
           ?.toList(),
       starsCount: map['stars_count'] as int,
       gratitude: map['gratitude'] as String,

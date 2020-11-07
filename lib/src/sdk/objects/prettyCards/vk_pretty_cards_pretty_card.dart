@@ -46,7 +46,11 @@ class VKPrettyCardsPrettyCard {
       'button': button,
       'button_text': buttonText,
       'card_id': cardId,
-      'images': images?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'link_url': linkUrl,
       'photo': photo,
       'price': price,
@@ -62,7 +66,11 @@ class VKPrettyCardsPrettyCard {
       button: map['button'] as String,
       buttonText: map['button_text'] as String,
       cardId: map['card_id'] as String,
-      images: map['images']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
       linkUrl: map['link_url'] as String,
       photo: map['photo'] as String,
       price: map['price'] as String,

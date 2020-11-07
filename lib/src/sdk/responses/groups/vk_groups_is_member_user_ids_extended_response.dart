@@ -11,7 +11,9 @@ class VKGroupsIsMemberUserIdsExtendedResponse {
     return <String, dynamic>{
       'groups_isMember_user_ids_extended_response':
           groupsIsMemberUserIdsExtendedResponse
-              ?.map((item) => item?.toMap())
+              ?.map(
+                (item) => item?.toMap(),
+              )
               ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -23,7 +25,9 @@ class VKGroupsIsMemberUserIdsExtendedResponse {
     return VKGroupsIsMemberUserIdsExtendedResponse(
       groupsIsMemberUserIdsExtendedResponse:
           map['groups_isMember_user_ids_extended_response']
-              ?.map((item) => VKGroupsMemberStatusFull.fromMap(item))
+              ?.map<List<VKGroupsMemberStatusFull>>(
+                (item) => VKGroupsMemberStatusFull.fromMap(item),
+              )
               ?.toList(),
     );
   }

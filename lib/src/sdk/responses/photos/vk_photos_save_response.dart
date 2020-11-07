@@ -9,8 +9,11 @@ class VKPhotosSaveResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'photos_save_response':
-          photosSaveResponse?.map((item) => item?.toMap())?.toList(),
+      'photos_save_response': photosSaveResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKPhotosSaveResponse {
 
     return VKPhotosSaveResponse(
       photosSaveResponse: map['photos_save_response']
-          ?.map((item) => VKPhotosPhoto.fromMap(item))
+          ?.map<List<VKPhotosPhoto>>(
+            (item) => VKPhotosPhoto.fromMap(item),
+          )
           ?.toList(),
     );
   }

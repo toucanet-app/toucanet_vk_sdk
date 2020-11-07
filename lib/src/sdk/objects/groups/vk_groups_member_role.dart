@@ -18,7 +18,11 @@ class VKGroupsMemberRole {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'permissions': permissions?.map((item) => item?.value)?.toList(),
+      'permissions': permissions
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
       'role': role?.value,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -29,7 +33,9 @@ class VKGroupsMemberRole {
     return VKGroupsMemberRole(
       id: map['id'] as int,
       permissions: map['permissions']
-          ?.map((item) => VKGroupsMemberRolePermission(item))
+          ?.map<VKGroupsMemberRolePermission>(
+            (item) => VKGroupsMemberRolePermission(item),
+          )
           ?.toList(),
       role: VKGroupsMemberRoleStatus(map['role']),
     );

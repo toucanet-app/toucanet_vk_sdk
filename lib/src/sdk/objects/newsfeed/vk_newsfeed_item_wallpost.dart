@@ -98,9 +98,17 @@ class VKNewsfeedItemWallpost {
       'source_id': sourceId,
       'date': date,
       'activity': activity?.toMap(),
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'comments': comments?.toMap(),
-      'copy_history': copyHistory?.map((item) => item?.toMap())?.toList(),
+      'copy_history': copyHistory
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'feedback': feedback?.toMap(),
       'geo': geo?.toMap(),
       'is_favorite': isFavorite,
@@ -127,11 +135,15 @@ class VKNewsfeedItemWallpost {
       date: map['date'] as int,
       activity: VKNewsfeedEventActivity.fromMap(map['activity']),
       attachments: map['attachments']
-          ?.map((item) => VKWallWallpostAttachment.fromMap(item))
+          ?.map<VKWallWallpostAttachment>(
+            (item) => VKWallWallpostAttachment.fromMap(item),
+          )
           ?.toList(),
       comments: VKBaseCommentsInfo.fromMap(map['comments']),
       copyHistory: map['copy_history']
-          ?.map((item) => VKWallWallpost.fromMap(item))
+          ?.map<VKWallWallpost>(
+            (item) => VKWallWallpost.fromMap(item),
+          )
           ?.toList(),
       feedback: VKNewsfeedItemWallpostFeedback.fromMap(map['feedback']),
       geo: VKBaseGeo.fromMap(map['geo']),

@@ -111,8 +111,11 @@ class VKUsersUserSettingsXtr {
       'relation': relation?.value,
       'relation_partner': relationPartner?.toMap(),
       'relation_pending': relationPending?.value,
-      'relation_requests':
-          relationRequests?.map((item) => item?.toMap())?.toList(),
+      'relation_requests': relationRequests
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'screen_name': screenName,
       'sex': sex?.value,
       'status': status,
@@ -142,7 +145,9 @@ class VKUsersUserSettingsXtr {
       relationPartner: VKUsersUserMin.fromMap(map['relation_partner']),
       relationPending: VKBaseBoolInt(map['relation_pending']),
       relationRequests: map['relation_requests']
-          ?.map((item) => VKUsersUserMin.fromMap(item))
+          ?.map<VKUsersUserMin>(
+            (item) => VKUsersUserMin.fromMap(item),
+          )
           ?.toList(),
       screenName: map['screen_name'] as String,
       sex: VKBaseSex(map['sex']),

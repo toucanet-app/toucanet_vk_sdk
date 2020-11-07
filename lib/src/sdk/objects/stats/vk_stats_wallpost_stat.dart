@@ -69,7 +69,11 @@ class VKStatsWallpostStat {
       'report': report,
       'to_group': toGroup,
       'unsubscribe': unsubscribe,
-      'sex_age': sexAge?.map((item) => item?.toMap())?.toList(),
+      'sex_age': sexAge
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -90,8 +94,11 @@ class VKStatsWallpostStat {
       report: map['report'] as int,
       toGroup: map['to_group'] as int,
       unsubscribe: map['unsubscribe'] as int,
-      sexAge:
-          map['sex_age']?.map((item) => VKStatsSexAge.fromMap(item))?.toList(),
+      sexAge: map['sex_age']
+          ?.map<VKStatsSexAge>(
+            (item) => VKStatsSexAge.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

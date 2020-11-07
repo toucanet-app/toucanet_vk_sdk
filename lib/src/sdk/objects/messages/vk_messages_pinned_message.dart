@@ -51,11 +51,19 @@ class VKMessagesPinnedMessage {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'conversation_message_id': conversationMessageId,
       'date': date,
       'from_id': fromId,
-      'fwd_messages': fwdMessages?.map((item) => item?.toMap())?.toList(),
+      'fwd_messages': fwdMessages
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'geo': geo?.toMap(),
       'id': id,
       'peer_id': peerId,
@@ -70,13 +78,17 @@ class VKMessagesPinnedMessage {
 
     return VKMessagesPinnedMessage(
       attachments: map['attachments']
-          ?.map((item) => VKMessagesMessageAttachment.fromMap(item))
+          ?.map<VKMessagesMessageAttachment>(
+            (item) => VKMessagesMessageAttachment.fromMap(item),
+          )
           ?.toList(),
       conversationMessageId: map['conversation_message_id'] as int,
       date: map['date'] as int,
       fromId: map['from_id'] as int,
       fwdMessages: map['fwd_messages']
-          ?.map((item) => VKMessagesForeignMessage.fromMap(item))
+          ?.map<VKMessagesForeignMessage>(
+            (item) => VKMessagesForeignMessage.fromMap(item),
+          )
           ?.toList(),
       geo: VKBaseGeo.fromMap(map['geo']),
       id: map['id'] as int,

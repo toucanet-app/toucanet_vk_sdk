@@ -9,8 +9,11 @@ class VKPhotosGetByIdExtendedResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'photos_getById_extended_response':
-          photosGetByIdExtendedResponse?.map((item) => item?.toMap())?.toList(),
+      'photos_getById_extended_response': photosGetByIdExtendedResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKPhotosGetByIdExtendedResponse {
 
     return VKPhotosGetByIdExtendedResponse(
       photosGetByIdExtendedResponse: map['photos_getById_extended_response']
-          ?.map((item) => VKPhotosPhotoFull.fromMap(item))
+          ?.map<List<VKPhotosPhotoFull>>(
+            (item) => VKPhotosPhotoFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

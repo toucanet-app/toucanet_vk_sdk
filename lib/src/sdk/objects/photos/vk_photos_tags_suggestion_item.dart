@@ -32,9 +32,17 @@ class VKPhotosTagsSuggestionItem {
       'title': title,
       'caption': caption,
       'type': type,
-      'buttons': buttons?.map((item) => item?.toMap())?.toList(),
+      'buttons': buttons
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'photo': photo?.toMap(),
-      'tags': tags?.map((item) => item?.toMap())?.toList(),
+      'tags': tags
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'track_code': trackCode,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -47,11 +55,16 @@ class VKPhotosTagsSuggestionItem {
       caption: map['caption'] as String,
       type: map['type'] as String,
       buttons: map['buttons']
-          ?.map((item) => VKPhotosTagsSuggestionItemButton.fromMap(item))
+          ?.map<VKPhotosTagsSuggestionItemButton>(
+            (item) => VKPhotosTagsSuggestionItemButton.fromMap(item),
+          )
           ?.toList(),
       photo: VKPhotosPhoto.fromMap(map['photo']),
-      tags:
-          map['tags']?.map((item) => VKPhotosPhotoTag.fromMap(item))?.toList(),
+      tags: map['tags']
+          ?.map<VKPhotosPhotoTag>(
+            (item) => VKPhotosPhotoTag.fromMap(item),
+          )
+          ?.toList(),
       trackCode: map['track_code'] as String,
     );
   }

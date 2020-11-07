@@ -9,8 +9,11 @@ class VKDatabaseGetCitiesByIdResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'database_getCitiesById_response':
-          databaseGetCitiesByIdResponse?.map((item) => item?.toMap())?.toList(),
+      'database_getCitiesById_response': databaseGetCitiesByIdResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKDatabaseGetCitiesByIdResponse {
 
     return VKDatabaseGetCitiesByIdResponse(
       databaseGetCitiesByIdResponse: map['database_getCitiesById_response']
-          ?.map((item) => VKBaseObject.fromMap(item))
+          ?.map<List<VKBaseObject>>(
+            (item) => VKBaseObject.fromMap(item),
+          )
           ?.toList(),
     );
   }

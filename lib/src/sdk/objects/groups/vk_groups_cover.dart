@@ -17,7 +17,11 @@ class VKGroupsCover {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'enabled': enabled?.value,
-      'images': images?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,11 @@ class VKGroupsCover {
 
     return VKGroupsCover(
       enabled: VKBaseBoolInt(map['enabled']),
-      images: map['images']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

@@ -9,8 +9,11 @@ class VKPagesGetHistoryResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'pages_getHistory_response':
-          pagesGetHistoryResponse?.map((item) => item?.toMap())?.toList(),
+      'pages_getHistory_response': pagesGetHistoryResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKPagesGetHistoryResponse {
 
     return VKPagesGetHistoryResponse(
       pagesGetHistoryResponse: map['pages_getHistory_response']
-          ?.map((item) => VKPagesWikipageHistory.fromMap(item))
+          ?.map<List<VKPagesWikipageHistory>>(
+            (item) => VKPagesWikipageHistory.fromMap(item),
+          )
           ?.toList(),
     );
   }

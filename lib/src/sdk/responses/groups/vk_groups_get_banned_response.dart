@@ -16,7 +16,11 @@ class VKGroupsGetBannedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKGroupsGetBannedResponse {
     return VKGroupsGetBannedResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKGroupsBannedItem.fromMap(item))
+          ?.map<VKGroupsBannedItem>(
+            (item) => VKGroupsBannedItem.fromMap(item),
+          )
           ?.toList(),
     );
   }

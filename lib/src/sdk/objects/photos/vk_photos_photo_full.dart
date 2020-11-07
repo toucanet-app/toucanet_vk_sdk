@@ -90,7 +90,11 @@ class VKPhotosPhotoFull {
       'date': date,
       'height': height,
       'id': id,
-      'images': images?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'lat': lat,
       'likes': likes?.toMap(),
       'long': long,
@@ -115,8 +119,11 @@ class VKPhotosPhotoFull {
       date: map['date'] as int,
       height: map['height'] as int,
       id: map['id'] as int,
-      images:
-          map['images']?.map((item) => VKPhotosImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKPhotosImage>(
+            (item) => VKPhotosImage.fromMap(item),
+          )
+          ?.toList(),
       lat: map['lat'] as double,
       likes: VKBaseLikes.fromMap(map['likes']),
       long: map['long'] as double,

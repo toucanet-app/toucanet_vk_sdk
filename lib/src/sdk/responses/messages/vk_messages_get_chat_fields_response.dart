@@ -60,7 +60,11 @@ class VKMessagesGetChatFieldsResponse {
       'push_settings': pushSettings?.toMap(),
       'title': title,
       'type': type,
-      'users': users?.map((item) => item?.toMap())?.toList(),
+      'users': users
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -79,7 +83,9 @@ class VKMessagesGetChatFieldsResponse {
       title: map['title'] as String,
       type: map['type'] as String,
       users: map['users']
-          ?.map((item) => VKMessagesUserXtrInvitedBy.fromMap(item))
+          ?.map<VKMessagesUserXtrInvitedBy>(
+            (item) => VKMessagesUserXtrInvitedBy.fromMap(item),
+          )
           ?.toList(),
     );
   }

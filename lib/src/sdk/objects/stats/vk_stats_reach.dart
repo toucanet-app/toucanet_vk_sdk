@@ -37,14 +37,34 @@ class VKStatsReach {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'age': age?.map((item) => item?.toMap())?.toList(),
-      'cities': cities?.map((item) => item?.toMap())?.toList(),
-      'countries': countries?.map((item) => item?.toMap())?.toList(),
+      'age': age
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'cities': cities
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'countries': countries
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'mobile_reach': mobileReach,
       'reach': reach,
       'reach_subscribers': reachSubscribers,
-      'sex': sex?.map((item) => item?.toMap())?.toList(),
-      'sex_age': sexAge?.map((item) => item?.toMap())?.toList(),
+      'sex': sex
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'sex_age': sexAge
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -52,17 +72,34 @@ class VKStatsReach {
     if (map == null) return null;
 
     return VKStatsReach(
-      age: map['age']?.map((item) => VKStatsSexAge.fromMap(item))?.toList(),
-      cities: map['cities']?.map((item) => VKStatsCity.fromMap(item))?.toList(),
+      age: map['age']
+          ?.map<VKStatsSexAge>(
+            (item) => VKStatsSexAge.fromMap(item),
+          )
+          ?.toList(),
+      cities: map['cities']
+          ?.map<VKStatsCity>(
+            (item) => VKStatsCity.fromMap(item),
+          )
+          ?.toList(),
       countries: map['countries']
-          ?.map((item) => VKStatsCountry.fromMap(item))
+          ?.map<VKStatsCountry>(
+            (item) => VKStatsCountry.fromMap(item),
+          )
           ?.toList(),
       mobileReach: map['mobile_reach'] as int,
       reach: map['reach'] as int,
       reachSubscribers: map['reach_subscribers'] as int,
-      sex: map['sex']?.map((item) => VKStatsSexAge.fromMap(item))?.toList(),
-      sexAge:
-          map['sex_age']?.map((item) => VKStatsSexAge.fromMap(item))?.toList(),
+      sex: map['sex']
+          ?.map<VKStatsSexAge>(
+            (item) => VKStatsSexAge.fromMap(item),
+          )
+          ?.toList(),
+      sexAge: map['sex_age']
+          ?.map<VKStatsSexAge>(
+            (item) => VKStatsSexAge.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

@@ -43,7 +43,11 @@ class VKBoardTopicPoll {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'answer_id': answerId,
-      'answers': answers?.map((item) => item?.toMap())?.toList(),
+      'answers': answers
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'created': created,
       'is_closed': isClosed?.value,
       'owner_id': ownerId,
@@ -58,8 +62,11 @@ class VKBoardTopicPoll {
 
     return VKBoardTopicPoll(
       answerId: map['answer_id'] as int,
-      answers:
-          map['answers']?.map((item) => VKPollsAnswer.fromMap(item))?.toList(),
+      answers: map['answers']
+          ?.map<VKPollsAnswer>(
+            (item) => VKPollsAnswer.fromMap(item),
+          )
+          ?.toList(),
       created: map['created'] as int,
       isClosed: VKBaseBoolInt(map['is_closed']),
       ownerId: map['owner_id'] as int,

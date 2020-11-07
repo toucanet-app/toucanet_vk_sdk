@@ -9,8 +9,11 @@ class VKSecureGetSMSHistoryResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'secure_getSMSHistory_response':
-          secureGetSMSHistoryResponse?.map((item) => item?.toMap())?.toList(),
+      'secure_getSMSHistory_response': secureGetSMSHistoryResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKSecureGetSMSHistoryResponse {
 
     return VKSecureGetSMSHistoryResponse(
       secureGetSMSHistoryResponse: map['secure_getSMSHistory_response']
-          ?.map((item) => VKSecureSmsNotification.fromMap(item))
+          ?.map<List<VKSecureSmsNotification>>(
+            (item) => VKSecureSmsNotification.fromMap(item),
+          )
           ?.toList(),
     );
   }

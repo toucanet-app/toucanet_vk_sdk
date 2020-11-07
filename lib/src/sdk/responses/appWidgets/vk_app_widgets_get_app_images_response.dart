@@ -13,7 +13,11 @@ class VKAppWidgetsGetAppImagesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -23,7 +27,9 @@ class VKAppWidgetsGetAppImagesResponse {
     return VKAppWidgetsGetAppImagesResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKAppWidgetsPhoto.fromMap(item))
+          ?.map<VKAppWidgetsPhoto>(
+            (item) => VKAppWidgetsPhoto.fromMap(item),
+          )
           ?.toList(),
     );
   }

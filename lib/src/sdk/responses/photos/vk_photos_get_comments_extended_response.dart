@@ -27,9 +27,21 @@ class VKPhotosGetCommentsExtendedResponse {
     return <String, dynamic>{
       'count': count,
       'real_offset': realOffset,
-      'items': items?.map((item) => item?.toMap())?.toList(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -41,13 +53,19 @@ class VKPhotosGetCommentsExtendedResponse {
       count: map['count'] as int,
       realOffset: map['real_offset'] as int,
       items: map['items']
-          ?.map((item) => VKWallWallComment.fromMap(item))
+          ?.map<VKWallWallComment>(
+            (item) => VKWallWallComment.fromMap(item),
+          )
           ?.toList(),
       profiles: map['profiles']
-          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.map<VKUsersUserFull>(
+            (item) => VKUsersUserFull.fromMap(item),
+          )
           ?.toList(),
       groups: map['groups']
-          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.map<VKGroupsGroupFull>(
+            (item) => VKGroupsGroupFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

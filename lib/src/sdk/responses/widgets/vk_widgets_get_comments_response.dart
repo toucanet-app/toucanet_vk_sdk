@@ -16,7 +16,11 @@ class VKWidgetsGetCommentsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'posts': posts?.map((item) => item?.toMap())?.toList(),
+      'posts': posts
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKWidgetsGetCommentsResponse {
     return VKWidgetsGetCommentsResponse(
       count: map['count'] as int,
       posts: map['posts']
-          ?.map((item) => VKWidgetsWidgetComment.fromMap(item))
+          ?.map<VKWidgetsWidgetComment>(
+            (item) => VKWidgetsWidgetComment.fromMap(item),
+          )
           ?.toList(),
     );
   }

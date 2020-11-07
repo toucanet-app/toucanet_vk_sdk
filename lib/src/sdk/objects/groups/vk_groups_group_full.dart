@@ -301,8 +301,16 @@ class VKGroupsGroupFull {
       'crop_photo': cropPhoto?.toMap(),
       'status': status,
       'main_album_id': mainAlbumId,
-      'links': links?.map((item) => item?.toMap())?.toList(),
-      'contacts': contacts?.map((item) => item?.toMap())?.toList(),
+      'links': links
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'contacts': contacts
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'wall': wall,
       'site': site,
       'main_section': mainSection?.value,
@@ -370,10 +378,14 @@ class VKGroupsGroupFull {
       status: map['status'] as String,
       mainAlbumId: map['main_album_id'] as int,
       links: map['links']
-          ?.map((item) => VKGroupsLinksItem.fromMap(item))
+          ?.map<VKGroupsLinksItem>(
+            (item) => VKGroupsLinksItem.fromMap(item),
+          )
           ?.toList(),
       contacts: map['contacts']
-          ?.map((item) => VKGroupsContactsItem.fromMap(item))
+          ?.map<VKGroupsContactsItem>(
+            (item) => VKGroupsContactsItem.fromMap(item),
+          )
           ?.toList(),
       wall: map['wall'] as int,
       site: map['site'] as String,

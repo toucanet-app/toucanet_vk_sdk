@@ -9,8 +9,11 @@ class VKAdsGetOfficeUsersResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'ads_getOfficeUsers_response':
-          adsGetOfficeUsersResponse?.map((item) => item?.toMap())?.toList(),
+      'ads_getOfficeUsers_response': adsGetOfficeUsersResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKAdsGetOfficeUsersResponse {
 
     return VKAdsGetOfficeUsersResponse(
       adsGetOfficeUsersResponse: map['ads_getOfficeUsers_response']
-          ?.map((item) => VKAdsUsers.fromMap(item))
+          ?.map<List<VKAdsUsers>>(
+            (item) => VKAdsUsers.fromMap(item),
+          )
           ?.toList(),
     );
   }

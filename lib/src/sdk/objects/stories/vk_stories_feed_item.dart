@@ -31,8 +31,16 @@ class VKStoriesFeedItem {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'type': type,
-      'stories': stories?.map((item) => item?.toMap())?.toList(),
-      'grouped': grouped?.map((item) => item?.toMap())?.toList(),
+      'stories': stories
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'grouped': grouped
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'app': app?.toMap(),
       'promo_data': promoData?.toMap(),
     }..removeWhere((_, dynamic value) => value == null);
@@ -43,10 +51,15 @@ class VKStoriesFeedItem {
 
     return VKStoriesFeedItem(
       type: map['type'] as String,
-      stories:
-          map['stories']?.map((item) => VKStoriesStory.fromMap(item))?.toList(),
+      stories: map['stories']
+          ?.map<VKStoriesStory>(
+            (item) => VKStoriesStory.fromMap(item),
+          )
+          ?.toList(),
       grouped: map['grouped']
-          ?.map((item) => VKStoriesFeedItem.fromMap(item))
+          ?.map<VKStoriesFeedItem>(
+            (item) => VKStoriesFeedItem.fromMap(item),
+          )
           ?.toList(),
       app: VKAppsAppMin.fromMap(map['app']),
       promoData: VKStoriesPromoBlock.fromMap(map['promo_data']),

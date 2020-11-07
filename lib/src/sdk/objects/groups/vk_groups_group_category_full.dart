@@ -30,8 +30,16 @@ class VKGroupsGroupCategoryFull {
       'id': id,
       'name': name,
       'page_count': pageCount,
-      'page_previews': pagePreviews?.map((item) => item?.toMap())?.toList(),
-      'subcategories': subcategories?.map((item) => item?.toMap())?.toList(),
+      'page_previews': pagePreviews
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'subcategories': subcategories
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -43,10 +51,14 @@ class VKGroupsGroupCategoryFull {
       name: map['name'] as String,
       pageCount: map['page_count'] as int,
       pagePreviews: map['page_previews']
-          ?.map((item) => VKGroupsGroup.fromMap(item))
+          ?.map<VKGroupsGroup>(
+            (item) => VKGroupsGroup.fromMap(item),
+          )
           ?.toList(),
       subcategories: map['subcategories']
-          ?.map((item) => VKGroupsGroupCategory.fromMap(item))
+          ?.map<VKGroupsGroupCategory>(
+            (item) => VKGroupsGroupCategory.fromMap(item),
+          )
           ?.toList(),
     );
   }

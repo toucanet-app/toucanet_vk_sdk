@@ -18,8 +18,11 @@ class VKStoriesClickableStickers {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'clickable_stickers':
-          clickableStickers?.map((item) => item?.toMap())?.toList(),
+      'clickable_stickers': clickableStickers
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'original_height': originalHeight,
       'original_width': originalWidth,
     }..removeWhere((_, dynamic value) => value == null);
@@ -30,7 +33,9 @@ class VKStoriesClickableStickers {
 
     return VKStoriesClickableStickers(
       clickableStickers: map['clickable_stickers']
-          ?.map((item) => VKStoriesClickableSticker.fromMap(item))
+          ?.map<VKStoriesClickableSticker>(
+            (item) => VKStoriesClickableSticker.fromMap(item),
+          )
           ?.toList(),
       originalHeight: map['original_height'] as int,
       originalWidth: map['original_width'] as int,

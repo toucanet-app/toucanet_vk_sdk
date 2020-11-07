@@ -23,8 +23,16 @@ class VKAccountGetBannedResponse {
     return <String, dynamic>{
       'count': count,
       'items': items,
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -35,10 +43,15 @@ class VKAccountGetBannedResponse {
       count: map['count'] as int,
       items: map['items'] as List<int>,
       profiles: map['profiles']
-          ?.map((item) => VKUsersUserMin.fromMap(item))
+          ?.map<VKUsersUserMin>(
+            (item) => VKUsersUserMin.fromMap(item),
+          )
           ?.toList(),
-      groups:
-          map['groups']?.map((item) => VKGroupsGroup.fromMap(item))?.toList(),
+      groups: map['groups']
+          ?.map<VKGroupsGroup>(
+            (item) => VKGroupsGroup.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

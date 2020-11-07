@@ -9,8 +9,11 @@ class VKPrettyCardsGetByIdResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'prettyCards_getById_response':
-          prettyCardsGetByIdResponse?.map((item) => item?.toMap())?.toList(),
+      'prettyCards_getById_response': prettyCardsGetByIdResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKPrettyCardsGetByIdResponse {
 
     return VKPrettyCardsGetByIdResponse(
       prettyCardsGetByIdResponse: map['prettyCards_getById_response']
-          ?.map((item) => VKPrettyCardsPrettyCard.fromMap(item))
+          ?.map<List<VKPrettyCardsPrettyCard>>(
+            (item) => VKPrettyCardsPrettyCard.fromMap(item),
+          )
           ?.toList(),
     );
   }

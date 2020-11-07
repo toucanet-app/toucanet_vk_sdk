@@ -13,6 +13,8 @@ class VKSecureSendNotificationResponse {
   }
 
   factory VKSecureSendNotificationResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKSecureSendNotificationResponse(
       secureSendNotificationResponse:
           map['secure_sendNotification_response'] as List<int>,

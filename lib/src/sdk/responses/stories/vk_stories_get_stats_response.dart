@@ -44,6 +44,8 @@ class VKStoriesGetStatsResponse {
   }
 
   factory VKStoriesGetStatsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStoriesGetStatsResponse(
       answer: VKStoriesStoryStatsStat.fromMap(map['answer']),
       bans: VKStoriesStoryStatsStat.fromMap(map['bans']),

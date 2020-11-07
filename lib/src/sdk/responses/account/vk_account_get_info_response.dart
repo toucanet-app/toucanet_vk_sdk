@@ -49,8 +49,8 @@ class VKAccountGetInfoResponse {
     this.noWallReplies,
     this.ownPostsDefault,
     this.subscriptions,
-  })  : assert(miniAppsAdsSlotId >= 0),
-        assert(qrPromotion >= 0);
+  })  : assert(miniAppsAdsSlotId == null || miniAppsAdsSlotId >= 0),
+        assert(qrPromotion == null || qrPromotion >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -71,6 +71,8 @@ class VKAccountGetInfoResponse {
   }
 
   factory VKAccountGetInfoResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAccountGetInfoResponse(
       wishlistsAePromoBannerShow:
           VKBaseBoolInt(map['wishlists_ae_promo_banner_show']),

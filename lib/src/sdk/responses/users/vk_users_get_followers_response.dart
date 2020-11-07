@@ -20,6 +20,8 @@ class VKUsersGetFollowersResponse {
   }
 
   factory VKUsersGetFollowersResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKUsersGetFollowersResponse(
       count: map['count'] as int,
       items: map['items'] as List<int>,

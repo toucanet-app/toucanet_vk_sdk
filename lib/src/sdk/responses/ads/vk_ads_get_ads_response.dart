@@ -9,14 +9,18 @@ class VKAdsGetAdsResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'ads_getAds_response': adsGetAdsResponse?.map((item) => item?.toMap()),
+      'ads_getAds_response':
+          adsGetAdsResponse?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKAdsGetAdsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsGetAdsResponse(
-      adsGetAdsResponse:
-          map['ads_getAds_response']?.map((item) => VKAdsAd.fromMap(item)),
+      adsGetAdsResponse: map['ads_getAds_response']
+          ?.map((item) => VKAdsAd.fromMap(item))
+          ?.toList(),
     );
   }
 }

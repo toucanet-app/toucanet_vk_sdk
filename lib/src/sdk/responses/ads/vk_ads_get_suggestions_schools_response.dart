@@ -9,16 +9,20 @@ class VKAdsGetSuggestionsSchoolsResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'ads_getSuggestions_schools_response':
-          adsGetSuggestionsSchoolsResponse?.map((item) => item?.toMap()),
+      'ads_getSuggestions_schools_response': adsGetSuggestionsSchoolsResponse
+          ?.map((item) => item?.toMap())
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKAdsGetSuggestionsSchoolsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsGetSuggestionsSchoolsResponse(
       adsGetSuggestionsSchoolsResponse:
           map['ads_getSuggestions_schools_response']
-              ?.map((item) => VKAdsTargSuggestionsSchools.fromMap(item)),
+              ?.map((item) => VKAdsTargSuggestionsSchools.fromMap(item))
+              ?.toList(),
     );
   }
 }

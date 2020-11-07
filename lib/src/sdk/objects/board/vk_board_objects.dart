@@ -1,4 +1,4 @@
-export 'board_default_order.dart';
-export 'board_topic.dart';
-export 'board_topic_comment.dart';
-export 'board_topic_poll.dart';
+export 'vk_board_default_order.dart';
+export 'vk_board_topic.dart';
+export 'vk_board_topic_comment.dart';
+export 'vk_board_topic_poll.dart';

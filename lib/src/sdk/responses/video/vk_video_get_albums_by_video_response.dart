@@ -13,6 +13,8 @@ class VKVideoGetAlbumsByVideoResponse {
   }
 
   factory VKVideoGetAlbumsByVideoResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKVideoGetAlbumsByVideoResponse(
       videoGetAlbumsByVideoResponse:
           map['video_getAlbumsByVideo_response'] as List<int>,

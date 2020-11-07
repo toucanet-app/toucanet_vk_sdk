@@ -18,6 +18,8 @@ class VKStreamingGetServerUrlResponse {
   }
 
   factory VKStreamingGetServerUrlResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStreamingGetServerUrlResponse(
       endpoint: map['endpoint'] as String,
       key: map['key'] as String,

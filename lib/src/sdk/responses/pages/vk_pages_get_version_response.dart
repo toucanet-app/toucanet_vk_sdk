@@ -88,6 +88,8 @@ class VKPagesGetVersionResponse {
   }
 
   factory VKPagesGetVersionResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPagesGetVersionResponse(
       created: map['created'] as int,
       creatorId: map['creator_id'] as int,

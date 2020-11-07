@@ -19,6 +19,8 @@ class VKUtilsCheckLinkResponse {
   }
 
   factory VKUtilsCheckLinkResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKUtilsCheckLinkResponse(
       link: map['link'] as String,
       status: VKUtilsLinkCheckedStatus(map['status']),

@@ -1,1 +1,1 @@
-export 'link_target_object.dart';
+export 'vk_link_target_object.dart';

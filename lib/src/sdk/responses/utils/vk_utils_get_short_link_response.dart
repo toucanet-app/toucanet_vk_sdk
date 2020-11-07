@@ -28,6 +28,8 @@ class VKUtilsGetShortLinkResponse {
   }
 
   factory VKUtilsGetShortLinkResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKUtilsGetShortLinkResponse(
       accessKey: map['access_key'] as String,
       key: map['key'] as String,

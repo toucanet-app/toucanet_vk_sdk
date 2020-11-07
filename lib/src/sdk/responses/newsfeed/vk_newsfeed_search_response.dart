@@ -19,12 +19,12 @@ class VKNewsfeedSearchResponse {
     this.nextFrom,
     this.count,
     this.totalCount,
-  })  : assert(count >= 0),
-        assert(totalCount >= 0);
+  })  : assert(count == null || count >= 0),
+        assert(totalCount == null || totalCount >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'items': items?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
       'suggested_queries': suggestedQueries,
       'next_from': nextFrom,
       'count': count,
@@ -33,8 +33,12 @@ class VKNewsfeedSearchResponse {
   }
 
   factory VKNewsfeedSearchResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKNewsfeedSearchResponse(
-      items: map['items']?.map((item) => VKWallWallpostFull.fromMap(item)),
+      items: map['items']
+          ?.map((item) => VKWallWallpostFull.fromMap(item))
+          ?.toList(),
       suggestedQueries: map['suggested_queries'] as List<String>,
       nextFrom: map['next_from'] as String,
       count: map['count'] as int,

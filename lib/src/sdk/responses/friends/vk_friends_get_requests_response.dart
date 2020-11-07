@@ -12,7 +12,7 @@ class VKFriendsGetRequestsResponse {
     this.count,
     this.items,
     this.countUnread,
-  }) : assert(count >= 0);
+  }) : assert(count == null || count >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -23,6 +23,8 @@ class VKFriendsGetRequestsResponse {
   }
 
   factory VKFriendsGetRequestsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKFriendsGetRequestsResponse(
       count: map['count'] as int,
       items: map['items'] as List<int>,

@@ -12,6 +12,8 @@ class VKMessagesGetInviteLinkResponse {
   }
 
   factory VKMessagesGetInviteLinkResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesGetInviteLinkResponse(
       link: map['link'] as String,
     );

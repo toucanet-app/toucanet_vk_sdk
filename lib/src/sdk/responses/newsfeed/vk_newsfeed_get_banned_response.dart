@@ -18,6 +18,8 @@ class VKNewsfeedGetBannedResponse {
   }
 
   factory VKNewsfeedGetBannedResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKNewsfeedGetBannedResponse(
       groups: map['groups'] as List<int>,
       members: map['members'] as List<int>,

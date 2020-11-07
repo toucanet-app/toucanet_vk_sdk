@@ -25,14 +25,14 @@ class VKNewsfeedSearchExtendedResponse {
     this.nextFrom,
     this.count,
     this.totalCount,
-  })  : assert(count >= 0),
-        assert(totalCount >= 0);
+  })  : assert(count == null || count >= 0),
+        assert(totalCount == null || totalCount >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'items': items?.map((item) => item?.toMap()),
-      'profiles': profiles?.map((item) => item?.toMap()),
-      'groups': groups?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
+      'groups': groups?.map((item) => item?.toMap())?.toList(),
       'suggested_queries': suggestedQueries,
       'next_from': nextFrom,
       'count': count,
@@ -41,10 +41,18 @@ class VKNewsfeedSearchExtendedResponse {
   }
 
   factory VKNewsfeedSearchExtendedResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKNewsfeedSearchExtendedResponse(
-      items: map['items']?.map((item) => VKWallWallpostFull.fromMap(item)),
-      profiles: map['profiles']?.map((item) => VKUsersUserFull.fromMap(item)),
-      groups: map['groups']?.map((item) => VKGroupsGroupFull.fromMap(item)),
+      items: map['items']
+          ?.map((item) => VKWallWallpostFull.fromMap(item))
+          ?.toList(),
+      profiles: map['profiles']
+          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.toList(),
+      groups: map['groups']
+          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.toList(),
       suggestedQueries: map['suggested_queries'] as List<String>,
       nextFrom: map['next_from'] as String,
       count: map['count'] as int,

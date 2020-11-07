@@ -15,6 +15,8 @@ class VKWallPostAdsStealthResponse {
   }
 
   factory VKWallPostAdsStealthResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKWallPostAdsStealthResponse(
       postId: map['post_id'] as int,
     );

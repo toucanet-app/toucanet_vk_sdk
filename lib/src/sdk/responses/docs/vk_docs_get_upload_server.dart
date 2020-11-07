@@ -15,6 +15,8 @@ class VKDocsGetUploadServer {
   }
 
   factory VKDocsGetUploadServer.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKDocsGetUploadServer(
       uploadUrl: map['upload_url'] as String,
     );

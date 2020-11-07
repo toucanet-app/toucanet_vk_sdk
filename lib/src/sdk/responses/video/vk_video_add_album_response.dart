@@ -15,6 +15,8 @@ class VKVideoAddAlbumResponse {
   }
 
   factory VKVideoAddAlbumResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKVideoAddAlbumResponse(
       albumId: map['album_id'] as int,
     );

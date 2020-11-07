@@ -13,6 +13,8 @@ class VKFriendsGetAppUsersResponse {
   }
 
   factory VKFriendsGetAppUsersResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKFriendsGetAppUsersResponse(
       friendsGetAppUsersResponse:
           map['friends_getAppUsers_response'] as List<int>,

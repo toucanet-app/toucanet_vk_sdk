@@ -27,20 +27,27 @@ class VKMessagesGetConversationsResponse {
     return <String, dynamic>{
       'count': count,
       'unread_count': unreadCount,
-      'items': items?.map((item) => item?.toMap()),
-      'profiles': profiles?.map((item) => item?.toMap()),
-      'groups': groups?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
+      'groups': groups?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKMessagesGetConversationsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesGetConversationsResponse(
       count: map['count'] as int,
       unreadCount: map['unread_count'] as int,
       items: map['items']
-          ?.map((item) => VKMessagesConversationWithMessage.fromMap(item)),
-      profiles: map['profiles']?.map((item) => VKUsersUserFull.fromMap(item)),
-      groups: map['groups']?.map((item) => VKGroupsGroupFull.fromMap(item)),
+          ?.map((item) => VKMessagesConversationWithMessage.fromMap(item))
+          ?.toList(),
+      profiles: map['profiles']
+          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.toList(),
+      groups: map['groups']
+          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.toList(),
     );
   }
 }

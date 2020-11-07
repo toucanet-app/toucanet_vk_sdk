@@ -1,3 +1,3 @@
-export 'search_hint.dart';
-export 'search_hint_section.dart';
-export 'search_hint_type.dart';
+export 'vk_search_hint.dart';
+export 'vk_search_hint_section.dart';
+export 'vk_search_hint_type.dart';

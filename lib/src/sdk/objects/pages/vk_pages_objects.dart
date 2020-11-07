@@ -1,4 +1,4 @@
-export 'pages_privacy_settings.dart';
-export 'pages_wikipage.dart';
-export 'pages_wikipage_full.dart';
-export 'pages_wikipage_history.dart';
+export 'vk_pages_privacy_settings.dart';
+export 'vk_pages_wikipage.dart';
+export 'vk_pages_wikipage_full.dart';
+export 'vk_pages_wikipage_history.dart';

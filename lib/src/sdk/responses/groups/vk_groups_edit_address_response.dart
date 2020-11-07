@@ -60,9 +60,9 @@ class VKGroupsEditAddressResponse {
     this.timetable,
     this.title,
     this.workInfoStatus,
-  })  : assert(cityId >= 0),
-        assert(countryId >= 0),
-        assert(metroStationId >= 0);
+  })  : assert(cityId == null || cityId >= 0),
+        assert(countryId == null || countryId >= 0),
+        assert(metroStationId == null || metroStationId >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -84,6 +84,8 @@ class VKGroupsEditAddressResponse {
   }
 
   factory VKGroupsEditAddressResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsEditAddressResponse(
       additionalAddress: map['additional_address'] as String,
       address: map['address'] as String,

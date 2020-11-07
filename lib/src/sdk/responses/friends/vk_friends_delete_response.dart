@@ -34,6 +34,8 @@ class VKFriendsDeleteResponse {
   }
 
   factory VKFriendsDeleteResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKFriendsDeleteResponse(
       success: map['success'] as int,
       friendDeleted: map['friend_deleted'] as int,

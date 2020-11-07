@@ -36,6 +36,8 @@ class VKPhotosGetMessagesUploadServerResponse {
 
   factory VKPhotosGetMessagesUploadServerResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPhotosGetMessagesUploadServerResponse(
       albumId: map['album_id'] as int,
       uploadUrl: map['upload_url'] as String,

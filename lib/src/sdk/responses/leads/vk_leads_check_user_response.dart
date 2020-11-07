@@ -29,6 +29,8 @@ class VKLeadsCheckUserResponse {
   }
 
   factory VKLeadsCheckUserResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLeadsCheckUserResponse(
       reason: map['reason'] as String,
       result: VKLeadsCheckedResult(map['result']),

@@ -16,6 +16,8 @@ class VKDownloadedGamesPaidStatusResponse {
 
   factory VKDownloadedGamesPaidStatusResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKDownloadedGamesPaidStatusResponse(
       isPaid: map['is_paid'] as bool,
     );

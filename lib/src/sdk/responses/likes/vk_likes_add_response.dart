@@ -15,6 +15,8 @@ class VKLikesAddResponse {
   }
 
   factory VKLikesAddResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLikesAddResponse(
       likes: map['likes'] as int,
     );

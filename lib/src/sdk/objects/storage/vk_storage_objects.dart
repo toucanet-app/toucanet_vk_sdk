@@ -1,1 +1,1 @@
-export 'storage_value.dart';
+export 'vk_storage_value.dart';

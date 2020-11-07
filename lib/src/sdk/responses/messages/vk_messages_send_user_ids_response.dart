@@ -12,6 +12,8 @@ class VKMessagesSendUserIdsResponse {
   }
 
   factory VKMessagesSendUserIdsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesSendUserIdsResponse(
       messagesSendUserIdsResponse:
           map['messages_send_user_ids_response'] as List<Map<String, dynamic>>,

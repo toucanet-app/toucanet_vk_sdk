@@ -76,6 +76,8 @@ class VKOrdersGetUserSubscriptionByIdResponse {
 
   factory VKOrdersGetUserSubscriptionByIdResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKOrdersGetUserSubscriptionByIdResponse(
       cancelReason: map['cancel_reason'] as String,
       createTime: map['create_time'] as int,

@@ -1,1 +1,1 @@
-export 'addresses_fields.dart';
+export 'vk_addresses_fields.dart';

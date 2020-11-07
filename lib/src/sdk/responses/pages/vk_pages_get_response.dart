@@ -88,6 +88,8 @@ class VKPagesGetResponse {
   }
 
   factory VKPagesGetResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPagesGetResponse(
       created: map['created'] as int,
       creatorId: map['creator_id'] as int,

@@ -12,16 +12,21 @@ class VKNewsfeedGetBannedExtendedResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'groups': groups?.map((item) => item?.toMap()),
-      'profiles': profiles?.map((item) => item?.toMap()),
+      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKNewsfeedGetBannedExtendedResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKNewsfeedGetBannedExtendedResponse(
-      groups: map['groups']?.map((item) => VKUsersUserFull.fromMap(item)),
-      profiles: map['profiles']?.map((item) => VKGroupsGroupFull.fromMap(item)),
+      groups:
+          map['groups']?.map((item) => VKUsersUserFull.fromMap(item))?.toList(),
+      profiles: map['profiles']
+          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.toList(),
     );
   }
 }

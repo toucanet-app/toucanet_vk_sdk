@@ -20,6 +20,8 @@ class VKLeadsStartResponse {
   }
 
   factory VKLeadsStartResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLeadsStartResponse(
       testMode: VKBaseBoolInt(map['test_mode']),
       vkSid: map['vk_sid'] as String,

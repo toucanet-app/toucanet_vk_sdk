@@ -29,6 +29,8 @@ class VKMessagesGetLongPollServerResponse {
 
   factory VKMessagesGetLongPollServerResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesGetLongPollServerResponse(
       key: map['key'] as String,
       pts: map['pts'] as int,

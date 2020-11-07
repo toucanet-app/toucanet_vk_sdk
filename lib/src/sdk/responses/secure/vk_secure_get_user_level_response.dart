@@ -10,14 +10,17 @@ class VKSecureGetUserLevelResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'secure_getUserLevel_response':
-          secureGetUserLevelResponse?.map((item) => item?.toMap()),
+          secureGetUserLevelResponse?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKSecureGetUserLevelResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKSecureGetUserLevelResponse(
       secureGetUserLevelResponse: map['secure_getUserLevel_response']
-          ?.map((item) => VKSecureLevel.fromMap(item)),
+          ?.map((item) => VKSecureLevel.fromMap(item))
+          ?.toList(),
     );
   }
 }

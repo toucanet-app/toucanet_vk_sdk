@@ -15,6 +15,8 @@ class VKWallCreateCommentResponse {
   }
 
   factory VKWallCreateCommentResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKWallCreateCommentResponse(
       commentId: map['comment_id'] as int,
     );

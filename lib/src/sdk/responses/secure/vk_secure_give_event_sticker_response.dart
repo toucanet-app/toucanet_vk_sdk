@@ -12,6 +12,8 @@ class VKSecureGiveEventStickerResponse {
   }
 
   factory VKSecureGiveEventStickerResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKSecureGiveEventStickerResponse(
       secureGiveEventStickerResponse:
           map['secure_giveEventSticker_response'] as List<Map<String, dynamic>>,

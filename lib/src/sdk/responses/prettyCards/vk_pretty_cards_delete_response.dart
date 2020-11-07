@@ -25,6 +25,8 @@ class VKPrettyCardsDeleteResponse {
   }
 
   factory VKPrettyCardsDeleteResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPrettyCardsDeleteResponse(
       ownerId: map['owner_id'] as int,
       cardId: map['card_id'] as String,

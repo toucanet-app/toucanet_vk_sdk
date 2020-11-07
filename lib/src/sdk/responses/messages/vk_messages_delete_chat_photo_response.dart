@@ -19,6 +19,8 @@ class VKMessagesDeleteChatPhotoResponse {
   }
 
   factory VKMessagesDeleteChatPhotoResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesDeleteChatPhotoResponse(
       messageId: map['message_id'] as int,
       chat: VKMessagesChat.fromMap(map['chat']),

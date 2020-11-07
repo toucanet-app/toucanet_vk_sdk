@@ -16,6 +16,8 @@ class VKPhotosGetMarketUploadServerResponse {
 
   factory VKPhotosGetMarketUploadServerResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPhotosGetMarketUploadServerResponse(
       uploadUrl: map['upload_url'] as String,
     );

@@ -14,14 +14,16 @@ class VKUtilsGetLinkStatsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'key': key,
-      'stats': stats?.map((item) => item?.toMap()),
+      'stats': stats?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKUtilsGetLinkStatsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKUtilsGetLinkStatsResponse(
       key: map['key'] as String,
-      stats: map['stats']?.map((item) => VKUtilsStats.fromMap(item)),
+      stats: map['stats']?.map((item) => VKUtilsStats.fromMap(item))?.toList(),
     );
   }
 }

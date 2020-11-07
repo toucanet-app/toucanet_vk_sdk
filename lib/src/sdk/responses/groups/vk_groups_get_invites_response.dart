@@ -16,15 +16,18 @@ class VKGroupsGetInvitesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKGroupsGetInvitesResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsGetInvitesResponse(
       count: map['count'] as int,
-      items:
-          map['items']?.map((item) => VKGroupsGroupXtrInvitedBy.fromMap(item)),
+      items: map['items']
+          ?.map((item) => VKGroupsGroupXtrInvitedBy.fromMap(item))
+          ?.toList(),
     );
   }
 }

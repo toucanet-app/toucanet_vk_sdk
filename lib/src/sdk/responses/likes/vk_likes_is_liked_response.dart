@@ -22,6 +22,8 @@ class VKLikesIsLikedResponse {
   }
 
   factory VKLikesIsLikedResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLikesIsLikedResponse(
       liked: VKBaseBoolInt(map['liked']),
       copied: VKBaseBoolInt(map['copied']),

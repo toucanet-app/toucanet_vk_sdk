@@ -13,6 +13,8 @@ class VKMarketAddResponse {
   }
 
   factory VKMarketAddResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMarketAddResponse(
       marketItemId: map['market_item_id'] as int,
     );

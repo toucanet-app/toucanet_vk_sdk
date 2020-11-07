@@ -13,6 +13,8 @@ class VKAdsDeleteAdsResponse {
   }
 
   factory VKAdsDeleteAdsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsDeleteAdsResponse(
       adsDeleteAdsResponse: map['ads_deleteAds_response'] as List<int>,
     );

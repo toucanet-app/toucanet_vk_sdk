@@ -1,2 +1,2 @@
-export 'appWidgets_photo.dart';
-export 'appWidgets_photos.dart';
+export 'vk_app_widgets_photo.dart';
+export 'vk_app_widgets_photos.dart';

@@ -1,1 +1,1 @@
-export 'audio_audio.dart';
+export 'vk_audio_audio.dart';

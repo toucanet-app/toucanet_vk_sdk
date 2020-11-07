@@ -21,6 +21,8 @@ class VKStoriesGetPhotoUploadServerResponse {
 
   factory VKStoriesGetPhotoUploadServerResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStoriesGetPhotoUploadServerResponse(
       uploadUrl: map['upload_url'] as String,
       userIds: map['user_ids'] as List<int>,

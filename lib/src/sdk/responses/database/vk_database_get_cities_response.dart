@@ -14,14 +14,17 @@ class VKDatabaseGetCitiesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap()),
+      'items': items?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKDatabaseGetCitiesResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKDatabaseGetCitiesResponse(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKDatabaseCity.fromMap(item)),
+      items:
+          map['items']?.map((item) => VKDatabaseCity.fromMap(item))?.toList(),
     );
   }
 }

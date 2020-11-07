@@ -1,1 +1,1 @@
-export 'events_event_attach.dart';
+export 'vk_events_event_attach.dart';

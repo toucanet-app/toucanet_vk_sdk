@@ -13,6 +13,8 @@ class VKFriendsGetMutualResponse {
   }
 
   factory VKFriendsGetMutualResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKFriendsGetMutualResponse(
       friendsGetMutualResponse: map['friends_getMutual_response'] as List<int>,
     );

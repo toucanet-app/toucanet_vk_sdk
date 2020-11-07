@@ -10,14 +10,17 @@ class VKWallGetByIdLegacyResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'wall_getById_legacy_response':
-          wallGetByIdLegacyResponse?.map((item) => item?.toMap()),
+          wallGetByIdLegacyResponse?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKWallGetByIdLegacyResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKWallGetByIdLegacyResponse(
       wallGetByIdLegacyResponse: map['wall_getById_legacy_response']
-          ?.map((item) => VKWallWallpostFull.fromMap(item)),
+          ?.map((item) => VKWallWallpostFull.fromMap(item))
+          ?.toList(),
     );
   }
 }

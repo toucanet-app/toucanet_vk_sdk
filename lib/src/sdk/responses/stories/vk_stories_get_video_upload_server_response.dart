@@ -21,6 +21,8 @@ class VKStoriesGetVideoUploadServerResponse {
 
   factory VKStoriesGetVideoUploadServerResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStoriesGetVideoUploadServerResponse(
       uploadUrl: map['upload_url'] as String,
       userIds: map['user_ids'] as List<int>,

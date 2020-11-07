@@ -20,6 +20,8 @@ class VKPrettyCardsEditResponse {
   }
 
   factory VKPrettyCardsEditResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPrettyCardsEditResponse(
       ownerId: map['owner_id'] as int,
       cardId: map['card_id'] as String,

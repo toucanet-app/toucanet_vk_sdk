@@ -15,6 +15,8 @@ class VKMessagesIsMessagesFromGroupAllowedResponse {
 
   factory VKMessagesIsMessagesFromGroupAllowedResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesIsMessagesFromGroupAllowedResponse(
       isAllowed: VKBaseBoolInt(map['is_allowed']),
     );

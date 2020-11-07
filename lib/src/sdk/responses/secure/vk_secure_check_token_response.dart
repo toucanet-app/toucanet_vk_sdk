@@ -28,6 +28,8 @@ class VKSecureCheckTokenResponse {
   }
 
   factory VKSecureCheckTokenResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKSecureCheckTokenResponse(
       date: map['date'] as int,
       expire: map['expire'] as int,

@@ -18,6 +18,8 @@ class VKLeadsMetricHitResponse {
   }
 
   factory VKLeadsMetricHitResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKLeadsMetricHitResponse(
       result: map['result'] as bool,
       redirectLink: map['redirect_link'] as String,

@@ -14,6 +14,8 @@ class VKMarketGetOrderByIdResponse {
   }
 
   factory VKMarketGetOrderByIdResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMarketGetOrderByIdResponse(
       order: VKMarketOrder.fromMap(map['order']),
     );

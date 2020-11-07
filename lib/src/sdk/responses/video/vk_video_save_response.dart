@@ -38,6 +38,8 @@ class VKVideoSaveResponse {
   }
 
   factory VKVideoSaveResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKVideoSaveResponse(
       accessKey: map['access_key'] as String,
       description: map['description'] as String,

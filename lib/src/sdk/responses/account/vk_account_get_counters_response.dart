@@ -63,20 +63,20 @@ class VKAccountGetCountersResponse {
     this.notifications,
     this.photos,
     this.sdk,
-  })  : assert(appRequests >= 1),
-        assert(events >= 1),
-        assert(faves >= 1),
-        assert(friends >= 1),
-        assert(friendsSuggestions >= 1),
-        assert(friendsRecommendations >= 1),
-        assert(gifts >= 1),
-        assert(groups >= 1),
-        assert(messages >= 1),
-        assert(memories >= 1),
-        assert(notes >= 1),
-        assert(notifications >= 1),
-        assert(photos >= 1),
-        assert(sdk >= 1);
+  })  : assert(appRequests == null || appRequests >= 1),
+        assert(events == null || events >= 1),
+        assert(faves == null || faves >= 1),
+        assert(friends == null || friends >= 1),
+        assert(friendsSuggestions == null || friendsSuggestions >= 1),
+        assert(friendsRecommendations == null || friendsRecommendations >= 1),
+        assert(gifts == null || gifts >= 1),
+        assert(groups == null || groups >= 1),
+        assert(messages == null || messages >= 1),
+        assert(memories == null || memories >= 1),
+        assert(notes == null || notes >= 1),
+        assert(notifications == null || notifications >= 1),
+        assert(photos == null || photos >= 1),
+        assert(sdk == null || sdk >= 1);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -100,6 +100,8 @@ class VKAccountGetCountersResponse {
   }
 
   factory VKAccountGetCountersResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAccountGetCountersResponse(
       appRequests: map['app_requests'] as int,
       events: map['events'] as int,

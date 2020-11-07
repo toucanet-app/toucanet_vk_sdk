@@ -20,6 +20,8 @@ class VKUsersGetSubscriptionsResponse {
   }
 
   factory VKUsersGetSubscriptionsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKUsersGetSubscriptionsResponse(
       users: VKUsersUsersArray.fromMap(map['users']),
       groups: VKGroupsGroupsArray.fromMap(map['groups']),

@@ -22,6 +22,8 @@ class VKMessagesGetLastActivityResponse {
   }
 
   factory VKMessagesGetLastActivityResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesGetLastActivityResponse(
       online: VKBaseBoolInt(map['online']),
       time: map['time'] as int,

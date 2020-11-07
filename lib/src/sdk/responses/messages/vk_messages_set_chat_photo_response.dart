@@ -19,6 +19,8 @@ class VKMessagesSetChatPhotoResponse {
   }
 
   factory VKMessagesSetChatPhotoResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKMessagesSetChatPhotoResponse(
       messageId: map['message_id'] as int,
       chat: VKMessagesChat.fromMap(map['chat']),

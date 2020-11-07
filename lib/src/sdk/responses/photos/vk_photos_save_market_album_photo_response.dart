@@ -9,17 +9,21 @@ class VKPhotosSaveMarketAlbumPhotoResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'photos_saveMarketAlbumPhoto_response':
-          photosSaveMarketAlbumPhotoResponse?.map((item) => item?.toMap()),
+      'photos_saveMarketAlbumPhoto_response': photosSaveMarketAlbumPhotoResponse
+          ?.map((item) => item?.toMap())
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKPhotosSaveMarketAlbumPhotoResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPhotosSaveMarketAlbumPhotoResponse(
       photosSaveMarketAlbumPhotoResponse:
           map['photos_saveMarketAlbumPhoto_response']
-              ?.map((item) => VKPhotosPhoto.fromMap(item)),
+              ?.map((item) => VKPhotosPhoto.fromMap(item))
+              ?.toList(),
     );
   }
 }

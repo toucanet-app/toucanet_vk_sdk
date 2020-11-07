@@ -3,7 +3,7 @@ class VKGroupsAddCallbackServerResponse {
 
   const VKGroupsAddCallbackServerResponse({
     this.serverId,
-  }) : assert(serverId >= 0);
+  }) : assert(serverId == null || serverId >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -12,6 +12,8 @@ class VKGroupsAddCallbackServerResponse {
   }
 
   factory VKGroupsAddCallbackServerResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsAddCallbackServerResponse(
       serverId: map['server_id'] as int,
     );

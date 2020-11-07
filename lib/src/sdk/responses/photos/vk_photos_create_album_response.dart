@@ -61,7 +61,7 @@ class VKPhotosCreateAlbumResponse {
     this.uploadByAdminsOnly,
   })  : assert(created >= 0),
         assert(size >= 0),
-        assert(thumbId >= 0),
+        assert(thumbId == null || thumbId >= 0),
         assert(updated >= 0);
 
   Map<String, dynamic> toMap() {
@@ -73,7 +73,7 @@ class VKPhotosCreateAlbumResponse {
       'id': id,
       'owner_id': ownerId,
       'size': size,
-      'sizes': sizes?.map((item) => item?.toMap()),
+      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
       'thumb_id': thumbId,
       'thumb_is_last': thumbIsLast?.value,
       'thumb_src': thumbSrc,
@@ -84,6 +84,8 @@ class VKPhotosCreateAlbumResponse {
   }
 
   factory VKPhotosCreateAlbumResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPhotosCreateAlbumResponse(
       canUpload: VKBaseBoolInt(map['can_upload']),
       commentsDisabled: VKBaseBoolInt(map['comments_disabled']),
@@ -92,7 +94,9 @@ class VKPhotosCreateAlbumResponse {
       id: map['id'] as int,
       ownerId: map['owner_id'] as int,
       size: map['size'] as int,
-      sizes: map['sizes']?.map((item) => VKPhotosPhotoSizes.fromMap(item)),
+      sizes: map['sizes']
+          ?.map((item) => VKPhotosPhotoSizes.fromMap(item))
+          ?.toList(),
       thumbId: map['thumb_id'] as int,
       thumbIsLast: VKBaseBoolInt(map['thumb_is_last']),
       thumbSrc: map['thumb_src'] as String,

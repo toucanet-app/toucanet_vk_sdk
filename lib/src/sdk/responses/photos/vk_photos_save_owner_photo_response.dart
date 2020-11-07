@@ -40,6 +40,8 @@ class VKPhotosSaveOwnerPhotoResponse {
   }
 
   factory VKPhotosSaveOwnerPhotoResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPhotosSaveOwnerPhotoResponse(
       photoHash: map['photo_hash'] as String,
       photoSrc: map['photo_src'] as String,

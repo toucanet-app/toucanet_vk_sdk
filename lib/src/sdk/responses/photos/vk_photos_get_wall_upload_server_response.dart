@@ -36,6 +36,8 @@ class VKPhotosGetWallUploadServerResponse {
 
   factory VKPhotosGetWallUploadServerResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKPhotosGetWallUploadServerResponse(
       albumId: map['album_id'] as int,
       uploadUrl: map['upload_url'] as String,

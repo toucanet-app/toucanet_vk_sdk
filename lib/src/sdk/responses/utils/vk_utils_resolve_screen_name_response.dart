@@ -24,6 +24,8 @@ class VKUtilsResolveScreenNameResponse {
   }
 
   factory VKUtilsResolveScreenNameResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKUtilsResolveScreenNameResponse(
       objectId: map['object_id'] as int,
       groupId: map['group_id'] as int,

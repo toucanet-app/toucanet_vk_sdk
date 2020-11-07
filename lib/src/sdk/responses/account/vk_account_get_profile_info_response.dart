@@ -108,7 +108,7 @@ class VKAccountGetProfileInfoResponse {
     this.languages,
     this.photo200,
     this.isServiceAccount,
-  }) : assert(bdateVisibility >= 0);
+  }) : assert(bdateVisibility == null || bdateVisibility >= 0);
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
@@ -132,7 +132,8 @@ class VKAccountGetProfileInfoResponse {
       'relation': relation?.value,
       'relation_partner': relationPartner?.toMap(),
       'relation_pending': relationPending?.value,
-      'relation_requests': relationRequests?.map((item) => item?.toMap()),
+      'relation_requests':
+          relationRequests?.map((item) => item?.toMap())?.toList(),
       'screen_name': screenName,
       'sex': sex?.value,
       'status': status,
@@ -145,6 +146,8 @@ class VKAccountGetProfileInfoResponse {
   }
 
   factory VKAccountGetProfileInfoResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAccountGetProfileInfoResponse(
       deactivated: map['deactivated'] as String,
       firstName: map['first_name'] as String,
@@ -166,8 +169,9 @@ class VKAccountGetProfileInfoResponse {
       relation: VKUsersUserRelation(map['relation']),
       relationPartner: VKUsersUserMin.fromMap(map['relation_partner']),
       relationPending: VKBaseBoolInt(map['relation_pending']),
-      relationRequests:
-          map['relation_requests']?.map((item) => VKUsersUserMin.fromMap(item)),
+      relationRequests: map['relation_requests']
+          ?.map((item) => VKUsersUserMin.fromMap(item))
+          ?.toList(),
       screenName: map['screen_name'] as String,
       sex: VKBaseSex(map['sex']),
       status: map['status'] as String,

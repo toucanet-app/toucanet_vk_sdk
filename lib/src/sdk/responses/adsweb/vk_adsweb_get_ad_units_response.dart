@@ -15,15 +15,18 @@ class VKAdswebGetAdUnitsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'ad_units': adUnits?.map((item) => item?.toMap()),
+      'ad_units': adUnits?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKAdswebGetAdUnitsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdswebGetAdUnitsResponse(
       count: map['count'] as int,
-      adUnits: map['ad_units']?.map(
-          (item) => VKAdswebGetAdUnitsResponseAdUnitsAdUnit.fromMap(item)),
+      adUnits: map['ad_units']
+          ?.map((item) => VKAdswebGetAdUnitsResponseAdUnitsAdUnit.fromMap(item))
+          ?.toList(),
     );
   }
 }

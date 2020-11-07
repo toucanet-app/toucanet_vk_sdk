@@ -11,14 +11,18 @@ class VKAdswebGetAdCategoriesResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'categories': categories?.map((item) => item?.toMap()),
+      'categories': categories?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKAdswebGetAdCategoriesResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdswebGetAdCategoriesResponse(
-      categories: map['categories']?.map((item) =>
-          VKAdswebGetAdCategoriesResponseCategoriesCategory.fromMap(item)),
+      categories: map['categories']
+          ?.map((item) =>
+              VKAdswebGetAdCategoriesResponseCategoriesCategory.fromMap(item))
+          ?.toList(),
     );
   }
 }

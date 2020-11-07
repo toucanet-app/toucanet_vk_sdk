@@ -13,6 +13,8 @@ class VKStorageGetKeysResponse {
   }
 
   factory VKStorageGetKeysResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKStorageGetKeysResponse(
       storageGetKeysResponse: map['storage_getKeys_response'] as List<String>,
     );

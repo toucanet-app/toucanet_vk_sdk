@@ -27,6 +27,8 @@ class VKGroupsGetLongPollSettingsResponse {
 
   factory VKGroupsGetLongPollSettingsResponse.fromMap(
       Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsGetLongPollSettingsResponse(
       apiVersion: map['api_version'] as String,
       events: VKGroupsLongPollEvents.fromMap(map['events']),

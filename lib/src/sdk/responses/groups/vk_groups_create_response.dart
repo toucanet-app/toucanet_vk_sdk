@@ -82,6 +82,8 @@ class VKGroupsCreateResponse {
   }
 
   factory VKGroupsCreateResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKGroupsCreateResponse(
       adminLevel: VKGroupsGroupAdminLevel(map['admin_level']),
       deactivated: map['deactivated'] as String,

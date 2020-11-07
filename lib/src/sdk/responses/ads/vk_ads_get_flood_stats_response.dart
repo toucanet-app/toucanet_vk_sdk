@@ -20,6 +20,8 @@ class VKAdsGetFloodStatsResponse {
   }
 
   factory VKAdsGetFloodStatsResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKAdsGetFloodStatsResponse(
       left: map['left'] as int,
       refresh: map['refresh'] as int,

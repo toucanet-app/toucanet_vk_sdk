@@ -42,6 +42,8 @@ class VKWallRepostResponse {
   }
 
   factory VKWallRepostResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKWallRepostResponse(
       success: map['success'] as int,
       postId: map['post_id'] as int,

@@ -10,14 +10,17 @@ class VKOrdersGetByIdResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'orders_getById_response':
-          ordersGetByIdResponse?.map((item) => item?.toMap()),
+          ordersGetByIdResponse?.map((item) => item?.toMap())?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKOrdersGetByIdResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKOrdersGetByIdResponse(
       ordersGetByIdResponse: map['orders_getById_response']
-          ?.map((item) => VKOrdersOrder.fromMap(item)),
+          ?.map((item) => VKOrdersOrder.fromMap(item))
+          ?.toList(),
     );
   }
 }

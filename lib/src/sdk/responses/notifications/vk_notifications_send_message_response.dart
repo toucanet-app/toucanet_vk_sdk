@@ -9,16 +9,20 @@ class VKNotificationsSendMessageResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'notifications_sendMessage_response':
-          notificationsSendMessageResponse?.map((item) => item?.toMap()),
+      'notifications_sendMessage_response': notificationsSendMessageResponse
+          ?.map((item) => item?.toMap())
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
   factory VKNotificationsSendMessageResponse.fromMap(Map<String, dynamic> map) {
+    if (map == null) return null;
+
     return VKNotificationsSendMessageResponse(
       notificationsSendMessageResponse:
           map['notifications_sendMessage_response']
-              ?.map((item) => VKNotificationsSendMessageItem.fromMap(item)),
+              ?.map((item) => VKNotificationsSendMessageItem.fromMap(item))
+              ?.toList(),
     );
   }
 }

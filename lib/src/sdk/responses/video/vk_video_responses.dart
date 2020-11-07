@@ -1,0 +1,14 @@
+export 'vk_video_add_album_response.dart';
+export 'vk_video_get_album_by_id_response.dart';
+export 'vk_video_get_albums_by_video_extended_response.dart';
+export 'vk_video_get_albums_by_video_response.dart';
+export 'vk_video_get_albums_extended_response.dart';
+export 'vk_video_get_albums_response.dart';
+export 'vk_video_get_comments_extended_response.dart';
+export 'vk_video_get_comments_response.dart';
+export 'vk_video_get_extended_response.dart';
+export 'vk_video_get_response.dart';
+export 'vk_video_restore_comment_response.dart';
+export 'vk_video_save_response.dart';
+export 'vk_video_search_extended_response.dart';
+export 'vk_video_search_response.dart';

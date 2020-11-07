@@ -1,0 +1,17 @@
+export 'vk_wall_create_comment_response.dart';
+export 'vk_wall_edit_response.dart';
+export 'vk_wall_get_by_id_extended_response.dart';
+export 'vk_wall_get_by_id_legacy_response.dart';
+export 'vk_wall_get_by_id_response.dart';
+export 'vk_wall_get_comment_extended_response.dart';
+export 'vk_wall_get_comment_response.dart';
+export 'vk_wall_get_comments_extended_response.dart';
+export 'vk_wall_get_comments_response.dart';
+export 'vk_wall_get_reposts_response.dart';
+export 'vk_wall_get_extended_response.dart';
+export 'vk_wall_get_response.dart';
+export 'vk_wall_post_ads_stealth_response.dart';
+export 'vk_wall_post_response.dart';
+export 'vk_wall_repost_response.dart';
+export 'vk_wall_search_extended_response.dart';
+export 'vk_wall_search_response.dart';

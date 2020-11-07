@@ -17,8 +17,16 @@ class VKAppsGetLeaderboardExtendedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -29,10 +37,14 @@ class VKAppsGetLeaderboardExtendedResponse {
     return VKAppsGetLeaderboardExtendedResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKAppsLeaderboard.fromMap(item))
+          ?.map<VKAppsLeaderboard>(
+            (item) => VKAppsLeaderboard.fromMap(item),
+          )
           ?.toList(),
       profiles: map['profiles']
-          ?.map((item) => VKUsersUserMin.fromMap(item))
+          ?.map<VKUsersUserMin>(
+            (item) => VKUsersUserMin.fromMap(item),
+          )
           ?.toList(),
     );
   }

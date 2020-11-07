@@ -19,7 +19,11 @@ class VKStoriesGetViewersExtendedV5115Response {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'hidden_reason': hiddenReason,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -31,7 +35,9 @@ class VKStoriesGetViewersExtendedV5115Response {
     return VKStoriesGetViewersExtendedV5115Response(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKStoriesViewersItem.fromMap(item))
+          ?.map<VKStoriesViewersItem>(
+            (item) => VKStoriesViewersItem.fromMap(item),
+          )
           ?.toList(),
       hiddenReason: map['hidden_reason'] as String,
     );

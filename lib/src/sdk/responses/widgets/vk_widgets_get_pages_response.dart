@@ -16,7 +16,11 @@ class VKWidgetsGetPagesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'pages': pages?.map((item) => item?.toMap())?.toList(),
+      'pages': pages
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKWidgetsGetPagesResponse {
     return VKWidgetsGetPagesResponse(
       count: map['count'] as int,
       pages: map['pages']
-          ?.map((item) => VKWidgetsWidgetPage.fromMap(item))
+          ?.map<VKWidgetsWidgetPage>(
+            (item) => VKWidgetsWidgetPage.fromMap(item),
+          )
           ?.toList(),
     );
   }

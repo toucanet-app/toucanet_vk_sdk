@@ -74,7 +74,11 @@ class VKPhotosPhotoAlbumFull {
       'id': id,
       'owner_id': ownerId,
       'size': size,
-      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
+      'sizes': sizes
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'thumb_id': thumbId,
       'thumb_is_last': thumbIsLast?.value,
       'thumb_src': thumbSrc,
@@ -96,7 +100,9 @@ class VKPhotosPhotoAlbumFull {
       ownerId: map['owner_id'] as int,
       size: map['size'] as int,
       sizes: map['sizes']
-          ?.map((item) => VKPhotosPhotoSizes.fromMap(item))
+          ?.map<VKPhotosPhotoSizes>(
+            (item) => VKPhotosPhotoSizes.fromMap(item),
+          )
           ?.toList(),
       thumbId: map['thumb_id'] as int,
       thumbIsLast: VKBaseBoolInt(map['thumb_is_last']),

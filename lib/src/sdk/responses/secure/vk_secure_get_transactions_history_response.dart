@@ -11,7 +11,9 @@ class VKSecureGetTransactionsHistoryResponse {
     return <String, dynamic>{
       'secure_getTransactionsHistory_response':
           secureGetTransactionsHistoryResponse
-              ?.map((item) => item?.toMap())
+              ?.map(
+                (item) => item?.toMap(),
+              )
               ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -23,7 +25,9 @@ class VKSecureGetTransactionsHistoryResponse {
     return VKSecureGetTransactionsHistoryResponse(
       secureGetTransactionsHistoryResponse:
           map['secure_getTransactionsHistory_response']
-              ?.map((item) => VKSecureTransaction.fromMap(item))
+              ?.map<List<VKSecureTransaction>>(
+                (item) => VKSecureTransaction.fromMap(item),
+              )
               ?.toList(),
     );
   }

@@ -9,8 +9,11 @@ class VKStorageGetWithKeysResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'storage_get_with_keys_response':
-          storageGetWithKeysResponse?.map((item) => item?.toMap())?.toList(),
+      'storage_get_with_keys_response': storageGetWithKeysResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKStorageGetWithKeysResponse {
 
     return VKStorageGetWithKeysResponse(
       storageGetWithKeysResponse: map['storage_get_with_keys_response']
-          ?.map((item) => VKStorageValue.fromMap(item))
+          ?.map<List<VKStorageValue>>(
+            (item) => VKStorageValue.fromMap(item),
+          )
           ?.toList(),
     );
   }

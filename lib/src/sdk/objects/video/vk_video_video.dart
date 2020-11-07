@@ -211,8 +211,16 @@ class VKVideoVideo {
       'date': date,
       'description': description,
       'duration': duration,
-      'image': image?.map((item) => item?.toMap())?.toList(),
-      'first_frame': firstFrame?.map((item) => item?.toMap())?.toList(),
+      'image': image
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'first_frame': firstFrame
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'width': width,
       'height': height,
       'id': id,
@@ -264,10 +272,14 @@ class VKVideoVideo {
       description: map['description'] as String,
       duration: map['duration'] as int,
       image: map['image']
-          ?.map((item) => VKVideoVideoImage.fromMap(item))
+          ?.map<VKVideoVideoImage>(
+            (item) => VKVideoVideoImage.fromMap(item),
+          )
           ?.toList(),
       firstFrame: map['first_frame']
-          ?.map((item) => VKVideoVideoImage.fromMap(item))
+          ?.map<VKVideoVideoImage>(
+            (item) => VKVideoVideoImage.fromMap(item),
+          )
           ?.toList(),
       width: map['width'] as int,
       height: map['height'] as int,

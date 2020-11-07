@@ -92,8 +92,11 @@ class VKMarketOrder {
       'tags': tags,
       'dimensions': dimensions,
       'total_price': totalPrice?.toMap(),
-      'preview_order_items':
-          previewOrderItems?.map((item) => item?.toMap())?.toList(),
+      'preview_order_items': previewOrderItems
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'delivery': delivery,
       'recipient': recipient,
       'price_details': priceDetails,
@@ -121,7 +124,9 @@ class VKMarketOrder {
       dimensions: map['dimensions'] as dynamic,
       totalPrice: VKMarketPrice.fromMap(map['total_price']),
       previewOrderItems: map['preview_order_items']
-          ?.map((item) => VKMarketOrderItem.fromMap(item))
+          ?.map<VKMarketOrderItem>(
+            (item) => VKMarketOrderItem.fromMap(item),
+          )
           ?.toList(),
       delivery: map['delivery'] as dynamic,
       recipient: map['recipient'] as dynamic,

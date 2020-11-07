@@ -19,7 +19,11 @@ class VKPhotosGetCommentsResponse {
     return <String, dynamic>{
       'count': count,
       'real_offset': realOffset,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -30,7 +34,9 @@ class VKPhotosGetCommentsResponse {
       count: map['count'] as int,
       realOffset: map['real_offset'] as int,
       items: map['items']
-          ?.map((item) => VKWallWallComment.fromMap(item))
+          ?.map<VKWallWallComment>(
+            (item) => VKWallWallComment.fromMap(item),
+          )
           ?.toList(),
     );
   }

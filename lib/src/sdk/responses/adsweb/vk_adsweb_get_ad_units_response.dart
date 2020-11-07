@@ -15,7 +15,11 @@ class VKAdswebGetAdUnitsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'ad_units': adUnits?.map((item) => item?.toMap())?.toList(),
+      'ad_units': adUnits
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -25,7 +29,9 @@ class VKAdswebGetAdUnitsResponse {
     return VKAdswebGetAdUnitsResponse(
       count: map['count'] as int,
       adUnits: map['ad_units']
-          ?.map((item) => VKAdswebGetAdUnitsResponseAdUnitsAdUnit.fromMap(item))
+          ?.map<VKAdswebGetAdUnitsResponseAdUnitsAdUnit>(
+            (item) => VKAdswebGetAdUnitsResponseAdUnitsAdUnit.fromMap(item),
+          )
           ?.toList(),
     );
   }

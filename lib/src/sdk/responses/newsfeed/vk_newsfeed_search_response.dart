@@ -24,7 +24,11 @@ class VKNewsfeedSearchResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'suggested_queries': suggestedQueries,
       'next_from': nextFrom,
       'count': count,
@@ -37,7 +41,9 @@ class VKNewsfeedSearchResponse {
 
     return VKNewsfeedSearchResponse(
       items: map['items']
-          ?.map((item) => VKWallWallpostFull.fromMap(item))
+          ?.map<VKWallWallpostFull>(
+            (item) => VKWallWallpostFull.fromMap(item),
+          )
           ?.toList(),
       suggestedQueries: map['suggested_queries'] as List<String>,
       nextFrom: map['next_from'] as String,

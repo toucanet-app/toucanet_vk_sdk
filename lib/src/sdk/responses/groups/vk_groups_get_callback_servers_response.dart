@@ -15,7 +15,11 @@ class VKGroupsGetCallbackServersResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -25,7 +29,9 @@ class VKGroupsGetCallbackServersResponse {
     return VKGroupsGetCallbackServersResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKGroupsCallbackServer.fromMap(item))
+          ?.map<VKGroupsCallbackServer>(
+            (item) => VKGroupsCallbackServer.fromMap(item),
+          )
           ?.toList(),
     );
   }

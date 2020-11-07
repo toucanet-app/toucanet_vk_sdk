@@ -14,7 +14,11 @@ class VKPhotosGetAllCommentsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -24,7 +28,9 @@ class VKPhotosGetAllCommentsResponse {
     return VKPhotosGetAllCommentsResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKPhotosCommentXtrPid.fromMap(item))
+          ?.map<VKPhotosCommentXtrPid>(
+            (item) => VKPhotosCommentXtrPid.fromMap(item),
+          )
           ?.toList(),
     );
   }

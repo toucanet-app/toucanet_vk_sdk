@@ -15,7 +15,11 @@ class VKAdswebGetFraudHistoryResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'entries': entries?.map((item) => item?.toMap())?.toList(),
+      'entries': entries
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -25,8 +29,9 @@ class VKAdswebGetFraudHistoryResponse {
     return VKAdswebGetFraudHistoryResponse(
       count: map['count'] as int,
       entries: map['entries']
-          ?.map((item) =>
-              VKAdswebGetFraudHistoryResponseEntriesEntry.fromMap(item))
+          ?.map<VKAdswebGetFraudHistoryResponseEntriesEntry>(
+            (item) => VKAdswebGetFraudHistoryResponseEntriesEntry.fromMap(item),
+          )
           ?.toList(),
     );
   }

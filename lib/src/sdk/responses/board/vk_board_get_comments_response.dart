@@ -19,7 +19,11 @@ class VKBoardGetCommentsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'poll': poll?.toMap(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -30,7 +34,9 @@ class VKBoardGetCommentsResponse {
     return VKBoardGetCommentsResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKBoardTopicComment.fromMap(item))
+          ?.map<VKBoardTopicComment>(
+            (item) => VKBoardTopicComment.fromMap(item),
+          )
           ?.toList(),
       poll: VKBoardTopicPoll.fromMap(map['poll']),
     );

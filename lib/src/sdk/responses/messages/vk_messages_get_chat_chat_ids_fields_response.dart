@@ -11,7 +11,9 @@ class VKMessagesGetChatChatIdsFieldsResponse {
     return <String, dynamic>{
       'messages_getChat_chat_ids_fields_response':
           messagesGetChatChatIdsFieldsResponse
-              ?.map((item) => item?.toMap())
+              ?.map(
+                (item) => item?.toMap(),
+              )
               ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -23,7 +25,9 @@ class VKMessagesGetChatChatIdsFieldsResponse {
     return VKMessagesGetChatChatIdsFieldsResponse(
       messagesGetChatChatIdsFieldsResponse:
           map['messages_getChat_chat_ids_fields_response']
-              ?.map((item) => VKMessagesChatFull.fromMap(item))
+              ?.map<List<VKMessagesChatFull>>(
+                (item) => VKMessagesChatFull.fromMap(item),
+              )
               ?.toList(),
     );
   }

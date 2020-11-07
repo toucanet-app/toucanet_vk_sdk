@@ -73,7 +73,11 @@ class VKWallWallpostToId {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'comments': comments?.toMap(),
       'copy_owner_id': copyOwnerId,
       'copy_post_id': copyPostId,
@@ -98,7 +102,9 @@ class VKWallWallpostToId {
 
     return VKWallWallpostToId(
       attachments: map['attachments']
-          ?.map((item) => VKWallWallpostAttachment.fromMap(item))
+          ?.map<VKWallWallpostAttachment>(
+            (item) => VKWallWallpostAttachment.fromMap(item),
+          )
           ?.toList(),
       comments: VKBaseCommentsInfo.fromMap(map['comments']),
       copyOwnerId: map['copy_owner_id'] as int,

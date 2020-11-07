@@ -16,7 +16,11 @@ class VKGroupsGetMembersFieldsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKGroupsGetMembersFieldsResponse {
     return VKGroupsGetMembersFieldsResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKGroupsUserXtrRole.fromMap(item))
+          ?.map<VKGroupsUserXtrRole>(
+            (item) => VKGroupsUserXtrRole.fromMap(item),
+          )
           ?.toList(),
     );
   }

@@ -13,7 +13,11 @@ class VKMessagesGetHistoryAttachmentsResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'next_from': nextFrom,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -24,7 +28,9 @@ class VKMessagesGetHistoryAttachmentsResponse {
 
     return VKMessagesGetHistoryAttachmentsResponse(
       items: map['items']
-          ?.map((item) => VKMessagesHistoryAttachment.fromMap(item))
+          ?.map<VKMessagesHistoryAttachment>(
+            (item) => VKMessagesHistoryAttachment.fromMap(item),
+          )
           ?.toList(),
       nextFrom: map['next_from'] as String,
     );

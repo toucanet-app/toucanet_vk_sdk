@@ -9,8 +9,11 @@ class VKUsersGetResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'users_get_response':
-          usersGetResponse?.map((item) => item?.toMap())?.toList(),
+      'users_get_response': usersGetResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKUsersGetResponse {
 
     return VKUsersGetResponse(
       usersGetResponse: map['users_get_response']
-          ?.map((item) => VKUsersUserXtrCounters.fromMap(item))
+          ?.map<List<VKUsersUserXtrCounters>>(
+            (item) => VKUsersUserXtrCounters.fromMap(item),
+          )
           ?.toList(),
     );
   }

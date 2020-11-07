@@ -16,7 +16,11 @@ class VKGroupsGetCatalogInfoExtendedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'enabled': enabled,
-      'categories': categories?.map((item) => item?.toMap())?.toList(),
+      'categories': categories
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -27,7 +31,9 @@ class VKGroupsGetCatalogInfoExtendedResponse {
     return VKGroupsGetCatalogInfoExtendedResponse(
       enabled: map['enabled'] as int,
       categories: map['categories']
-          ?.map((item) => VKGroupsGroupCategoryFull.fromMap(item))
+          ?.map<VKGroupsGroupCategoryFull>(
+            (item) => VKGroupsGroupCategoryFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

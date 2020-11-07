@@ -45,7 +45,11 @@ class VKFaveBookmark {
       'post': post?.toMap(),
       'product': product?.toMap(),
       'seen': seen,
-      'tags': tags?.map((item) => item?.toMap())?.toList(),
+      'tags': tags
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'type': type?.value,
       'video': video?.toMap(),
     }..removeWhere((_, dynamic value) => value == null);
@@ -60,7 +64,11 @@ class VKFaveBookmark {
       post: VKWallWallpostFull.fromMap(map['post']),
       product: VKMarketMarketItem.fromMap(map['product']),
       seen: map['seen'] as bool,
-      tags: map['tags']?.map((item) => VKFaveTag.fromMap(item))?.toList(),
+      tags: map['tags']
+          ?.map<VKFaveTag>(
+            (item) => VKFaveTag.fromMap(item),
+          )
+          ?.toList(),
       type: VKFaveBookmarkType(map['type']),
       video: VKVideoVideo.fromMap(map['video']),
     );

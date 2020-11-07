@@ -14,7 +14,11 @@ class VKAdsRejectReason {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'comment': comment,
-      'rules': rules?.map((item) => item?.toMap())?.toList(),
+      'rules': rules
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -23,7 +27,11 @@ class VKAdsRejectReason {
 
     return VKAdsRejectReason(
       comment: map['comment'] as String,
-      rules: map['rules']?.map((item) => VKAdsRules.fromMap(item))?.toList(),
+      rules: map['rules']
+          ?.map<VKAdsRules>(
+            (item) => VKAdsRules.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

@@ -10,7 +10,9 @@ class VKDatabaseGetCountriesByIdResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'database_getCountriesById_response': databaseGetCountriesByIdResponse
-          ?.map((item) => item?.toMap())
+          ?.map(
+            (item) => item?.toMap(),
+          )
           ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -21,7 +23,9 @@ class VKDatabaseGetCountriesByIdResponse {
     return VKDatabaseGetCountriesByIdResponse(
       databaseGetCountriesByIdResponse:
           map['database_getCountriesById_response']
-              ?.map((item) => VKBaseCountry.fromMap(item))
+              ?.map<List<VKBaseCountry>>(
+                (item) => VKBaseCountry.fromMap(item),
+              )
               ?.toList(),
     );
   }

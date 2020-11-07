@@ -37,13 +37,25 @@ class VKWallGetCommentsExtendedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'show_reply_button': showReplyButton,
       'can_post': canPost,
       'groups_can_post': groupsCanPost,
       'current_level_count': currentLevelCount,
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -53,16 +65,24 @@ class VKWallGetCommentsExtendedResponse {
     return VKWallGetCommentsExtendedResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKWallWallComment.fromMap(item))
+          ?.map<VKWallWallComment>(
+            (item) => VKWallWallComment.fromMap(item),
+          )
           ?.toList(),
       showReplyButton: map['show_reply_button'] as bool,
       canPost: map['can_post'] as bool,
       groupsCanPost: map['groups_can_post'] as bool,
       currentLevelCount: map['current_level_count'] as int,
-      profiles:
-          map['profiles']?.map((item) => VKUsersUser.fromMap(item))?.toList(),
-      groups:
-          map['groups']?.map((item) => VKGroupsGroup.fromMap(item))?.toList(),
+      profiles: map['profiles']
+          ?.map<VKUsersUser>(
+            (item) => VKUsersUser.fromMap(item),
+          )
+          ?.toList(),
+      groups: map['groups']
+          ?.map<VKGroupsGroup>(
+            (item) => VKGroupsGroup.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

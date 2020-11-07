@@ -15,7 +15,11 @@ class VKAppsGetResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -24,7 +28,11 @@ class VKAppsGetResponse {
 
     return VKAppsGetResponse(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKAppsApp.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKAppsApp>(
+            (item) => VKAppsApp.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

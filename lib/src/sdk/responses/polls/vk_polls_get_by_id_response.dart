@@ -89,7 +89,11 @@ class VKPollsGetByIdResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'anonymous': anonymous,
-      'friends': friends?.map((item) => item?.toMap())?.toList(),
+      'friends': friends
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'multiple': multiple,
       'answer_id': answerId,
       'end_date': endDate,
@@ -101,7 +105,11 @@ class VKPollsGetByIdResponse {
       'can_report': canReport,
       'can_share': canShare,
       'photo': photo?.toMap(),
-      'answers': answers?.map((item) => item?.toMap())?.toList(),
+      'answers': answers
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'created': created,
       'id': id,
       'owner_id': ownerId,
@@ -118,8 +126,11 @@ class VKPollsGetByIdResponse {
 
     return VKPollsGetByIdResponse(
       anonymous: map['anonymous'] as bool,
-      friends:
-          map['friends']?.map((item) => VKPollsFriend.fromMap(item))?.toList(),
+      friends: map['friends']
+          ?.map<VKPollsFriend>(
+            (item) => VKPollsFriend.fromMap(item),
+          )
+          ?.toList(),
       multiple: map['multiple'] as bool,
       answerId: map['answer_id'] as int,
       endDate: map['end_date'] as int,
@@ -131,8 +142,11 @@ class VKPollsGetByIdResponse {
       canReport: map['can_report'] as bool,
       canShare: map['can_share'] as bool,
       photo: VKPollsBackground.fromMap(map['photo']),
-      answers:
-          map['answers']?.map((item) => VKPollsAnswer.fromMap(item))?.toList(),
+      answers: map['answers']
+          ?.map<VKPollsAnswer>(
+            (item) => VKPollsAnswer.fromMap(item),
+          )
+          ?.toList(),
       created: map['created'] as int,
       id: map['id'] as int,
       ownerId: map['owner_id'] as int,

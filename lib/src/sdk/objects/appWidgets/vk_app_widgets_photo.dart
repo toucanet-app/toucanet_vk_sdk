@@ -19,7 +19,11 @@ class VKAppWidgetsPhoto {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'id': id,
-      'images': images?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'type': type,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -29,7 +33,11 @@ class VKAppWidgetsPhoto {
 
     return VKAppWidgetsPhoto(
       id: map['id'] as String,
-      images: map['images']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
       type: map['type'] as dynamic,
     );
   }

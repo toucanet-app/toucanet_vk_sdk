@@ -11,7 +11,9 @@ class VKDatabaseGetMetroStationsByIdResponse {
     return <String, dynamic>{
       'database_getMetroStationsById_response':
           databaseGetMetroStationsByIdResponse
-              ?.map((item) => item?.toMap())
+              ?.map(
+                (item) => item?.toMap(),
+              )
               ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -23,7 +25,9 @@ class VKDatabaseGetMetroStationsByIdResponse {
     return VKDatabaseGetMetroStationsByIdResponse(
       databaseGetMetroStationsByIdResponse:
           map['database_getMetroStationsById_response']
-              ?.map((item) => VKDatabaseStation.fromMap(item))
+              ?.map<List<VKDatabaseStation>>(
+                (item) => VKDatabaseStation.fromMap(item),
+              )
               ?.toList(),
     );
   }

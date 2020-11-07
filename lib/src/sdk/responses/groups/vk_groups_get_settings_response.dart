@@ -175,8 +175,11 @@ class VKGroupsGetSettingsResponse {
       'event_group_id': eventGroupId,
       'photos': photos,
       'public_category': publicCategory,
-      'public_category_list':
-          publicCategoryList?.map((item) => item?.toMap())?.toList(),
+      'public_category_list': publicCategoryList
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'public_date': publicDate,
       'public_date_label': publicDateLabel,
       'public_subcategory': publicSubcategory,
@@ -184,7 +187,11 @@ class VKGroupsGetSettingsResponse {
       'start_date': startDate,
       'finish_date': finishDate,
       'subject': subject,
-      'subject_list': subjectList?.map((item) => item?.toMap())?.toList(),
+      'subject_list': subjectList
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'suggested_privacy': suggestedPrivacy,
       'title': title,
       'topics': topics?.value,
@@ -224,7 +231,9 @@ class VKGroupsGetSettingsResponse {
       photos: map['photos'] as int,
       publicCategory: map['public_category'] as int,
       publicCategoryList: map['public_category_list']
-          ?.map((item) => VKGroupsGroupPublicCategoryList.fromMap(item))
+          ?.map<VKGroupsGroupPublicCategoryList>(
+            (item) => VKGroupsGroupPublicCategoryList.fromMap(item),
+          )
           ?.toList(),
       publicDate: map['public_date'] as String,
       publicDateLabel: map['public_date_label'] as String,
@@ -234,7 +243,9 @@ class VKGroupsGetSettingsResponse {
       finishDate: map['finish_date'] as int,
       subject: map['subject'] as int,
       subjectList: map['subject_list']
-          ?.map((item) => VKGroupsSubjectItem.fromMap(item))
+          ?.map<VKGroupsSubjectItem>(
+            (item) => VKGroupsSubjectItem.fromMap(item),
+          )
           ?.toList(),
       suggestedPrivacy: map['suggested_privacy'] as int,
       title: map['title'] as String,

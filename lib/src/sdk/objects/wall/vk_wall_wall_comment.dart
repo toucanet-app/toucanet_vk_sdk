@@ -60,7 +60,11 @@ class VKWallWallComment {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'date': date,
       'from_id': fromId,
       'id': id,
@@ -82,7 +86,9 @@ class VKWallWallComment {
 
     return VKWallWallComment(
       attachments: map['attachments']
-          ?.map((item) => VKWallCommentAttachment.fromMap(item))
+          ?.map<VKWallCommentAttachment>(
+            (item) => VKWallCommentAttachment.fromMap(item),
+          )
           ?.toList(),
       date: map['date'] as int,
       fromId: map['from_id'] as int,

@@ -14,7 +14,11 @@ class VKUtilsLinkStats {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'key': key,
-      'stats': stats?.map((item) => item?.toMap())?.toList(),
+      'stats': stats
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -23,7 +27,11 @@ class VKUtilsLinkStats {
 
     return VKUtilsLinkStats(
       key: map['key'] as String,
-      stats: map['stats']?.map((item) => VKUtilsStats.fromMap(item))?.toList(),
+      stats: map['stats']
+          ?.map<VKUtilsStats>(
+            (item) => VKUtilsStats.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

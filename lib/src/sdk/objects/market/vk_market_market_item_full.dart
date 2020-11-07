@@ -114,7 +114,11 @@ class VKMarketMarketItemFull {
       'variants_grouping_id': variantsGroupingId,
       'is_main_variant': isMainVariant,
       'albums_ids': albumsIds,
-      'photos': photos?.map((item) => item?.toMap())?.toList(),
+      'photos': photos
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'can_comment': canComment?.value,
       'can_repost': canRepost?.value,
       'likes': likes?.toMap(),
@@ -144,8 +148,11 @@ class VKMarketMarketItemFull {
       variantsGroupingId: map['variants_grouping_id'] as int,
       isMainVariant: map['is_main_variant'] as bool,
       albumsIds: map['albums_ids'] as List<int>,
-      photos:
-          map['photos']?.map((item) => VKPhotosPhoto.fromMap(item))?.toList(),
+      photos: map['photos']
+          ?.map<VKPhotosPhoto>(
+            (item) => VKPhotosPhoto.fromMap(item),
+          )
+          ?.toList(),
       canComment: VKBaseBoolInt(map['can_comment']),
       canRepost: VKBaseBoolInt(map['can_repost']),
       likes: VKBaseLikes.fromMap(map['likes']),

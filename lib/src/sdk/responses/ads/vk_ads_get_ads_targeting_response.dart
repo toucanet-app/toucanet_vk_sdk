@@ -9,8 +9,11 @@ class VKAdsGetAdsTargetingResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'ads_getAdsTargeting_response':
-          adsGetAdsTargetingResponse?.map((item) => item?.toMap())?.toList(),
+      'ads_getAdsTargeting_response': adsGetAdsTargetingResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKAdsGetAdsTargetingResponse {
 
     return VKAdsGetAdsTargetingResponse(
       adsGetAdsTargetingResponse: map['ads_getAdsTargeting_response']
-          ?.map((item) => VKAdsTargSettings.fromMap(item))
+          ?.map<List<VKAdsTargSettings>>(
+            (item) => VKAdsTargSettings.fromMap(item),
+          )
           ?.toList(),
     );
   }

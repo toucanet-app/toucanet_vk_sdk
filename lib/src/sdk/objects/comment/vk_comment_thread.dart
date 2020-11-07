@@ -30,7 +30,11 @@ class VKCommentThread {
       'can_post': canPost,
       'count': count,
       'groups_can_post': groupsCanPost,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'show_reply_button': showReplyButton,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -43,7 +47,9 @@ class VKCommentThread {
       count: map['count'] as int,
       groupsCanPost: map['groups_can_post'] as bool,
       items: map['items']
-          ?.map((item) => VKWallWallComment.fromMap(item))
+          ?.map<VKWallWallComment>(
+            (item) => VKWallWallComment.fromMap(item),
+          )
           ?.toList(),
       showReplyButton: map['show_reply_button'] as bool,
     );

@@ -48,7 +48,11 @@ class VKNewsfeedItemDigest {
       'date': date,
       'button_text': buttonText,
       'feed_id': feedId,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'main_post_ids': mainPostIds,
       'template': template,
       'title': title,
@@ -65,8 +69,11 @@ class VKNewsfeedItemDigest {
       date: map['date'] as int,
       buttonText: map['button_text'] as String,
       feedId: map['feed_id'] as String,
-      items:
-          map['items']?.map((item) => VKWallWallpost.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKWallWallpost>(
+            (item) => VKWallWallpost.fromMap(item),
+          )
+          ?.toList(),
       mainPostIds: map['main_post_ids'] as List<String>,
       template: map['template'] as String,
       title: map['title'] as String,

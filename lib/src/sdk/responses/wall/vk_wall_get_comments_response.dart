@@ -28,7 +28,11 @@ class VKWallGetCommentsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'can_post': canPost,
       'groups_can_post': groupsCanPost,
       'current_level_count': currentLevelCount,
@@ -41,7 +45,9 @@ class VKWallGetCommentsResponse {
     return VKWallGetCommentsResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKWallWallComment.fromMap(item))
+          ?.map<VKWallWallComment>(
+            (item) => VKWallWallComment.fromMap(item),
+          )
           ?.toList(),
       canPost: map['can_post'] as bool,
       groupsCanPost: map['groups_can_post'] as bool,

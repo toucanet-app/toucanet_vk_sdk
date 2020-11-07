@@ -10,7 +10,9 @@ class VKAdsGetSuggestionsRegionsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'ads_getSuggestions_regions_response': adsGetSuggestionsRegionsResponse
-          ?.map((item) => item?.toMap())
+          ?.map(
+            (item) => item?.toMap(),
+          )
           ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -21,7 +23,9 @@ class VKAdsGetSuggestionsRegionsResponse {
     return VKAdsGetSuggestionsRegionsResponse(
       adsGetSuggestionsRegionsResponse:
           map['ads_getSuggestions_regions_response']
-              ?.map((item) => VKAdsTargSuggestionsRegions.fromMap(item))
+              ?.map<List<VKAdsTargSuggestionsRegions>>(
+                (item) => VKAdsTargSuggestionsRegions.fromMap(item),
+              )
               ?.toList(),
     );
   }

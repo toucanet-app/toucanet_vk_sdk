@@ -15,7 +15,11 @@ class VKAdswebGetSitesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'sites': sites?.map((item) => item?.toMap())?.toList(),
+      'sites': sites
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -25,7 +29,9 @@ class VKAdswebGetSitesResponse {
     return VKAdswebGetSitesResponse(
       count: map['count'] as int,
       sites: map['sites']
-          ?.map((item) => VKAdswebGetSitesResponseSitesSite.fromMap(item))
+          ?.map<VKAdswebGetSitesResponseSitesSite>(
+            (item) => VKAdswebGetSitesResponseSitesSite.fromMap(item),
+          )
           ?.toList(),
     );
   }

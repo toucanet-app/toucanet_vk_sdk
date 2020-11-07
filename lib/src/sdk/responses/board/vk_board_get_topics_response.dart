@@ -23,7 +23,11 @@ class VKBoardGetTopicsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'default_order': defaultOrder?.value,
       'can_add_topics': canAddTopics?.value,
     }..removeWhere((_, dynamic value) => value == null);
@@ -34,7 +38,11 @@ class VKBoardGetTopicsResponse {
 
     return VKBoardGetTopicsResponse(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKBoardTopic.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKBoardTopic>(
+            (item) => VKBoardTopic.fromMap(item),
+          )
+          ?.toList(),
       defaultOrder: VKBoardDefaultOrder(map['default_order']),
       canAddTopics: VKBaseBoolInt(map['can_add_topics']),
     );

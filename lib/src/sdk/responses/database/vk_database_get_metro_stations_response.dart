@@ -14,7 +14,11 @@ class VKDatabaseGetMetroStationsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -24,7 +28,9 @@ class VKDatabaseGetMetroStationsResponse {
     return VKDatabaseGetMetroStationsResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKDatabaseStation.fromMap(item))
+          ?.map<VKDatabaseStation>(
+            (item) => VKDatabaseStation.fromMap(item),
+          )
           ?.toList(),
     );
   }

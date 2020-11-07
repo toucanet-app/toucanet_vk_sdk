@@ -18,7 +18,11 @@ class VKPhotosGetAllResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'more': more?.value,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -29,7 +33,9 @@ class VKPhotosGetAllResponse {
     return VKPhotosGetAllResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKPhotosPhotoXtrRealOffset.fromMap(item))
+          ?.map<VKPhotosPhotoXtrRealOffset>(
+            (item) => VKPhotosPhotoXtrRealOffset.fromMap(item),
+          )
           ?.toList(),
       more: VKBaseBoolInt(map['more']),
     );

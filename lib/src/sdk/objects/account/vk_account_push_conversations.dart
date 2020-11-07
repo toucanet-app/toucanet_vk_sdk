@@ -14,7 +14,11 @@ class VKAccountPushConversations {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -24,7 +28,9 @@ class VKAccountPushConversations {
     return VKAccountPushConversations(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKAccountPushConversationsItem.fromMap(item))
+          ?.map<VKAccountPushConversationsItem>(
+            (item) => VKAccountPushConversationsItem.fromMap(item),
+          )
           ?.toList(),
     );
   }

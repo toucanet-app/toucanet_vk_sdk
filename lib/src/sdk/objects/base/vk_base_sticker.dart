@@ -35,11 +35,22 @@ class VKBaseSticker {
     return <String, dynamic>{
       'sticker_id': stickerId,
       'product_id': productId,
-      'images': images?.map((item) => item?.toMap())?.toList(),
-      'images_with_background':
-          imagesWithBackground?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'images_with_background': imagesWithBackground
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'animation_url': animationUrl,
-      'animations': animations?.map((item) => item?.toMap())?.toList(),
+      'animations': animations
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'is_allowed': isAllowed,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -50,13 +61,21 @@ class VKBaseSticker {
     return VKBaseSticker(
       stickerId: map['sticker_id'] as int,
       productId: map['product_id'] as int,
-      images: map['images']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
       imagesWithBackground: map['images_with_background']
-          ?.map((item) => VKBaseImage.fromMap(item))
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
           ?.toList(),
       animationUrl: map['animation_url'] as String,
       animations: map['animations']
-          ?.map((item) => VKBaseStickerAnimation.fromMap(item))
+          ?.map<VKBaseStickerAnimation>(
+            (item) => VKBaseStickerAnimation.fromMap(item),
+          )
           ?.toList(),
       isAllowed: map['is_allowed'] as bool,
     );

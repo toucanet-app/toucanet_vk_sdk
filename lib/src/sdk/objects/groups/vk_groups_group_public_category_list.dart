@@ -17,7 +17,11 @@ class VKGroupsGroupPublicCategoryList {
     return <String, dynamic>{
       'id': id,
       'name': name,
-      'subcategories': subcategories?.map((item) => item?.toMap())?.toList(),
+      'subcategories': subcategories
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -28,7 +32,9 @@ class VKGroupsGroupPublicCategoryList {
       id: map['id'] as int,
       name: map['name'] as String,
       subcategories: map['subcategories']
-          ?.map((item) => VKGroupsGroupCategoryType.fromMap(item))
+          ?.map<VKGroupsGroupCategoryType>(
+            (item) => VKGroupsGroupCategoryType.fromMap(item),
+          )
           ?.toList(),
     );
   }

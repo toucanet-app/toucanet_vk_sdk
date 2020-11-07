@@ -9,8 +9,11 @@ class VKStatsGetPostReachResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'stats_getPostReach_response':
-          statsGetPostReachResponse?.map((item) => item?.toMap())?.toList(),
+      'stats_getPostReach_response': statsGetPostReachResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKStatsGetPostReachResponse {
 
     return VKStatsGetPostReachResponse(
       statsGetPostReachResponse: map['stats_getPostReach_response']
-          ?.map((item) => VKStatsWallpostStat.fromMap(item))
+          ?.map<List<VKStatsWallpostStat>>(
+            (item) => VKStatsWallpostStat.fromMap(item),
+          )
           ?.toList(),
     );
   }

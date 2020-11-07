@@ -9,8 +9,11 @@ class VKOrdersGetByIdResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'orders_getById_response':
-          ordersGetByIdResponse?.map((item) => item?.toMap())?.toList(),
+      'orders_getById_response': ordersGetByIdResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKOrdersGetByIdResponse {
 
     return VKOrdersGetByIdResponse(
       ordersGetByIdResponse: map['orders_getById_response']
-          ?.map((item) => VKOrdersOrder.fromMap(item))
+          ?.map<List<VKOrdersOrder>>(
+            (item) => VKOrdersOrder.fromMap(item),
+          )
           ?.toList(),
     );
   }

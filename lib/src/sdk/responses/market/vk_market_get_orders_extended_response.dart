@@ -19,8 +19,16 @@ class VKMarketGetOrdersExtendedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -29,9 +37,15 @@ class VKMarketGetOrdersExtendedResponse {
 
     return VKMarketGetOrdersExtendedResponse(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKMarketOrder.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKMarketOrder>(
+            (item) => VKMarketOrder.fromMap(item),
+          )
+          ?.toList(),
       groups: map['groups']
-          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.map<VKGroupsGroupFull>(
+            (item) => VKGroupsGroupFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

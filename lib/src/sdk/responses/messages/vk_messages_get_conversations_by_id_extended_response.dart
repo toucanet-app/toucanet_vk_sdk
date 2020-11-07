@@ -19,8 +19,16 @@ class VKMessagesGetConversationsByIdExtendedResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -31,10 +39,15 @@ class VKMessagesGetConversationsByIdExtendedResponse {
     return VKMessagesGetConversationsByIdExtendedResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKMessagesConversation.fromMap(item))
+          ?.map<VKMessagesConversation>(
+            (item) => VKMessagesConversation.fromMap(item),
+          )
           ?.toList(),
-      profiles:
-          map['profiles']?.map((item) => VKUsersUser.fromMap(item))?.toList(),
+      profiles: map['profiles']
+          ?.map<VKUsersUser>(
+            (item) => VKUsersUser.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

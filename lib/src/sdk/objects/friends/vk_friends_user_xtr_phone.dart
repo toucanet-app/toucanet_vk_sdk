@@ -456,8 +456,16 @@ class VKFriendsUserXtrPhone {
       'is_hidden_from_feed': isHiddenFromFeed?.value,
       'common_count': commonCount,
       'occupation': occupation?.toMap(),
-      'career': career?.map((item) => item?.toMap())?.toList(),
-      'military': military?.map((item) => item?.toMap())?.toList(),
+      'career': career
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'military': military
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'university': university,
       'university_name': universityName,
       'faculty': faculty,
@@ -469,9 +477,21 @@ class VKFriendsUserXtrPhone {
       'relation': relation?.value,
       'relation_partner': relationPartner?.toMap(),
       'personal': personal?.toMap(),
-      'universities': universities?.map((item) => item?.toMap())?.toList(),
-      'schools': schools?.map((item) => item?.toMap())?.toList(),
-      'relatives': relatives?.map((item) => item?.toMap())?.toList(),
+      'universities': universities
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'schools': schools
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'relatives': relatives
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'is_subscribed_podcasts': isSubscribedPodcasts,
       'can_subscribe_podcasts': canSubscribePodcasts,
       'can_subscribe_posts': canSubscribePosts,
@@ -556,10 +576,15 @@ class VKFriendsUserXtrPhone {
       isHiddenFromFeed: VKBaseBoolInt(map['is_hidden_from_feed']),
       commonCount: map['common_count'] as int,
       occupation: VKUsersOccupation.fromMap(map['occupation']),
-      career:
-          map['career']?.map((item) => VKUsersCareer.fromMap(item))?.toList(),
+      career: map['career']
+          ?.map<VKUsersCareer>(
+            (item) => VKUsersCareer.fromMap(item),
+          )
+          ?.toList(),
       military: map['military']
-          ?.map((item) => VKUsersMilitary.fromMap(item))
+          ?.map<VKUsersMilitary>(
+            (item) => VKUsersMilitary.fromMap(item),
+          )
           ?.toList(),
       university: map['university'] as int,
       universityName: map['university_name'] as String,
@@ -573,12 +598,19 @@ class VKFriendsUserXtrPhone {
       relationPartner: VKUsersUserMin.fromMap(map['relation_partner']),
       personal: VKUsersPersonal.fromMap(map['personal']),
       universities: map['universities']
-          ?.map((item) => VKUsersUniversity.fromMap(item))
+          ?.map<VKUsersUniversity>(
+            (item) => VKUsersUniversity.fromMap(item),
+          )
           ?.toList(),
-      schools:
-          map['schools']?.map((item) => VKUsersSchool.fromMap(item))?.toList(),
+      schools: map['schools']
+          ?.map<VKUsersSchool>(
+            (item) => VKUsersSchool.fromMap(item),
+          )
+          ?.toList(),
       relatives: map['relatives']
-          ?.map((item) => VKUsersRelative.fromMap(item))
+          ?.map<VKUsersRelative>(
+            (item) => VKUsersRelative.fromMap(item),
+          )
           ?.toList(),
       isSubscribedPodcasts: map['is_subscribed_podcasts'] as bool,
       canSubscribePodcasts: map['can_subscribe_podcasts'] as bool,

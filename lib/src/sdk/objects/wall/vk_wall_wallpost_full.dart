@@ -124,7 +124,11 @@ class VKWallWallpostFull {
     return <String, dynamic>{
       'carousel_offset': carouselOffset,
       'access_key': accessKey,
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'copyright': copyright?.toMap(),
       'date': date,
       'edited': edited,
@@ -141,7 +145,11 @@ class VKWallWallpostFull {
       'signer_id': signerId,
       'text': text,
       'views': views?.toMap(),
-      'copy_history': copyHistory?.map((item) => item?.toMap())?.toList(),
+      'copy_history': copyHistory
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'can_edit': canEdit?.value,
       'created_by': createdBy,
       'can_delete': canDelete?.value,
@@ -160,7 +168,9 @@ class VKWallWallpostFull {
       carouselOffset: map['carousel_offset'] as int,
       accessKey: map['access_key'] as String,
       attachments: map['attachments']
-          ?.map((item) => VKWallWallpostAttachment.fromMap(item))
+          ?.map<VKWallWallpostAttachment>(
+            (item) => VKWallWallpostAttachment.fromMap(item),
+          )
           ?.toList(),
       copyright: VKWallPostCopyright.fromMap(map['copyright']),
       date: map['date'] as int,
@@ -179,7 +189,9 @@ class VKWallWallpostFull {
       text: map['text'] as String,
       views: VKWallViews.fromMap(map['views']),
       copyHistory: map['copy_history']
-          ?.map((item) => VKWallWallpost.fromMap(item))
+          ?.map<VKWallWallpost>(
+            (item) => VKWallWallpost.fromMap(item),
+          )
           ?.toList(),
       canEdit: VKBaseBoolInt(map['can_edit']),
       createdBy: map['created_by'] as int,

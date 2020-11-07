@@ -65,25 +65,101 @@ class VKAccountPushParams {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'msg': msg?.map((item) => item?.value)?.toList(),
-      'chat': chat?.map((item) => item?.value)?.toList(),
-      'like': like?.map((item) => item?.value)?.toList(),
-      'repost': repost?.map((item) => item?.value)?.toList(),
-      'comment': comment?.map((item) => item?.value)?.toList(),
-      'mention': mention?.map((item) => item?.value)?.toList(),
-      'reply': reply?.map((item) => item?.value)?.toList(),
-      'new_post': newPost?.map((item) => item?.value)?.toList(),
-      'wall_post': wallPost?.map((item) => item?.value)?.toList(),
-      'wall_publish': wallPublish?.map((item) => item?.value)?.toList(),
-      'friend': friend?.map((item) => item?.value)?.toList(),
-      'friend_found': friendFound?.map((item) => item?.value)?.toList(),
-      'friend_accepted': friendAccepted?.map((item) => item?.value)?.toList(),
-      'group_invite': groupInvite?.map((item) => item?.value)?.toList(),
-      'group_accepted': groupAccepted?.map((item) => item?.value)?.toList(),
-      'birthday': birthday?.map((item) => item?.value)?.toList(),
-      'event_soon': eventSoon?.map((item) => item?.value)?.toList(),
-      'app_request': appRequest?.map((item) => item?.value)?.toList(),
-      'sdk_open': sdkOpen?.map((item) => item?.value)?.toList(),
+      'msg': msg
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'chat': chat
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'like': like
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'repost': repost
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'comment': comment
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'mention': mention
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'reply': reply
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'new_post': newPost
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'wall_post': wallPost
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'wall_publish': wallPublish
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'friend': friend
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'friend_found': friendFound
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'friend_accepted': friendAccepted
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'group_invite': groupInvite
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'group_accepted': groupAccepted
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'birthday': birthday
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'event_soon': eventSoon
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'app_request': appRequest
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
+      'sdk_open': sdkOpen
+          ?.map(
+            (item) => item?.value,
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -91,57 +167,100 @@ class VKAccountPushParams {
     if (map == null) return null;
 
     return VKAccountPushParams(
-      msg: map['msg']?.map((item) => VKAccountPushParamsMode(item))?.toList(),
-      chat: map['chat']?.map((item) => VKAccountPushParamsMode(item))?.toList(),
+      msg: map['msg']
+          ?.map<VKAccountPushParamsMode>(
+            (item) => VKAccountPushParamsMode(item),
+          )
+          ?.toList(),
+      chat: map['chat']
+          ?.map<VKAccountPushParamsMode>(
+            (item) => VKAccountPushParamsMode(item),
+          )
+          ?.toList(),
       like: map['like']
-          ?.map((item) => VKAccountPushParamsSettings(item))
+          ?.map<VKAccountPushParamsSettings>(
+            (item) => VKAccountPushParamsSettings(item),
+          )
           ?.toList(),
       repost: map['repost']
-          ?.map((item) => VKAccountPushParamsSettings(item))
+          ?.map<VKAccountPushParamsSettings>(
+            (item) => VKAccountPushParamsSettings(item),
+          )
           ?.toList(),
       comment: map['comment']
-          ?.map((item) => VKAccountPushParamsSettings(item))
+          ?.map<VKAccountPushParamsSettings>(
+            (item) => VKAccountPushParamsSettings(item),
+          )
           ?.toList(),
       mention: map['mention']
-          ?.map((item) => VKAccountPushParamsSettings(item))
+          ?.map<VKAccountPushParamsSettings>(
+            (item) => VKAccountPushParamsSettings(item),
+          )
           ?.toList(),
-      reply:
-          map['reply']?.map((item) => VKAccountPushParamsOnoff(item))?.toList(),
+      reply: map['reply']
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
+          ?.toList(),
       newPost: map['new_post']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       wallPost: map['wall_post']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       wallPublish: map['wall_publish']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       friend: map['friend']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       friendFound: map['friend_found']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       friendAccepted: map['friend_accepted']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       groupInvite: map['group_invite']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       groupAccepted: map['group_accepted']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       birthday: map['birthday']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       eventSoon: map['event_soon']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       appRequest: map['app_request']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
       sdkOpen: map['sdk_open']
-          ?.map((item) => VKAccountPushParamsOnoff(item))
+          ?.map<VKAccountPushParamsOnoff>(
+            (item) => VKAccountPushParamsOnoff(item),
+          )
           ?.toList(),
     );
   }

@@ -1,6 +1,8 @@
 import '../../objects/vk_objects.dart';
 
 class VKNewsfeedGetRecommendedResponse {
+  // final List<VKNewsfeedNewsfeedItem> items;
+
   final List<VKUsersUserFull> profiles;
 
   final List<VKGroupsGroupFull> groups;
@@ -12,6 +14,7 @@ class VKNewsfeedGetRecommendedResponse {
   final String nextFrom;
 
   const VKNewsfeedGetRecommendedResponse({
+    // this.items,
     this.profiles,
     this.groups,
     this.newOffset,
@@ -20,8 +23,21 @@ class VKNewsfeedGetRecommendedResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      // 'items': items
+      //     ?.map(
+      //       (item) => item?.toMap(),
+      //     )
+      //     ?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'new_offset': newOffset,
       'next_from': nextFrom,
     }..removeWhere((_, dynamic value) => value == null);
@@ -31,11 +47,20 @@ class VKNewsfeedGetRecommendedResponse {
     if (map == null) return null;
 
     return VKNewsfeedGetRecommendedResponse(
+      // items: map['items']
+      //     ?.map<VKNewsfeedNewsfeedItem>(
+      //       (item) => VKNewsfeedNewsfeedItem.fromMap(item),
+      //     )
+      //     ?.toList(),
       profiles: map['profiles']
-          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.map<VKUsersUserFull>(
+            (item) => VKUsersUserFull.fromMap(item),
+          )
           ?.toList(),
       groups: map['groups']
-          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.map<VKGroupsGroupFull>(
+            (item) => VKGroupsGroupFull.fromMap(item),
+          )
           ?.toList(),
       newOffset: map['new_offset'] as String,
       nextFrom: map['next_from'] as String,

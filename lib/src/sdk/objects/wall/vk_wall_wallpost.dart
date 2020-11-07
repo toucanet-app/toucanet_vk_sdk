@@ -81,7 +81,11 @@ class VKWallWallpost {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'access_key': accessKey,
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'copyright': copyright?.toMap(),
       'date': date,
       'edited': edited,
@@ -107,7 +111,9 @@ class VKWallWallpost {
     return VKWallWallpost(
       accessKey: map['access_key'] as String,
       attachments: map['attachments']
-          ?.map((item) => VKWallWallpostAttachment.fromMap(item))
+          ?.map<VKWallWallpostAttachment>(
+            (item) => VKWallWallpostAttachment.fromMap(item),
+          )
           ?.toList(),
       copyright: VKWallPostCopyright.fromMap(map['copyright']),
       date: map['date'] as int,

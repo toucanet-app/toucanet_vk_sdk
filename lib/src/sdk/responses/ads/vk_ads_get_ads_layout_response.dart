@@ -9,8 +9,11 @@ class VKAdsGetAdsLayoutResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'ads_getAdsLayout_response':
-          adsGetAdsLayoutResponse?.map((item) => item?.toMap())?.toList(),
+      'ads_getAdsLayout_response': adsGetAdsLayoutResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKAdsGetAdsLayoutResponse {
 
     return VKAdsGetAdsLayoutResponse(
       adsGetAdsLayoutResponse: map['ads_getAdsLayout_response']
-          ?.map((item) => VKAdsAdLayout.fromMap(item))
+          ?.map<List<VKAdsAdLayout>>(
+            (item) => VKAdsAdLayout.fromMap(item),
+          )
           ?.toList(),
     );
   }

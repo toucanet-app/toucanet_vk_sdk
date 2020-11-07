@@ -14,7 +14,11 @@ class VKNewsfeedItemVideoVideo {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -23,7 +27,11 @@ class VKNewsfeedItemVideoVideo {
 
     return VKNewsfeedItemVideoVideo(
       count: map['count'] as int,
-      items: map['items']?.map((item) => VKVideoVideo.fromMap(item))?.toList(),
+      items: map['items']
+          ?.map<VKVideoVideo>(
+            (item) => VKVideoVideo.fromMap(item),
+          )
+          ?.toList(),
     );
   }
 }

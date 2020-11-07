@@ -9,8 +9,11 @@ class VKPagesGetTitlesResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'pages_getTitles_response':
-          pagesGetTitlesResponse?.map((item) => item?.toMap())?.toList(),
+      'pages_getTitles_response': pagesGetTitlesResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKPagesGetTitlesResponse {
 
     return VKPagesGetTitlesResponse(
       pagesGetTitlesResponse: map['pages_getTitles_response']
-          ?.map((item) => VKPagesWikipage.fromMap(item))
+          ?.map<List<VKPagesWikipage>>(
+            (item) => VKPagesWikipage.fromMap(item),
+          )
           ?.toList(),
     );
   }

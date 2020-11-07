@@ -64,7 +64,11 @@ class VKWidgetsWidgetComment {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'can_delete': canDelete?.value,
       'comments': comments?.toMap(),
       'date': date,
@@ -86,7 +90,9 @@ class VKWidgetsWidgetComment {
 
     return VKWidgetsWidgetComment(
       attachments: map['attachments']
-          ?.map((item) => VKWallCommentAttachment.fromMap(item))
+          ?.map<VKWallCommentAttachment>(
+            (item) => VKWallCommentAttachment.fromMap(item),
+          )
           ?.toList(),
       canDelete: VKBaseBoolInt(map['can_delete']),
       comments: VKWidgetsCommentReplies.fromMap(map['comments']),

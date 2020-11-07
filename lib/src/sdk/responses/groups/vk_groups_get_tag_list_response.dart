@@ -9,8 +9,11 @@ class VKGroupsGetTagListResponse {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'groups_getTagList_response':
-          groupsGetTagListResponse?.map((item) => item?.toMap())?.toList(),
+      'groups_getTagList_response': groupsGetTagListResponse
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -19,7 +22,9 @@ class VKGroupsGetTagListResponse {
 
     return VKGroupsGetTagListResponse(
       groupsGetTagListResponse: map['groups_getTagList_response']
-          ?.map((item) => VKGroupsGroupTag.fromMap(item))
+          ?.map<List<VKGroupsGroupTag>>(
+            (item) => VKGroupsGroupTag.fromMap(item),
+          )
           ?.toList(),
     );
   }

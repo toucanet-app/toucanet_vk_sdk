@@ -13,7 +13,11 @@ class VKMessagesGetChatPreviewResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'preview': preview?.toMap(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -23,7 +27,9 @@ class VKMessagesGetChatPreviewResponse {
     return VKMessagesGetChatPreviewResponse(
       preview: VKMessagesChatPreview.fromMap(map['preview']),
       profiles: map['profiles']
-          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.map<VKUsersUserFull>(
+            (item) => VKUsersUserFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

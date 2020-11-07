@@ -117,7 +117,11 @@ class VKPhotosPhotoXtrTagInfo {
       'photo_807': photo807,
       'placer_id': placerId,
       'post_id': postId,
-      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
+      'sizes': sizes
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'tag_created': tagCreated,
       'tag_id': tagId,
       'text': text,
@@ -147,7 +151,9 @@ class VKPhotosPhotoXtrTagInfo {
       placerId: map['placer_id'] as int,
       postId: map['post_id'] as int,
       sizes: map['sizes']
-          ?.map((item) => VKPhotosPhotoSizes.fromMap(item))
+          ?.map<VKPhotosPhotoSizes>(
+            (item) => VKPhotosPhotoSizes.fromMap(item),
+          )
           ?.toList(),
       tagCreated: map['tag_created'] as int,
       tagId: map['tag_id'] as int,

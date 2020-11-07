@@ -16,7 +16,11 @@ class VKWallSearchResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKWallSearchResponse {
     return VKWallSearchResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKWallWallpostFull.fromMap(item))
+          ?.map<VKWallWallpostFull>(
+            (item) => VKWallWallpostFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

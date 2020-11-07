@@ -15,7 +15,11 @@ class VKAdsUsers {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'accesses': accesses?.map((item) => item?.toMap())?.toList(),
+      'accesses': accesses
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'user_id': userId,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -24,8 +28,11 @@ class VKAdsUsers {
     if (map == null) return null;
 
     return VKAdsUsers(
-      accesses:
-          map['accesses']?.map((item) => VKAdsAccesses.fromMap(item))?.toList(),
+      accesses: map['accesses']
+          ?.map<VKAdsAccesses>(
+            (item) => VKAdsAccesses.fromMap(item),
+          )
+          ?.toList(),
       userId: map['user_id'] as int,
     );
   }

@@ -14,7 +14,11 @@ class VKMessagesLongpollMessages {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -24,7 +28,9 @@ class VKMessagesLongpollMessages {
     return VKMessagesLongpollMessages(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKMessagesMessage.fromMap(item))
+          ?.map<VKMessagesMessage>(
+            (item) => VKMessagesMessage.fromMap(item),
+          )
           ?.toList(),
     );
   }

@@ -34,7 +34,11 @@ class VKFavePage {
     return <String, dynamic>{
       'description': description,
       'group': group?.toMap(),
-      'tags': tags?.map((item) => item?.toMap())?.toList(),
+      'tags': tags
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'type': type?.value,
       'updated_date': updatedDate,
       'user': user?.toMap(),
@@ -47,7 +51,11 @@ class VKFavePage {
     return VKFavePage(
       description: map['description'] as String,
       group: VKGroupsGroupFull.fromMap(map['group']),
-      tags: map['tags']?.map((item) => VKFaveTag.fromMap(item))?.toList(),
+      tags: map['tags']
+          ?.map<VKFaveTag>(
+            (item) => VKFaveTag.fromMap(item),
+          )
+          ?.toList(),
       type: VKFavePageType(map['type']),
       updatedDate: map['updated_date'] as int,
       user: VKUsersUserFull.fromMap(map['user']),

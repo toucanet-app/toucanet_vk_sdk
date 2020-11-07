@@ -13,7 +13,11 @@ class VKAdsRules {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'paragraphs': paragraphs?.map((item) => item?.toMap())?.toList(),
+      'paragraphs': paragraphs
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'title': title,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -23,7 +27,9 @@ class VKAdsRules {
 
     return VKAdsRules(
       paragraphs: map['paragraphs']
-          ?.map((item) => VKAdsParagraphs.fromMap(item))
+          ?.map<VKAdsParagraphs>(
+            (item) => VKAdsParagraphs.fromMap(item),
+          )
           ?.toList(),
       title: map['title'] as String,
     );

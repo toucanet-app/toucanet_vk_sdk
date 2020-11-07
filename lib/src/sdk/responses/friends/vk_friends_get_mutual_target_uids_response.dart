@@ -11,7 +11,9 @@ class VKFriendsGetMutualTargetUidsResponse {
     return <String, dynamic>{
       'friends_getMutual_target_uids_response':
           friendsGetMutualTargetUidsResponse
-              ?.map((item) => item?.toMap())
+              ?.map(
+                (item) => item?.toMap(),
+              )
               ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -23,7 +25,9 @@ class VKFriendsGetMutualTargetUidsResponse {
     return VKFriendsGetMutualTargetUidsResponse(
       friendsGetMutualTargetUidsResponse:
           map['friends_getMutual_target_uids_response']
-              ?.map((item) => VKFriendsMutualFriend.fromMap(item))
+              ?.map<List<VKFriendsMutualFriend>>(
+                (item) => VKFriendsMutualFriend.fromMap(item),
+              )
               ?.toList(),
     );
   }

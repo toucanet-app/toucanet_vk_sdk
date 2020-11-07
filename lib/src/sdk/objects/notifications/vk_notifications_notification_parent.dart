@@ -313,7 +313,11 @@ class VKNotificationsNotificationParent {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'attachments': attachments?.map((item) => item?.toMap())?.toList(),
+      'attachments': attachments
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'comments': comments?.toMap(),
       'copy_owner_id': copyOwnerId,
       'copy_post_id': copyPostId,
@@ -333,14 +337,22 @@ class VKNotificationsNotificationParent {
       'access_key': accessKey,
       'album_id': albumId,
       'height': height,
-      'images': images?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'lat': lat,
       'long': long,
       'owner_id': ownerId,
       'photo_256': photo256,
       'can_comment': canComment?.value,
       'place': place,
-      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
+      'sizes': sizes
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'user_id': userId,
       'width': width,
       'has_tags': hasTags,
@@ -363,8 +375,16 @@ class VKNotificationsNotificationParent {
       'is_private': isPrivate?.value,
       'description': description,
       'duration': duration,
-      'image': image?.map((item) => item?.toMap())?.toList(),
-      'first_frame': firstFrame?.map((item) => item?.toMap())?.toList(),
+      'image': image
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'first_frame': firstFrame
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'player': player,
       'processing': processing?.value,
       'converting': converting?.value,
@@ -396,7 +416,9 @@ class VKNotificationsNotificationParent {
 
     return VKNotificationsNotificationParent(
       attachments: map['attachments']
-          ?.map((item) => VKWallWallpostAttachment.fromMap(item))
+          ?.map<VKWallWallpostAttachment>(
+            (item) => VKWallWallpostAttachment.fromMap(item),
+          )
           ?.toList(),
       comments: VKBaseCommentsInfo.fromMap(map['comments']),
       copyOwnerId: map['copy_owner_id'] as int,
@@ -417,8 +439,11 @@ class VKNotificationsNotificationParent {
       accessKey: map['access_key'] as String,
       albumId: map['album_id'] as int,
       height: map['height'] as int,
-      images:
-          map['images']?.map((item) => VKPhotosImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKPhotosImage>(
+            (item) => VKPhotosImage.fromMap(item),
+          )
+          ?.toList(),
       lat: map['lat'] as double,
       long: map['long'] as double,
       ownerId: map['owner_id'] as int,
@@ -426,7 +451,9 @@ class VKNotificationsNotificationParent {
       canComment: VKBaseBoolInt(map['can_comment']),
       place: map['place'] as String,
       sizes: map['sizes']
-          ?.map((item) => VKPhotosPhotoSizes.fromMap(item))
+          ?.map<VKPhotosPhotoSizes>(
+            (item) => VKPhotosPhotoSizes.fromMap(item),
+          )
           ?.toList(),
       userId: map['user_id'] as int,
       width: map['width'] as int,
@@ -451,10 +478,14 @@ class VKNotificationsNotificationParent {
       description: map['description'] as String,
       duration: map['duration'] as int,
       image: map['image']
-          ?.map((item) => VKVideoVideoImage.fromMap(item))
+          ?.map<VKVideoVideoImage>(
+            (item) => VKVideoVideoImage.fromMap(item),
+          )
           ?.toList(),
       firstFrame: map['first_frame']
-          ?.map((item) => VKVideoVideoImage.fromMap(item))
+          ?.map<VKVideoVideoImage>(
+            (item) => VKVideoVideoImage.fromMap(item),
+          )
           ?.toList(),
       player: map['player'] as String,
       processing: VKBasePropertyExists(map['processing']),

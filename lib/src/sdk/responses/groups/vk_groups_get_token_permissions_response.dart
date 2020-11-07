@@ -15,7 +15,11 @@ class VKGroupsGetTokenPermissionsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'mask': mask,
-      'permissions': permissions?.map((item) => item?.toMap())?.toList(),
+      'permissions': permissions
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKGroupsGetTokenPermissionsResponse {
     return VKGroupsGetTokenPermissionsResponse(
       mask: map['mask'] as int,
       permissions: map['permissions']
-          ?.map((item) => VKGroupsTokenPermissionSetting.fromMap(item))
+          ?.map<VKGroupsTokenPermissionSetting>(
+            (item) => VKGroupsTokenPermissionSetting.fromMap(item),
+          )
           ?.toList(),
     );
   }

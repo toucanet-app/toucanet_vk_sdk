@@ -23,7 +23,11 @@ class VKNewsfeedItemHolidayRecommendationsBlockHeader {
     return <String, dynamic>{
       'title': title,
       'subtitle': subtitle,
-      'image': image?.map((item) => item?.toMap())?.toList(),
+      'image': image
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'action': action?.toMap(),
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -35,7 +39,11 @@ class VKNewsfeedItemHolidayRecommendationsBlockHeader {
     return VKNewsfeedItemHolidayRecommendationsBlockHeader(
       title: map['title'] as String,
       subtitle: map['subtitle'] as String,
-      image: map['image']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
+      image: map['image']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
       action: VKBaseLinkButtonAction.fromMap(map['action']),
     );
   }

@@ -30,8 +30,16 @@ class VKStoriesGetResponse {
       'count': count,
       'items': items,
       'promo_data': promoData?.toMap(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'need_upload_screen': needUploadScreen,
     }..removeWhere((_, dynamic value) => value == null);
   }
@@ -43,10 +51,16 @@ class VKStoriesGetResponse {
       count: map['count'] as int,
       items: map['items'] as List<List>,
       promoData: VKStoriesPromoBlock.fromMap(map['promo_data']),
-      profiles:
-          map['profiles']?.map((item) => VKUsersUser.fromMap(item))?.toList(),
-      groups:
-          map['groups']?.map((item) => VKGroupsGroup.fromMap(item))?.toList(),
+      profiles: map['profiles']
+          ?.map<VKUsersUser>(
+            (item) => VKUsersUser.fromMap(item),
+          )
+          ?.toList(),
+      groups: map['groups']
+          ?.map<VKGroupsGroup>(
+            (item) => VKGroupsGroup.fromMap(item),
+          )
+          ?.toList(),
       needUploadScreen: map['need_upload_screen'] as bool,
     );
   }

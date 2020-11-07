@@ -136,7 +136,11 @@ class VKPhotosPhotoFullXtrRealOffset {
       'post_id': postId,
       'real_offset': realOffset,
       'reposts': reposts?.toMap(),
-      'sizes': sizes?.map((item) => item?.toMap())?.toList(),
+      'sizes': sizes
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'tags': tags?.toMap(),
       'text': text,
       'user_id': userId,
@@ -170,7 +174,9 @@ class VKPhotosPhotoFullXtrRealOffset {
       realOffset: map['real_offset'] as int,
       reposts: VKBaseObjectCount.fromMap(map['reposts']),
       sizes: map['sizes']
-          ?.map((item) => VKPhotosPhotoSizes.fromMap(item))
+          ?.map<VKPhotosPhotoSizes>(
+            (item) => VKPhotosPhotoSizes.fromMap(item),
+          )
           ?.toList(),
       tags: VKBaseObjectCount.fromMap(map['tags']),
       text: map['text'] as String,

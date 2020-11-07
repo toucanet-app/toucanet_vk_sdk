@@ -46,8 +46,16 @@ class VKPollsBackground {
       'height': height,
       'id': id,
       'name': name,
-      'images': images?.map((item) => item?.toMap())?.toList(),
-      'points': points?.map((item) => item?.toMap())?.toList(),
+      'images': images
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'points': points
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'type': type,
       'width': width,
     }..removeWhere((_, dynamic value) => value == null);
@@ -62,9 +70,15 @@ class VKPollsBackground {
       height: map['height'] as int,
       id: map['id'] as int,
       name: map['name'] as String,
-      images: map['images']?.map((item) => VKBaseImage.fromMap(item))?.toList(),
+      images: map['images']
+          ?.map<VKBaseImage>(
+            (item) => VKBaseImage.fromMap(item),
+          )
+          ?.toList(),
       points: map['points']
-          ?.map((item) => VKBaseGradientPoint.fromMap(item))
+          ?.map<VKBaseGradientPoint>(
+            (item) => VKBaseGradientPoint.fromMap(item),
+          )
           ?.toList(),
       type: map['type'] as String,
       width: map['width'] as int,

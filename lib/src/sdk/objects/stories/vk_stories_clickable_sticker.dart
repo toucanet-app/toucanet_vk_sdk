@@ -101,7 +101,11 @@ class VKStoriesClickableSticker {
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'clickable_area': clickableArea?.map((item) => item?.toMap())?.toList(),
+      'clickable_area': clickableArea
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
       'id': id,
       'hashtag': hashtag,
       'link_object': linkObject?.toMap(),
@@ -136,7 +140,9 @@ class VKStoriesClickableSticker {
 
     return VKStoriesClickableSticker(
       clickableArea: map['clickable_area']
-          ?.map((item) => VKStoriesClickableArea.fromMap(item))
+          ?.map<VKStoriesClickableArea>(
+            (item) => VKStoriesClickableArea.fromMap(item),
+          )
           ?.toList(),
       id: map['id'] as int,
       hashtag: map['hashtag'] as String,

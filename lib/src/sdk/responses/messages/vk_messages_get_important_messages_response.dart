@@ -21,9 +21,21 @@ class VKMessagesGetImportantMessagesResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'messages': messages?.toMap(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
-      'conversations': conversations?.map((item) => item?.toMap())?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'conversations': conversations
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -33,12 +45,20 @@ class VKMessagesGetImportantMessagesResponse {
 
     return VKMessagesGetImportantMessagesResponse(
       messages: VKMessagesMessagesArray.fromMap(map['messages']),
-      profiles:
-          map['profiles']?.map((item) => VKUsersUser.fromMap(item))?.toList(),
-      groups:
-          map['groups']?.map((item) => VKGroupsGroup.fromMap(item))?.toList(),
+      profiles: map['profiles']
+          ?.map<VKUsersUser>(
+            (item) => VKUsersUser.fromMap(item),
+          )
+          ?.toList(),
+      groups: map['groups']
+          ?.map<VKGroupsGroup>(
+            (item) => VKGroupsGroup.fromMap(item),
+          )
+          ?.toList(),
       conversations: map['conversations']
-          ?.map((item) => VKMessagesConversation.fromMap(item))
+          ?.map<VKMessagesConversation>(
+            (item) => VKMessagesConversation.fromMap(item),
+          )
           ?.toList(),
     );
   }

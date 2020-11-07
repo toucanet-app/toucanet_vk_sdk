@@ -59,8 +59,11 @@ class VKAdsLookalikeRequest {
       'source_retargeting_group_id': sourceRetargetingGroupId,
       'source_name': sourceName,
       'audience_count': audienceCount,
-      'save_audience_levels':
-          saveAudienceLevels?.map((item) => item?.toMap())?.toList(),
+      'save_audience_levels': saveAudienceLevels
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -78,7 +81,9 @@ class VKAdsLookalikeRequest {
       sourceName: map['source_name'] as String,
       audienceCount: map['audience_count'] as int,
       saveAudienceLevels: map['save_audience_levels']
-          ?.map((item) => VKAdsLookalikeRequestSaveAudienceLevel.fromMap(item))
+          ?.map<VKAdsLookalikeRequestSaveAudienceLevel>(
+            (item) => VKAdsLookalikeRequestSaveAudienceLevel.fromMap(item),
+          )
           ?.toList(),
     );
   }

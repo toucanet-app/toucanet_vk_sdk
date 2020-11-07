@@ -27,9 +27,21 @@ class VKMessagesGetConversationsResponse {
     return <String, dynamic>{
       'count': count,
       'unread_count': unreadCount,
-      'items': items?.map((item) => item?.toMap())?.toList(),
-      'profiles': profiles?.map((item) => item?.toMap())?.toList(),
-      'groups': groups?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'profiles': profiles
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
+      'groups': groups
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -40,13 +52,19 @@ class VKMessagesGetConversationsResponse {
       count: map['count'] as int,
       unreadCount: map['unread_count'] as int,
       items: map['items']
-          ?.map((item) => VKMessagesConversationWithMessage.fromMap(item))
+          ?.map<VKMessagesConversationWithMessage>(
+            (item) => VKMessagesConversationWithMessage.fromMap(item),
+          )
           ?.toList(),
       profiles: map['profiles']
-          ?.map((item) => VKUsersUserFull.fromMap(item))
+          ?.map<VKUsersUserFull>(
+            (item) => VKUsersUserFull.fromMap(item),
+          )
           ?.toList(),
       groups: map['groups']
-          ?.map((item) => VKGroupsGroupFull.fromMap(item))
+          ?.map<VKGroupsGroupFull>(
+            (item) => VKGroupsGroupFull.fromMap(item),
+          )
           ?.toList(),
     );
   }

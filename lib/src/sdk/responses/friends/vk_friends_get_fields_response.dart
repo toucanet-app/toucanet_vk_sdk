@@ -16,7 +16,11 @@ class VKFriendsGetFieldsResponse {
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'count': count,
-      'items': items?.map((item) => item?.toMap())?.toList(),
+      'items': items
+          ?.map(
+            (item) => item?.toMap(),
+          )
+          ?.toList(),
     }..removeWhere((_, dynamic value) => value == null);
   }
 
@@ -26,7 +30,9 @@ class VKFriendsGetFieldsResponse {
     return VKFriendsGetFieldsResponse(
       count: map['count'] as int,
       items: map['items']
-          ?.map((item) => VKFriendsUserXtrLists.fromMap(item))
+          ?.map<VKFriendsUserXtrLists>(
+            (item) => VKFriendsUserXtrLists.fromMap(item),
+          )
           ?.toList(),
     );
   }

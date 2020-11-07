@@ -12,7 +12,7 @@ class VKClient {
   final String clientSecret;
 
   final VKAuth auth;
-  final VKMessages messages;
+  VKMessages _messages;
 
   VKClient({
     @required this.clientId,
@@ -20,6 +20,9 @@ class VKClient {
     this.version = 5.103,
     this.transportClient = const HttpClient(),
   })  : assert(transportClient != null),
-        auth = VKAuth(clientId, version),
-        messages = VKMessages(transportClient);
+        auth = VKAuth(clientId, version);
+  VKMessages get messages {
+    _messages ??= VKMessages(transportClient, auth);
+    return _messages;
+  }
 }

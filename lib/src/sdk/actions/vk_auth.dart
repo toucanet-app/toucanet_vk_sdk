@@ -7,9 +7,10 @@ import '../errors/vk_error_mapper.dart';
 class VKAuth {
   final int clientId;
   final double version;
+  String token;
   static const defaultHost = 'https://oauth.vk.com/';
 
-  const VKAuth(this.clientId, this.version);
+  VKAuth(this.clientId, this.version);
 
   String getAuthorizeUrl({
     String state = '',

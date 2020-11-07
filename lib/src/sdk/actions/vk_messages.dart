@@ -1,9 +1,12 @@
 import 'dart:convert';
 import 'dart:math';
 
-import 'package:toucanet_vk_sdk/src/sdk/errors/vk_error_mapper.dart';
-
 import '../../base/transport_client.dart';
+
+import '../responses/vk_responses.dart';
+import '../errors/vk_error_mapper.dart';
+import '../errors/exceptions/vk_exceptions.dart';
+
 import 'vk_auth.dart';
 
 class VKMessages {
@@ -13,36 +16,52 @@ class VKMessages {
   const VKMessages(this.transportClient, this.auth)
       : assert(transportClient != null);
 
-  Future<TransportClientResponse> getConversations(int offset,
-      {int count = 10}) async {
-    final result = await transportClient
-        .post('https://api.vk.com/method/messages.getConversations', {
-      'access_token': auth.token,
-      'v': '${auth.version}',
-      'offset': '$offset',
-      'count': '$count',
-      'extended': '1',
-      'filter': 'all',
-      'fields': '${[
-        'photo_200_orig',
-        'photo_50',
-        'photo_100',
-        'status',
-        'counters',
-        'online'
-      ]}'
-    });
-    final decode = jsonDecode(result.body);
-    if (decode is! Map) {
-      throw Exception('is Map error');
-    }
-    if ((decode as Map).containsKey('error')) {
-      throw ErrorMapper.mapErrorResponseToException(
-        decode['error']['error_code'],
-        decode['error']['error_msg'],
+  Future<VKMessagesGetConversationsResponse> getConversations(
+    int offset, {
+    int count = 10,
+  }) async {
+    try {
+      final result = await transportClient.post(
+        'https://api.vk.com/method/messages.getConversations',
+        {
+          'access_token': auth.token,
+          'v': '${auth.version}',
+          'offset': '$offset',
+          'count': '$count',
+          'extended': '1',
+          'filter': 'all',
+          'fields': '${[
+            'photo_200_orig',
+            'photo_50',
+            'photo_100',
+            'status',
+            'counters',
+            'online'
+          ]}'
+        },
       );
+
+      final data = json.decode(result.body);
+
+      if (data is! Map) throw Exception('Failed to parse body. \n$data.');
+
+      if (data.containsKey('error')) {
+        throw ErrorMapper.mapErrorResponseToException(
+          data['error']['error_code'],
+          data['error']['error_msg'],
+        );
+      }
+
+      if (data.containsKey('response')) {
+        return VKMessagesGetConversationsResponse.fromMap(data['response']);
+      }
+
+      throw Exception('Invalid response format.');
+    } on VKApiException catch (_) {
+      rethrow;
+    } on Exception catch (error) {
+      throw ErrorMapper.mapErrorResponseToException(1, '$error');
     }
-    return result;
   }
 
   Future<TransportClientResponse> getHistory(int offset, int userId,

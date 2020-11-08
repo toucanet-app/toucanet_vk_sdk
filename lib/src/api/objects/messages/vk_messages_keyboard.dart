@@ -4,7 +4,7 @@ class VKMessagesKeyboard {
   /// Community or bot, which set this keyboard.
   final int authorId;
 
-  final List<List> buttons;
+  final List<dynamic> buttons;
 
   /// Should this keyboard disappear on first use.
   final bool oneTime;
@@ -32,7 +32,7 @@ class VKMessagesKeyboard {
 
     return VKMessagesKeyboard(
       authorId: map['author_id'] as int,
-      buttons: map['buttons'] as List<List>,
+      buttons: map['buttons'] as List<dynamic>,
       oneTime: map['one_time'] as bool,
       inline: map['inline'] as bool,
     );

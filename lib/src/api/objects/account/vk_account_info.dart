@@ -1,6 +1,8 @@
+import '../../../base/map_serializer.dart';
+
 import '../base/vk_base_bool_int.dart';
 
-class VKAccountInfo {
+class VKAccountInfo implements MapSerializer {
   final VKBaseBoolInt wishlistsAePromoBannerShow;
 
   /// Two factor authentication is enabled.
@@ -52,6 +54,7 @@ class VKAccountInfo {
   })  : assert(miniAppsAdsSlotId == null || miniAppsAdsSlotId >= 0),
         assert(qrPromotion == null || qrPromotion >= 0);
 
+  @override
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'wishlists_ae_promo_banner_show': wishlistsAePromoBannerShow?.value,

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../base/json_serializer.dart';
+import '../base/map_serializer.dart';
 
 /// Thrown when JSON cannot be processing.
 class JsonProcessingException implements Exception {}
@@ -10,9 +10,9 @@ typedef JsonDeserializer<T> = T Function(dynamic json);
 
 /// JSON helper.
 abstract class Json {
-  static String encode<T extends JsonSerializer>(T object) {
+  static String encode<T extends MapSerializer>(T object) {
     try {
-      return json.encode(object.toJson());
+      return json.encode(object.toMap());
     } on Exception catch (_) {
       throw JsonProcessingException();
     }
@@ -22,7 +22,7 @@ abstract class Json {
     try {
       final dynamic data = json.decode(jsonString);
       return jsonDeserializer(data);
-    } on Exception catch (_) {
+    } on FormatException catch (_) {
       throw JsonProcessingException();
     }
   }

@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import 'package:toucanet_vk_sdk/src/utils/http.dart';
+import 'package:toucanet_vk_sdk/src/helpers/http.dart';
 
 void main() {
   group('Http.explodeQuery', () {
@@ -21,6 +21,11 @@ void main() {
         Http.explodeQuery('key1=test1&key2=test2'),
         {'key1': 'test1', 'key2': 'test2'},
       );
+    });
+  });
+  group('Http.rtrimSlashes', () {
+    test('slash delete', () {
+      expect(Http.rtrimSlashes('https://vk.com/'), 'https://vk.com');
     });
   });
 }

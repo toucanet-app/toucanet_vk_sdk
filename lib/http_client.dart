@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:http/http.dart' as http;
 
-import 'base/transport_client.dart';
+import 'src/base/transport_client.dart';
 
 class HttpClient implements TransportClient {
   const HttpClient();

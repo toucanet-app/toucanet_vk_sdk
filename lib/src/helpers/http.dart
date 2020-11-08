@@ -13,4 +13,6 @@ abstract class Http {
 
     return parameters;
   }
+
+  static String rtrimSlashes(String url) => url.replaceAll(RegExp('/+\$'), '');
 }

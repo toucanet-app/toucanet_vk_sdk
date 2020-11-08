@@ -1,6 +1,6 @@
 import 'package:test/test.dart';
 
-import 'package:toucanet_vk_sdk/src/utils/http.dart';
+import 'package:toucanet_vk_sdk/src/helpers/http.dart';
 
 void main() {
   group('Http.explodeQuery', () {

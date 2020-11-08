@@ -1,31 +1,24 @@
 import 'dart:convert';
 import 'dart:math';
+import 'package:meta/meta.dart';
 
-import '../../base/transport_client.dart';
-
+import '../vk_client.dart';
+import '../errors/vk_errors.dart';
 import '../responses/vk_responses.dart';
-import '../errors/vk_error_mapper.dart';
-import '../errors/exceptions/vk_exceptions.dart';
-
-import 'vk_auth.dart';
 
 class VKMessages {
-  final TransportClient transportClient;
-  final VKAuth auth;
+  final VKClient client;
 
-  const VKMessages(this.transportClient, this.auth)
-      : assert(transportClient != null);
+  const VKMessages({@required this.client}) : assert(client != null);
 
   Future<VKMessagesGetConversationsResponse> getConversations(
     int offset, {
     int count = 10,
   }) async {
     try {
-      final result = await transportClient.post(
-        'https://api.vk.com/method/messages.getConversations',
+      final result = await client.call(
+        'messages.getConversations',
         {
-          'access_token': auth.token,
-          'v': '${auth.version}',
           'offset': '$offset',
           'count': '$count',
           'extended': '1',
@@ -40,16 +33,18 @@ class VKMessages {
           ]}'
         },
       );
-      final data = json.decode(result.body);
+
+      final data = json.decode(result);
 
       if (data is! Map) throw Exception('Failed to parse body. \n$data.');
 
       if (data.containsKey('error')) {
-        throw ErrorMapper.mapErrorResponseToException(
-          data['error']['error_code'],
+        throw VKErrorMapper.mapErrorResponseToException(
           data['error']['error_msg'],
+          data['error']['error_code'],
         );
       }
+
       if (data.containsKey('response')) {
         return VKMessagesGetConversationsResponse.fromMap(data['response']);
       }
@@ -58,17 +53,14 @@ class VKMessages {
     } on VKApiException catch (_) {
       rethrow;
     } on Exception catch (error) {
-      throw ErrorMapper.mapErrorResponseToException(1, '$error');
+      throw VKErrorMapper.mapErrorResponseToException('$error');
     }
   }
 
   Future<VKMessagesGetHistoryResponse> getHistory(int offset, int userId,
       {int count = 12}) async {
     try {
-      final result = await transportClient
-          .post('https://api.vk.com/method/messages.getHistory', {
-        'access_token': auth.token,
-        'v': '${auth.version}',
+      final result = await client.call('messages.getHistory', {
         'offset': '$offset',
         'rev': '0',
         'count': '$count',
@@ -76,14 +68,14 @@ class VKMessages {
         'extended': '1',
       });
 
-      final data = json.decode(result.body);
+      final data = json.decode(result);
 
       if (data is! Map) throw Exception('Failed to parse body. \n$data.');
 
       if (data.containsKey('error')) {
-        throw ErrorMapper.mapErrorResponseToException(
-          data['error']['error_code'],
+        throw VKErrorMapper.mapErrorResponseToException(
           data['error']['error_msg'],
+          data['error']['error_code'],
         );
       }
 
@@ -95,23 +87,19 @@ class VKMessages {
     } on VKApiException catch (_) {
       rethrow;
     } on Exception catch (error) {
-      throw ErrorMapper.mapErrorResponseToException(1, '$error');
+      throw VKErrorMapper.mapErrorResponseToException('$error');
     }
   }
 
   Future<void> send(int userId, String message, String type) async {
     if (type == 'user') {
-      await transportClient.post('https://api.vk.com/method/messages.send', {
-        'access_token': auth.token,
-        'v': '${auth.version}',
+      await client.call('messages.send', {
         'user_id': '$userId',
         'random_id': '${Random().nextInt(4294967295)}',
         'message': message
       });
     } else {
-      await transportClient.post('https://api.vk.com/method/messages.send', {
-        'access_token': auth.token,
-        'v': '${auth.version}',
+      await client.call('messages.send', {
         'peer_id': '$userId',
         'random_id': '${Random().nextInt(4294967295)}',
         'message': message

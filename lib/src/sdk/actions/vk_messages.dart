@@ -40,6 +40,41 @@ class VKMessages {
           ]}'
         },
       );
+      final data = json.decode(result.body);
+
+      if (data is! Map) throw Exception('Failed to parse body. \n$data.');
+
+      if (data.containsKey('error')) {
+        throw ErrorMapper.mapErrorResponseToException(
+          data['error']['error_code'],
+          data['error']['error_msg'],
+        );
+      }
+      if (data.containsKey('response')) {
+        return VKMessagesGetConversationsResponse.fromMap(data['response']);
+      }
+
+      throw Exception('Invalid response format.');
+    } on VKApiException catch (_) {
+      rethrow;
+    } on Exception catch (error) {
+      throw ErrorMapper.mapErrorResponseToException(1, '$error');
+    }
+  }
+
+  Future<VKMessagesGetHistoryResponse> getHistory(int offset, int userId,
+      {int count = 12}) async {
+    try {
+      final result = await transportClient
+          .post('https://api.vk.com/method/messages.getHistory', {
+        'access_token': auth.token,
+        'v': '${auth.version}',
+        'offset': '$offset',
+        'rev': '0',
+        'count': '$count',
+        'user_id': '$userId',
+        'extended': '1',
+      });
 
       final data = json.decode(result.body);
 
@@ -53,7 +88,7 @@ class VKMessages {
       }
 
       if (data.containsKey('response')) {
-        return VKMessagesGetConversationsResponse.fromMap(data['response']);
+        return VKMessagesGetHistoryResponse.fromMap(data['response']);
       }
 
       throw Exception('Invalid response format.');
@@ -62,21 +97,6 @@ class VKMessages {
     } on Exception catch (error) {
       throw ErrorMapper.mapErrorResponseToException(1, '$error');
     }
-  }
-
-  Future<TransportClientResponse> getHistory(int offset, int userId,
-      {int count = 12}) async {
-    final result = await transportClient
-        .post('https://api.vk.com/method/messages.getHistory', {
-      'access_token': auth.token,
-      'v': '${auth.version}',
-      'offset': '$offset',
-      'rev': '0',
-      'count': '$count',
-      'user_id': '$userId',
-      'extended': '1',
-    });
-    return result;
   }
 
   Future<void> send(int userId, String message, String type) async {

@@ -6,7 +6,7 @@ import '../base/map_serializer.dart';
 class JsonProcessingException implements Exception {}
 
 /// Used by [Json.decode].
-typedef _JsonDeserializer<T> = T Function(dynamic json);
+typedef JsonDeserializer<T> = T Function(dynamic json);
 
 /// JSON helper.
 abstract class Json {
@@ -18,11 +18,11 @@ abstract class Json {
     }
   }
 
-  static T decode<T>(String jsonString, _JsonDeserializer<T> jsonDeserializer) {
+  static T decode<T>(String jsonString, JsonDeserializer<T> jsonDeserializer) {
     try {
       final dynamic data = json.decode(jsonString);
       return jsonDeserializer(data);
-    } on Exception catch (_) {
+    } on FormatException catch (_) {
       throw JsonProcessingException();
     }
   }

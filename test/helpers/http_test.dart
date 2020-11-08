@@ -23,4 +23,9 @@ void main() {
       );
     });
   });
+  group('Http.rtrimSlashes', () {
+    test('slash delete', () {
+      expect(Http.rtrimSlashes('https://vk.com/'), 'https://vk.com');
+    });
+  });
 }

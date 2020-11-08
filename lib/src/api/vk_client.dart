@@ -1,7 +1,9 @@
 import '../helpers/http.dart';
+import '../helpers/json.dart';
 import '../base/transport_client.dart';
 
 import 'vk_settings.dart';
+import './errors/vk_errors.dart';
 
 class VKClient {
   final VKSettings settings;
@@ -32,12 +34,31 @@ class VKClient {
     return transportClient.post(url, parameters);
   }
 
-  Future<String> call(String name, [Map<String, dynamic> parameters]) async {
-    final response = await _fetch(
-      Http.rtrimSlashes(settings.apiBaseUrl) + '/method/$name',
-      parameters,
-    );
+  Future<T> call<T>(
+    String name, [
+    Map<String, dynamic> parameters,
+    JsonDeserializer<T> jsonDeserializer,
+  ]) async {
+    try {
+      final response = await _fetch(
+        Http.rtrimSlashes(settings.apiBaseUrl) + '/method/$name',
+        parameters,
+      );
+      return Json.decode(response.body, (json) {
+        if (json is! Map) throw Exception('Failed to parse body. \n$json.');
 
-    return response.body;
+        if (json.containsKey('error')) {
+          throw VKErrorMapper.mapErrorResponseToException(
+            json['error']['error_msg'],
+            json['error']['error_code'],
+          );
+        }
+        return jsonDeserializer(json['response']);
+      });
+    } on VKApiException catch (_) {
+      rethrow;
+    } on Exception catch (error) {
+      throw VKErrorMapper.mapErrorResponseToException('$error');
+    }
   }
 }
